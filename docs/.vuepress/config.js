@@ -14,6 +14,8 @@ module.exports = {
             { text: 'Portfolio', link: 'https://blaxberry.github.io/#/' }
           ]
         }
-      ]
+      ],
+      sidebarDepth: 4,
+      sidebar: 'auto'
     }
   }
