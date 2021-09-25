@@ -1,5 +1,6 @@
 module.exports = {
     title: 'StudyNotes',
+    // base:'vuepress-studynotes/tree/page/',
     description: 'Program Study Notes',
     themeConfig: {
       smoothScroll: true,
