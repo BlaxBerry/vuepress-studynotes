@@ -1,17 +1,17 @@
 {
-  "name": "vue-vite-mobile-news",
-  "version": "0.0.0",
+  "name": "vuepress-studynotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
-  "dependencies": {
-    "vue": "^3.2.6"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.6.1",
-    "@vue/compiler-sfc": "^3.2.6",
-    "vite": "^2.5.4"
+    "vuepress": "^1.8.2"
   }
 }
