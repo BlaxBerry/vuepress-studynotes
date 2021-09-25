@@ -1,7 +1,5 @@
 # Vue2 + Vuex
 
-<img src="https://ichi.pro/assets/images/max/724/1*kCXAQpCAX2PGtWAjVKEUow.jpeg" />
-
 集中管理组件之间的共享的数据。
 
 储存在VueX中的数据都是响应式的，可以实时保持数据与页面的同步
