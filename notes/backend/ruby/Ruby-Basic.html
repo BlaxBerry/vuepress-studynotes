@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ruby基础 | StudyNotes</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/vuepress-studynotes/avatar.png">
+    <meta name="description" content="Program Study Notes">
+    
+    <link rel="preload" href="/vuepress-studynotes/assets/css/0.styles.573e5b30.css" as="style"><link rel="preload" href="/vuepress-studynotes/assets/js/app.8a208b05.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/2.cb5dfabd.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/14.932a0b00.js" as="script"><link rel="prefetch" href="/vuepress-studynotes/assets/js/10.06eca73c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/11.c36905f2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/12.55d1ca9c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/13.a495c5f0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/15.1c04baaf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/16.871bd1e0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/17.b97f8caf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/18.b5f14d30.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/19.3fe8aeae.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/20.fd330509.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/21.b0d128a9.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/22.d75fceae.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/23.ab664138.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/24.125937c2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/25.de4e2105.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/26.e58d22a2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/27.af0dba26.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/28.1bc70958.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/29.9b446062.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/3.52eb4948.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/30.9bff19c0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/31.598f250d.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/32.e3f7ed47.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/33.e5542dd4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/34.ad624811.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/4.32120fa5.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/5.a40522bf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/6.1e0a47e6.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/7.0d01b1c8.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/8.e147f4a7.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/9.4edc41f7.js">
+    <link rel="stylesheet" href="/vuepress-studynotes/assets/css/0.styles.573e5b30.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-studynotes/" class="home-link router-link-active"><!----> <span class="site-name">StudyNotes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-studynotes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-End" class="dropdown-title"><span class="title">Front-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-End" class="mobile-dropdown-title"><span class="title">Front-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue3+Vue-cli.html" class="nav-link">
+  Vue3 + Vue-Cli
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vuex.html" class="nav-link">
+  Vue2 + Vuex
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vue-Router.html" class="nav-link">
+  Vue-Router
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Basic.html" class="nav-link">
+  React-JSX
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Components.html" class="nav-link">
+  React-Components
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Router.html" class="nav-link">
+  React-Router-Dom
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Back-End" class="dropdown-title"><span class="title">Back-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Back-End" class="mobile-dropdown-title"><span class="title">Back-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Node.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Node.js-Basic.html" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Express.js-Basic.html" class="nav-link">
+  Express.js
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Ruby
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Ruby
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DataBase" class="dropdown-title"><span class="title">DataBase</span> <span class="arrow down"></span></button> <button type="button" aria-label="DataBase" class="mobile-dropdown-title"><span class="title">DataBase</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-studynotes/notes/database/SQL.html" class="nav-link">
+  SQL
+</a></li><li class="dropdown-item"><!----> <a href="https://mongodb.net.cn/manual/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MongoDB
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Links" class="dropdown-title"><span class="title">Links</span> <span class="arrow down"></span></button> <button type="button" aria-label="Links" class="mobile-dropdown-title"><span class="title">Links</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blaxberry.github.io/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Portfolio
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-studynotes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-End" class="dropdown-title"><span class="title">Front-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-End" class="mobile-dropdown-title"><span class="title">Front-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue3+Vue-cli.html" class="nav-link">
+  Vue3 + Vue-Cli
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vuex.html" class="nav-link">
+  Vue2 + Vuex
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vue-Router.html" class="nav-link">
+  Vue-Router
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Basic.html" class="nav-link">
+  React-JSX
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Components.html" class="nav-link">
+  React-Components
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Router.html" class="nav-link">
+  React-Router-Dom
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Back-End" class="dropdown-title"><span class="title">Back-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Back-End" class="mobile-dropdown-title"><span class="title">Back-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Node.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Node.js-Basic.html" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Express.js-Basic.html" class="nav-link">
+  Express.js
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Ruby
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Ruby
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DataBase" class="dropdown-title"><span class="title">DataBase</span> <span class="arrow down"></span></button> <button type="button" aria-label="DataBase" class="mobile-dropdown-title"><span class="title">DataBase</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-studynotes/notes/database/SQL.html" class="nav-link">
+  SQL
+</a></li><li class="dropdown-item"><!----> <a href="https://mongodb.net.cn/manual/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MongoDB
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Links" class="dropdown-title"><span class="title">Links</span> <span class="arrow down"></span></button> <button type="button" aria-label="Links" class="mobile-dropdown-title"><span class="title">Links</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blaxberry.github.io/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Portfolio
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Ruby基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#变量" class="sidebar-link">变量</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#变量类型" class="sidebar-link">变量类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#变量作用域" class="sidebar-link">变量作用域</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#赋值与使用" class="sidebar-link">赋值与使用</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#式展開" class="sidebar-link">式展開</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#常量" class="sidebar-link">常量</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#数据类型" class="sidebar-link">数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#判断类型" class="sidebar-link">判断类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#数值-number" class="sidebar-link">数值 Number</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#字符串-string" class="sidebar-link">字符串 String</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#nil" class="sidebar-link">nil</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#symbol" class="sidebar-link">symbol</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#时间-time" class="sidebar-link">时间 Time</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#数组-array" class="sidebar-link">数组 Array</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#获取元素" class="sidebar-link">获取元素</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#修改元素" class="sidebar-link">修改元素</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#插入元素" class="sidebar-link">插入元素</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#数组合并" class="sidebar-link">数组合并</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#共同元素" class="sidebar-link">共同元素</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#范围-range" class="sidebar-link">范围 Range</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#" class="sidebar-link">..</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#-2" class="sidebar-link">...</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#哈希-hash" class="sidebar-link">哈希 Hash</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#定义键值对" class="sidebar-link">定义键值对</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#获取值" class="sidebar-link">获取值</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#展开hash" class="sidebar-link">展开Hash</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#方法函数" class="sidebar-link">方法函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#定义与调用" class="sidebar-link">定义与调用</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#返回值" class="sidebar-link">返回值</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#函数参数" class="sidebar-link">函数参数</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#变量作用域-2" class="sidebar-link">变量作用域</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#ruby语法" class="sidebar-link">Ruby语法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#判断" class="sidebar-link">判断</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#循环" class="sidebar-link">循环</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#类-class" class="sidebar-link">类 class</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#变量-2" class="sidebar-link">变量</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#方法" class="sidebar-link">方法</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#常量-2" class="sidebar-link">常量</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#self" class="sidebar-link">self</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#继承" class="sidebar-link">继承</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#模块-module" class="sidebar-link">模块 module</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#模块的静态方法" class="sidebar-link">模块的静态方法</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#设定为静态方法" class="sidebar-link">设定为静态方法</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#include" class="sidebar-link">include</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#错误-与-例外处理" class="sidebar-link">错误 与 例外处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#错误处理" class="sidebar-link">错误处理</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#库-library" class="sidebar-link">库（library）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#库的导入" class="sidebar-link">库的导入</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#第三方库-gem" class="sidebar-link">第三方库（gem）</a></li></ul></li><li><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html#正则表达式" class="sidebar-link">正则表达式</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ruby基础"><a href="#ruby基础" class="header-anchor">#</a> Ruby基础</h1> <img src="https://kitsune.blog/wp-content/uploads/ruby-logo.png" style="zoom:50%;"> <h2 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h2> <h3 id="变量类型"><a href="#变量类型" class="header-anchor">#</a> 变量类型</h3> <ul><li><p><strong>局部变量</strong></p> <blockquote><p>ローカル変数</p></blockquote></li> <li><p><strong>全局变量</strong></p> <blockquote><p>グローバル変数</p></blockquote></li> <li><p><strong>实例变量</strong></p> <blockquote><p>インスタンス変数</p></blockquote></li> <li><p><strong>类变量</strong></p> <blockquote><p>クラス変数</p></blockquote></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>		<span class="token comment"># 局部变量</span>
+<span class="token variable">$a</span> <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>		<span class="token comment"># 全局变量</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Example</span>
+  <span class="token variable">@@a</span> <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>  <span class="token comment"># 类变量</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+    <span class="token variable">@a</span> <span class="token operator">=</span> params		<span class="token comment"># 实例变量</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+example <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="变量作用域"><a href="#变量作用域" class="header-anchor">#</a> 变量作用域</h3> <blockquote><p><strong>変数スコープ</strong>  は<strong>参照できる範囲</strong>を意味する</p></blockquote> <hr> <h4 id="局部变量"><a href="#局部变量" class="header-anchor">#</a> 局部变量</h4> <blockquote><p>ローカル変数：どこで定義したかによって、スコープが変わる</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    a <span class="token operator">=</span> <span class="token number">200</span>
+    puts a
+<span class="token keyword">end</span>
+
+fn
+<span class="token comment"># 200</span>
+</code></pre></div><p>函数内部直接使用函数外部定义的局部变量，报错</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    puts a
+<span class="token keyword">end</span>
+
+fn
+<span class="token comment"># undefined local variable or method `a' for main:Object (NameError)</span>
+</code></pre></div><hr> <h4 id="全局变量"><a href="#全局变量" class="header-anchor">#</a> 全局变量</h4> <blockquote><p>グローバル変数：どこからでも参照できる</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token variable">$a</span> <span class="token operator">=</span> <span class="token number">100</span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    a <span class="token operator">=</span> <span class="token number">200</span>
+    puts <span class="token variable">$a</span>
+<span class="token keyword">end</span>
+
+fn
+<span class="token comment"># 100</span>
+</code></pre></div><h3 id="赋值与使用"><a href="#赋值与使用" class="header-anchor">#</a> 赋值与使用</h3> <p>先使用后定义，报错</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts name 
+name <span class="token operator">=</span> <span class="token string">&quot;Ruby&quot;</span>
+
+<span class="token comment"># undefined local variable or method `a' for main:Object (NameError)</span>
+</code></pre></div><hr> <h4 id="并行赋值"><a href="#并行赋值" class="header-anchor">#</a> 并行赋值</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span>
+p a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c
+<span class="token comment"># 10</span>
+<span class="token comment"># 20</span>
+<span class="token comment"># 30</span>
+</code></pre></div><p>交换两个变量的值</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> c
+</code></pre></div><h4 id="多重代入"><a href="#多重代入" class="header-anchor">#</a> 多重代入</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a<span class="token punctuation">,</span> <span class="token operator">*</span>b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span>
+
+p a  <span class="token comment"># 10</span>
+p b  <span class="token comment"># [20,30]</span>
+</code></pre></div><h3 id="式展開"><a href="#式展開" class="header-anchor">#</a> 式展開</h3> <blockquote><p>式展開は、文字列の中に変数や計算式の結果などを出力できる機能</p></blockquote> <p>在字符串中调用变量时，</p> <ul><li><p>除了local变量需要通过 <strong>#{变量}</strong> 解析</p></li> <li><p>global变量可直接通过 <strong>#变量</strong> 解析</p></li> <li><p>类中的也可直接通过 <strong>#@实例变量、#@@类变量</strong> 解析 (详见类)</p></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token variable">$tom</span> <span class="token operator">=</span> <span class="token string">'tom'</span>
+andy <span class="token operator">=</span> <span class="token string">&quot;andy&quot;</span>
+
+puts <span class="token string">&quot;hello <span class="token interpolation"><span class="token delimiter tag">#{</span>andy<span class="token delimiter tag">}</span></span>&quot;</span>
+puts <span class="token string">&quot;hello #$tom&quot;</span>
+
+<span class="token comment"># hello andy</span>
+<span class="token comment"># hello tom</span>
+</code></pre></div><p><code>#{}</code>の中に、計算式の結果も出力でき</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token string">&quot;sum is <span class="token interpolation"><span class="token delimiter tag">#{</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">+</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">3</span><span class="token delimiter tag">}</span></span>&quot;</span>
+<span class="token comment"># sum is 10</span>
+</code></pre></div><h2 id="常量"><a href="#常量" class="header-anchor">#</a> 常量</h2> <p>命名建议使用大写字母和下划线_</p> <p>不可再次赋值</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token constant">A</span> <span class="token operator">=</span> <span class="token string">'hello andy'</span>
+<span class="token constant">A</span> <span class="token operator">=</span> <span class="token string">'hello tom'</span>
+puts <span class="token constant">A</span>
+<span class="token comment"># 結果</span>
+warning<span class="token punctuation">:</span> already initialized constant <span class="token constant">A</span>
+warning<span class="token punctuation">:</span> previous definition of <span class="token constant">A</span> was here
+hello tom
+</code></pre></div><h2 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h2> <blockquote><p>Rubyの世界では、すべてのデータがオブジェクト</p></blockquote> <table><thead><tr><th style="text-align:center;">类型</th> <th style="text-align:center;">含义</th> <th style="text-align:center;">例子</th></tr></thead> <tbody><tr><td style="text-align:center;">Number</td> <td style="text-align:center;">数值</td> <td style="text-align:center;">1.0   1</td></tr> <tr><td style="text-align:center;">String</td> <td style="text-align:center;">字符串</td> <td style="text-align:center;">&quot;hello&quot;   'hello'</td></tr> <tr><td style="text-align:center;">Range</td> <td style="text-align:center;">范围</td> <td style="text-align:center;">1..5   1...5</td></tr> <tr><td style="text-align:center;">TrueClass</td> <td style="text-align:center;">真</td> <td style="text-align:center;">true</td></tr> <tr><td style="text-align:center;">FalseClass</td> <td style="text-align:center;">假</td> <td style="text-align:center;">false</td></tr> <tr><td style="text-align:center;">NilClass</td> <td style="text-align:center;">空</td> <td style="text-align:center;">nil</td></tr> <tr><td style="text-align:center;">Array</td> <td style="text-align:center;">数组</td> <td style="text-align:center;">[1,2,3]</td></tr> <tr><td style="text-align:center;">Hash</td> <td style="text-align:center;">哈希</td> <td style="text-align:center;">{:name=&quot;andy&quot;}   {&quot;name&quot;=&gt;&quot;andy&quot;}</td></tr> <tr><td style="text-align:center;">Symbol</td> <td style="text-align:center;"></td> <td style="text-align:center;">:name. :age</td></tr> <tr><td style="text-align:center;">Time</td> <td style="text-align:center;">时间</td> <td style="text-align:center;">2021-07-26 05:00:45 +0900</td></tr></tbody></table> <h3 id="判断类型"><a href="#判断类型" class="header-anchor">#</a> 判断类型</h3> <blockquote><p>オブジェクトのクラスを確認</p></blockquote> <p>通过 <strong>数据.class</strong> 判断数据的类型</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数据<span class="token punctuation">.</span><span class="token keyword">class</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token number">1.</span><span class="token keyword">class</span>        <span class="token comment"># Integer</span>
+puts <span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">class</span>    <span class="token comment"># Float</span>
+
+puts <span class="token string">&quot;hello&quot;</span><span class="token punctuation">.</span><span class="token keyword">class</span>  <span class="token comment"># String</span>
+
+puts <span class="token keyword">nil</span><span class="token punctuation">.</span><span class="token keyword">class</span>			<span class="token comment"># NilClass</span>
+
+puts <span class="token boolean">true</span><span class="token punctuation">.</span><span class="token keyword">class</span>			<span class="token comment"># TrueClass</span>
+puts <span class="token boolean">false</span><span class="token punctuation">.</span><span class="token keyword">class</span>		<span class="token comment"># FalseClass</span>
+
+puts <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">class</span>		<span class="token comment"># Array</span>
+
+puts <span class="token symbol">:key</span><span class="token punctuation">.</span><span class="token keyword">class</span>			<span class="token comment"># Symbol</span>
+
+puts <span class="token regex">/a-z/</span><span class="token punctuation">.</span><span class="token keyword">class</span>		<span class="token comment"># Regexp</span>
+</code></pre></div><h3 id="数值-number"><a href="#数值-number" class="header-anchor">#</a> 数值 Number</h3> <table><thead><tr><th style="text-align:center;">类型</th> <th style="text-align:center;">含义</th></tr></thead> <tbody><tr><td style="text-align:center;">Integer类</td> <td style="text-align:center;">整数</td></tr> <tr><td style="text-align:center;">Float类</td> <td style="text-align:center;">浮点</td></tr></tbody></table> <hr> <h4 id="加减乘除运算"><a href="#加减乘除运算" class="header-anchor">#</a> 加减乘除运算</h4> <blockquote><p>足し算（<strong>+</strong>）引き算（<strong>-</strong>）掛け算（*<strong><strong>）割り算（</strong>/</strong>）</p></blockquote> <hr> <h4 id="指数运算"><a href="#指数运算" class="header-anchor">#</a> 指数运算</h4> <blockquote><p>べき乗（******）</p> <p>演算子の左辺を右辺の値で累乗します。</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token number">3</span><span class="token operator">*</span><span class="token operator">*</span><span class="token number">2</span>
+<span class="token comment"># 9 </span>
+</code></pre></div><hr> <h4 id="赋值运算符"><a href="#赋值运算符" class="header-anchor">#</a> 赋值运算符</h4> <blockquote><p>代入演算子 += -= *= /=</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>x <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">5</span>
+x <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">5</span>
+x <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">5</span>
+x <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">5</span>  
+</code></pre></div><h3 id="字符串-string"><a href="#字符串-string" class="header-anchor">#</a> 字符串 String</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token string">'hello'</span>
+b <span class="token operator">=</span> <span class="token string">&quot;hello&quot;</span>
+
+c <span class="token operator">=</span> &quot;
+    hello
+    <span class="token constant">Ruby</span>
+&quot;
+puts c
+<span class="token comment">=begin
+
+    hello
+    Ruby
+
+=end</span>
+</code></pre></div><hr> <h4 id="字符串拼接"><a href="#字符串拼接" class="header-anchor">#</a> 字符串拼接</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>p <span class="token string">'1'</span><span class="token operator">+</span><span class="token string">'1'</span>  <span class="token comment"># '11'</span>
+</code></pre></div><hr> <h4 id="无隐式转换"><a href="#无隐式转换" class="header-anchor">#</a> 无隐式转换</h4> <p>Ruby没有隐式转换</p> <blockquote><p>暗黙的に変換</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>p <span class="token string">&quot;1&quot;</span> <span class="token operator">+</span> <span class="token number">1</span>  	<span class="token comment"># 报错</span>
+p <span class="token number">1.</span>to_s <span class="token operator">+</span> <span class="token string">&quot;1&quot;</span>　<span class="token comment"># &quot;11&quot;</span>
+
+p <span class="token number">3</span> <span class="token operator">*</span> <span class="token string">&quot;1&quot;</span>  <span class="token comment"># 报错</span>
+p <span class="token string">&quot;1&quot;</span> <span class="token operator">*</span> <span class="token number">3</span>  <span class="token comment"># &quot;111&quot;</span>
+</code></pre></div><hr> <h4 id="转义字符"><a href="#转义字符" class="header-anchor">#</a> 转义字符 \</h4> <p>文字列リテラル</p> <ul><li>\n：换行</li> <li>\s：空格</li></ul> <hr> <h4 id="单双引号"><a href="#单双引号" class="header-anchor">#</a> 单双引号</h4> <p>シングルクオートとダブルクオートの違い</p> <p>两者都可用于字符串类型</p> <p>但只有双引号可识别 <strong>式展開や改行文字</strong></p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token string">&quot;<span class="token interpolation"><span class="token delimiter tag">#{</span><span class="token number">10</span> <span class="token operator">+</span> <span class="token number">20</span><span class="token delimiter tag">}</span></span>&quot;</span>  <span class="token comment"># 30</span>
+puts <span class="token string">'<span class="token interpolation"><span class="token delimiter tag">#{</span><span class="token number">10</span> <span class="token operator">+</span> <span class="token number">20</span><span class="token delimiter tag">}</span></span>'</span>  <span class="token comment"># #{10 + 20}</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token string">&quot;Hello \n World&quot;</span>
+<span class="token comment">=begin
+Hello 
+World
+=end</span>
+
+puts <span class="token string">'Hello \n World'</span>
+<span class="token comment"># Hello \n World</span>
+</code></pre></div><hr> <h4 id="多行字符串"><a href="#多行字符串" class="header-anchor">#</a> 多行字符串</h4> <p>对于特别多 的多行的字符串</p> <blockquote><p>ヒアキュメント /  行指向文字列リテラル</p></blockquote> <ul><li><strong>变量中：</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token operator">&lt;</span><span class="token operator">&lt;</span>自定义
+	xxxxx
+自定义
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>html <span class="token operator">=</span> <span class="token string heredoc-string"><span class="token delimiter symbol"><span class="token punctuation">&lt;&lt;</span>HTML</span>
+    &lt;div id=&quot;father&quot;&gt;
+        &lt;div id=&quot;son&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+<span class="token delimiter symbol">HTML</span></span>
+
+puts html
+<span class="token comment">=begin
+    &lt;div id=&quot;father&quot;&gt;
+        &lt;div id=&quot;son&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+=end</span>
+</code></pre></div><ul><li><strong>函数中：</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">Name</span></span>
+  <span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">~</span>自定义
+		xxxxx
+	自定义
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-Ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">html</span></span>
+    <span class="token string heredoc-string"><span class="token delimiter symbol"><span class="token punctuation">&lt;&lt;~</span>HTML</span>
+      &lt;div id=&quot;father&quot;&gt;
+          &lt;div id=&quot;son&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    <span class="token delimiter symbol">HTML</span></span>
+<span class="token keyword">end</span> 
+
+puts html
+<span class="token comment">=begin
+      &lt;div id=&quot;father&quot;&gt;
+          &lt;div id=&quot;son&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+=end</span>
+</code></pre></div><h3 id="nil"><a href="#nil" class="header-anchor">#</a> nil</h3> <p>表示空值</p> <blockquote><p>nilオブジェクトは<strong>何も存在しない</strong>ことを表す</p></blockquote> <blockquote><p>Rubyの<code>false</code>と<code>nil</code>のみが偽</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>p <span class="token keyword">nil</span><span class="token punctuation">.</span>to_s	 <span class="token comment"># &quot;&quot;</span>
+</code></pre></div><hr> <h4 id="判断nil"><a href="#判断nil" class="header-anchor">#</a> 判断nil</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token keyword">nil</span><span class="token punctuation">.</span><span class="token keyword">nil</span><span class="token operator">?</span> <span class="token comment"># true</span>
+puts <span class="token number">1.</span><span class="token keyword">nil</span><span class="token operator">?</span>   <span class="token comment"># false</span>
+puts <span class="token string">&quot;&quot;</span><span class="token punctuation">.</span><span class="token keyword">nil</span><span class="token operator">?</span>  <span class="token comment"># false</span>
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+<span class="token keyword">end</span>
+puts fn<span class="token punctuation">.</span><span class="token keyword">nil</span><span class="token operator">?</span> <span class="token comment"># true </span>
+
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h3 id="symbol"><a href="#symbol" class="header-anchor">#</a> symbol</h3> <p>シンボルは任意の文字列と一対一に対応するオブジェクト</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>`<span class="token punctuation">:</span>' 識別子
+`<span class="token punctuation">:</span>' 変数名
+`<span class="token punctuation">:</span>' 演算子
+</code></pre></div><hr> <h4 id="验证唯一性"><a href="#验证唯一性" class="header-anchor">#</a> 验证唯一性</h4> <p><strong>.objet_id</strong> 验证</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token string">&quot;hello&quot;</span><span class="token punctuation">.</span>object_id
+puts <span class="token string">&quot;hello&quot;</span><span class="token punctuation">.</span>object_id
+<span class="token comment"># 70349442295420</span>
+<span class="token comment"># 70349442295280</span>
+
+hello <span class="token operator">=</span> <span class="token string">&quot;hello&quot;</span>
+puts <span class="token symbol">:hello</span><span class="token punctuation">.</span>object_id
+puts <span class="token symbol">:hello</span><span class="token punctuation">.</span>object_id
+<span class="token comment"># 1055388</span>
+<span class="token comment"># 1055388</span>
+
+<span class="token comment"># 当然同一个变量的id是相同的</span>
+puts hello<span class="token punctuation">.</span>object_id
+puts hello<span class="token punctuation">.</span>object_id
+<span class="token comment"># 70278201976100</span>
+<span class="token comment"># 70278201976100</span>
+</code></pre></div><p><strong>.equal?()</strong> 验证</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>puts <span class="token symbol">:hello</span><span class="token punctuation">.</span>equal<span class="token operator">?</span><span class="token punctuation">(</span><span class="token symbol">:hello</span><span class="token punctuation">)</span>
+puts <span class="token string">&quot;hello&quot;</span><span class="token punctuation">.</span>equal<span class="token operator">?</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># true</span>
+<span class="token comment"># false</span>
+</code></pre></div><hr> <h4 id="用处"><a href="#用处" class="header-anchor">#</a> 用处</h4> <p>`名前'を指し示す時など、文字列そのものが必要なわけではない時に用います。</p> <ul><li>ハッシュのキー { :key =&gt; &quot;value&quot; }</li> <li>アクセサの引数で渡すインスタンス変数名 attr_reader :name</li> <li>メソッド引数で渡すメソッド名 <strong>send</strong> :to_s</li> <li>C の enum 的な使用 (値そのものは無視してよい場合)</li></ul> <h3 id="时间-time"><a href="#时间-time" class="header-anchor">#</a> 时间 Time</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code>p <span class="token builtin">Time</span><span class="token punctuation">.</span>now
+
+t <span class="token operator">=</span> <span class="token builtin">Time</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+y <span class="token operator">=</span> t<span class="token punctuation">.</span>year
+m <span class="token operator">=</span> t<span class="token punctuation">.</span>month
+d <span class="token operator">=</span> t<span class="token punctuation">.</span>day
+
+w <span class="token operator">=</span> t<span class="token punctuation">.</span>wday
+
+min <span class="token operator">=</span> t<span class="token punctuation">.</span>min
+sec <span class="token operator">=</span> t<span class="token punctuation">.</span>sec
+
+total_sec<span class="token operator">=</span> t<span class="token punctuation">.</span>to_i	<span class="token comment"># 总毫秒（1970/1/1/0）</span>
+
+
+p <span class="token punctuation">(</span>time<span class="token punctuation">.</span>now<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">class</span>	<span class="token comment"># Time</span>
+p t<span class="token punctuation">.</span><span class="token keyword">class</span>		<span class="token comment"># Time</span>
+p y<span class="token punctuation">.</span><span class="token keyword">class</span>   <span class="token comment"># Integer</span>
+</code></pre></div><h4 id="日期格式化"><a href="#日期格式化" class="header-anchor">#</a> 日期格式化</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>time <span class="token operator">=</span> <span class="token builtin">Time</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+ 
+p time<span class="token punctuation">.</span>to_s
+<span class="token comment"># &quot;2015-09-17 15:26:42 +0800&quot;</span>
+puts time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># 2015-09-17 15:26:42</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h2 id="数组-array"><a href="#数组-array" class="header-anchor">#</a> 数组 Array</h2> <p><strong>配列</strong></p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token punctuation">[</span><span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">3</span>，<span class="token number">4</span><span class="token punctuation">]</span>
+</code></pre></div><h3 id="获取元素"><a href="#获取元素" class="header-anchor">#</a> 获取元素</h3> <blockquote><p>Arrayオブジェクトの要素を参照する時，<strong>インデックス</strong> / <strong>添字</strong></p></blockquote> <p>通过数组的序号<strong>index</strong>获取指定元素</p> <hr> <h4 id="获取单个指定元素"><a href="#获取单个指定元素" class="header-anchor">#</a> 获取单个指定元素</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数组<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+
+数组<span class="token punctuation">[</span><span class="token operator">-</span>index<span class="token punctuation">]</span> <span class="token comment"># 倒着取</span>
+
+数组<span class="token punctuation">.</span>at<span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+p arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>	<span class="token comment"># 1</span>
+p arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>	<span class="token comment"># 2</span>
+p arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>	<span class="token comment"># 3</span>
+
+p arr<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># 3</span>
+
+p arr<span class="token punctuation">.</span>at<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 1</span>
+</code></pre></div><hr> <h4 id="获取范围内的元素"><a href="#获取范围内的元素" class="header-anchor">#</a> 获取范围内的元素</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数组<span class="token punctuation">[</span>开始序号<span class="token punctuation">,</span> 结束序号<span class="token punctuation">]</span>
+数组<span class="token punctuation">[</span>开始序号<span class="token punctuation">.</span><span class="token punctuation">.</span>结束序号<span class="token punctuation">]</span>
+数组<span class="token punctuation">[</span>开始序号<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>结束序号<span class="token punctuation">]</span>
+
+数组<span class="token punctuation">.</span>slice<span class="token punctuation">(</span>开始序号<span class="token punctuation">,</span> 结束序号<span class="token punctuation">)</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+p arr<span class="token punctuation">[</span><span class="token number">1.</span><span class="token number">.3</span><span class="token punctuation">]</span>		<span class="token comment"># [2, 3, 4]</span>
+p arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>		<span class="token comment"># [2, 3, 4]</span>
+
+p arr<span class="token punctuation">.</span>slice<span class="token punctuation">(</span><span class="token number">1</span>，<span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># [2, 3, 4]</span>
+</code></pre></div><h3 id="修改元素"><a href="#修改元素" class="header-anchor">#</a> 修改元素</h3> <h4 id="修改单个指定元素"><a href="#修改单个指定元素" class="header-anchor">#</a> 修改单个指定元素</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数组<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> 新的值
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">9</span>
+arr<span class="token punctuation">[</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">100</span>
+p arr 
+<span class="token comment"># [9, 2, 3, 4, 100]</span>
+</code></pre></div><hr> <h4 id="修改范围内元素"><a href="#修改范围内元素" class="header-anchor">#</a> 修改范围内元素</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数组<span class="token punctuation">[</span>开始序号<span class="token punctuation">,</span>结束序号<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>值，值，值，值<span class="token punctuation">]</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">]</span>
+p arr 
+<span class="token comment"># [100, 99, 98, 3, 4, 5]</span>
+</code></pre></div><h3 id="插入元素"><a href="#插入元素" class="header-anchor">#</a> 插入元素</h3> <h4 id="范围插入元素"><a href="#范围插入元素" class="header-anchor">#</a> 范围插入元素</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数组<span class="token punctuation">[</span>插入位置后一个序号<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span>  <span class="token punctuation">[</span>值，值，值，值<span class="token punctuation">]</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">]</span>
+p arr
+<span class="token comment"># [1, 100, 90, 80, 1, 1, 1]</span>
+</code></pre></div><h3 id="数组合并"><a href="#数组合并" class="header-anchor">#</a> 数组合并</h3> <h4 id="arr-arr"><a href="#arr-arr" class="header-anchor">#</a> arr ｜ arr</h4> <blockquote><p>和集合</p></blockquote> <p>按照前后顺序合并两个数组中不重复的元素，</p> <p>重复元素只会保留一个</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+p a <span class="token operator">|</span> b
+<span class="token comment"># [1, 2, 3, 5]</span>
+</code></pre></div><hr> <h4 id="arr-arr-2"><a href="#arr-arr-2" class="header-anchor">#</a> arr + arr</h4> <blockquote><p>配列の結合</p></blockquote> <p>按照前后顺序直接拼接两个数组的元素，</p> <p>重复元素也合并进去</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+p a <span class="token operator">+</span> b
+<span class="token comment"># [1, 2, 3, 3, 3, 5]</span>
+</code></pre></div><h3 id="共同元素"><a href="#共同元素" class="header-anchor">#</a> 共同元素</h3> <h4 id="arr-arr-3"><a href="#arr-arr-3" class="header-anchor">#</a> arr &amp; arr</h4> <blockquote><p>共通集合</p></blockquote> <p>获取数组形式的两个数组的重复的元素，只会保留一个</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+p b <span class="token operator">&amp;</span> a
+<span class="token comment"># [3]</span>
+</code></pre></div><hr> <h4 id="arr-arr-4"><a href="#arr-arr-4" class="header-anchor">#</a> arr - arr</h4> <blockquote><p>集合の差</p></blockquote> <p>从一个数组中将包含在另一个数组中的元素全部除去</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>数组<span class="token constant">A</span> <span class="token operator">-</span> 数组<span class="token constant">B</span>
+<span class="token comment"># 从 A 中将包含在 B 中的元素全部除去</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+p a <span class="token operator">-</span> b		<span class="token comment"># [1, 2]</span>
+p b <span class="token operator">-</span> a		<span class="token comment"># [4, 5, 6]</span>
+</code></pre></div><p><strong>要素の追加</strong></p> <p>加一个</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token builtin">Array</span>オブジェクト <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">&quot;要素&quot;</span>
+</code></pre></div><p>加多个</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token builtin">Array</span>オブジェクト<span class="token punctuation">.</span>push<span class="token punctuation">(</span>要素<span class="token punctuation">,</span>要素<span class="token punctuation">)</span>
+</code></pre></div><p><strong>要素の削除</strong></p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token builtin">Array</span>オブジェクト<span class="token punctuation">.</span>delete_at<span class="token punctuation">(</span>index<span class="token punctuation">)</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h2 id="范围-range"><a href="#范围-range" class="header-anchor">#</a> 范围 Range</h2> <blockquote><p>演算子式/範囲式</p></blockquote> <h3 id=""><a href="#" class="header-anchor">#</a> ..</h3> <p>包含指定的最高值的范围</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>最小值<span class="token punctuation">.</span><span class="token punctuation">.</span>最大值
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>p <span class="token punctuation">(</span><span class="token number">1.</span><span class="token number">.5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_a
+<span class="token comment"># [1, 2, 3, 4, 5]</span>
+
+p <span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token string">'d'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_a
+<span class="token comment"># [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span>
+</code></pre></div><h3 id="-2"><a href="#-2" class="header-anchor">#</a> ...</h3> <p>不包含指定的最高值的范围</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>最小值<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>最大值
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>p <span class="token punctuation">(</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_a
+<span class="token comment"># [1, 2, 3, 4]</span>
+
+p <span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token string">'d'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_a
+<span class="token comment"># [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span>
+</code></pre></div><h2 id="哈希-hash"><a href="#哈希-hash" class="header-anchor">#</a> 哈希 Hash</h2> <p>Hash 就是键值对</p> <h3 id="定义键值对"><a href="#定义键值对" class="header-anchor">#</a> 定义键值对</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># 旧</span>
+<span class="token punctuation">{</span><span class="token string">'key'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> value<span class="token punctuation">}</span>
+
+<span class="token comment"># 新（symbol）</span>
+<span class="token punctuation">{</span>key<span class="token punctuation">:</span> value<span class="token punctuation">}</span>
+</code></pre></div><ul><li>字符串的key键</li></ul> <blockquote><p>キーに文字列を使用</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>string_hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;andy&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;age&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;address&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;CN&quot;</span>
+<span class="token punctuation">}</span>
+
+puts string_hash
+<span class="token comment"># {&quot;name&quot;=&gt;&quot;andy&quot;, &quot;age&quot;=&gt;28, &quot;address&quot;=&gt;&quot;CN&quot;} </span>
+</code></pre></div><ul><li>Symbol的key键</li></ul> <blockquote><p>キーにシンボルを使用</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>symbol_hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+ 	name<span class="token punctuation">:</span> <span class="token string">&quot;andy&quot;</span><span class="token punctuation">,</span> 
+  age<span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> 
+  address<span class="token punctuation">:</span> <span class="token string">&quot;CN&quot;</span>
+<span class="token punctuation">}</span>
+
+puts symbol_hash
+<span class="token comment"># {:name=&gt;&quot;andy&quot;, :age=28, :address=&gt;&quot;CN&quot;}</span>
+</code></pre></div><ul><li>也可将字符串 和 Symbol 混合在一个Hash中</li></ul> <blockquote><p>文字列のキーとシンボルのキーを混在させることができ</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+ 	name<span class="token punctuation">:</span> <span class="token string">&quot;andy&quot;</span><span class="token punctuation">,</span> 
+  <span class="token string">&quot;age&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span> 
+  address<span class="token punctuation">:</span> <span class="token string">&quot;CN&quot;</span>
+<span class="token punctuation">}</span>
+
+p hash
+<span class="token comment"># {:name=&gt;&quot;andy&quot;, &quot;age&quot;=&gt;28, :address=&gt;&quot;CN&quot;}</span>
+</code></pre></div><h3 id="获取值"><a href="#获取值" class="header-anchor">#</a> 获取值</h3> <blockquote><p>Hashオブジェクトの要素を参照する時</p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>哈希<span class="token punctuation">[</span><span class="token string">'key'</span><span class="token punctuation">]</span>
+哈希<span class="token punctuation">[</span><span class="token symbol">:key</span><span class="token punctuation">]</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">&quot;andy&quot;</span><span class="token punctuation">,</span> 
+  <span class="token string">&quot;nickname&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;AD&quot;</span>
+  age<span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> 
+  address<span class="token punctuation">:</span> <span class="token string">&quot;CN&quot;</span>
+<span class="token punctuation">}</span>
+
+p hash<span class="token punctuation">[</span><span class="token string">'nickname'</span><span class="token punctuation">]</span>	<span class="token comment"># &quot;AD&quot;</span>
+p hash<span class="token punctuation">[</span><span class="token symbol">:name</span><span class="token punctuation">]</span>			<span class="token comment"># &quot;andy&quot;</span>
+</code></pre></div><blockquote><p><strong>要素の追加</strong></p></blockquote> <div class="language-ruby extra-class"><pre class="language-ruby"><code>ハッシュ名<span class="token punctuation">[</span>キー<span class="token punctuation">]</span> <span class="token operator">=</span> 追加したい値
+</code></pre></div><h3 id="展开hash"><a href="#展开hash" class="header-anchor">#</a> 展开Hash</h3> <p>可通过在哈希前加上 ******，在一个哈希内将其他哈希的键值对展开</p> <p>可用于追加键值对</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token punctuation">{</span>
+  <span class="token operator">*</span><span class="token operator">*</span>哈希
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>b <span class="token operator">=</span> <span class="token punctuation">{</span>
+    address<span class="token punctuation">:</span> <span class="token string">'CN'</span>
+<span class="token punctuation">}</span>
+
+a <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'andy'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span><span class="token number">28</span><span class="token punctuation">,</span>
+    <span class="token operator">*</span><span class="token operator">*</span>b
+<span class="token punctuation">}</span>
+
+p a 
+<span class="token comment"># {:name=&gt;&quot;andy&quot;, :age=&gt;28, :address=&gt;&quot;CN&quot;}</span>
+</code></pre></div><h2 id="方法函数"><a href="#方法函数" class="header-anchor">#</a> 方法函数</h2> <h3 id="定义与调用"><a href="#定义与调用" class="header-anchor">#</a> 定义与调用</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> 函数名
+  函数体
+<span class="token keyword">end</span>
+
+函数名
+</code></pre></div><p>先调用后定义，报错</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>fn
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span> 
+    puts <span class="token string">'helo'</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># undefined local variable or method `fn' for main:Object (NameError)</span>
+</code></pre></div><h3 id="返回值"><a href="#返回值" class="header-anchor">#</a> 返回值</h3> <p>每个方法默认都会返回一个值。</p> <p>Ruby默认返回的值是最后一个语句的值</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    a <span class="token operator">=</span> <span class="token number">100</span>
+    b <span class="token operator">=</span> <span class="token number">200</span>
+    c <span class="token operator">=</span> <span class="token number">300</span>
+<span class="token keyword">end</span>
+
+p fn   <span class="token comment"># 300</span>
+</code></pre></div><hr> <h4 id="return语句"><a href="#return语句" class="header-anchor">#</a> return语句</h4> <p>用于从 Ruby 方法中返回一个或多个值。</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    a <span class="token operator">=</span> <span class="token number">100</span>
+    b <span class="token operator">=</span> <span class="token number">200</span>
+    c <span class="token operator">=</span> <span class="token number">300</span>
+   	<span class="token keyword">return</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c
+<span class="token keyword">end</span>
+
+p fn 	<span class="token comment"># [100, 200, 300]</span>
+</code></pre></div><ul><li><p>return后有指定的返回值，返回该指定值</p></li> <li><p>若return后未给出指定返回值，返回 <strong>nil</strong></p></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn01</span></span>
+  	<span class="token keyword">return</span> <span class="token number">99</span>
+    a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">end</span>
+p fn01 	<span class="token comment"># 99</span>
+
+
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn02</span></span>
+  	<span class="token keyword">return</span> 
+<span class="token keyword">end</span>
+p fn02 	<span class="token comment"># nil</span>
+</code></pre></div><h3 id="函数参数"><a href="#函数参数" class="header-anchor">#</a> 函数参数</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> 函数名<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+  函数体
+<span class="token keyword">end</span>
+
+函数名<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+</code></pre></div><p>如调用函数是传参数的个数不对，会报错ArgumentError</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+  xxxx
+<span class="token keyword">end</span>
+fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">#  wrong number of arguments (given 0, expected 2) (ArgumentError)</span>
+</code></pre></div><hr> <h4 id="参数默认值"><a href="#参数默认值" class="header-anchor">#</a> 参数默认值</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> 函数名<span class="token punctuation">(</span>a<span class="token operator">=</span>默认值<span class="token punctuation">,</span>b<span class="token operator">=</span>默认值<span class="token punctuation">)</span>
+  函数体
+<span class="token keyword">end</span>
+
+函数名
+函数名<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+</code></pre></div><hr> <h4 id="可变参数"><a href="#可变参数" class="header-anchor">#</a> 可变参数</h4> <p>可変長引数</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> 函数名<span class="token punctuation">(</span><span class="token operator">*</span>参数<span class="token punctuation">)</span>
+  函数体
+<span class="token keyword">end</span>
+
+函数名<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+函数名<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token operator">*</span>params<span class="token punctuation">)</span>
+    p a
+    p params
+    p params<span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token comment"># Array</span>
+<span class="token keyword">end</span>
+fn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 			<span class="token comment"># 1  []</span>
+fn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>			<span class="token comment"># 1  [2]</span>
+fn<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> 	<span class="token comment"># 1  [2,3]</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h3 id="变量作用域-2"><a href="#变量作用域-2" class="header-anchor">#</a> 变量作用域</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    a <span class="token operator">=</span> <span class="token number">200</span>
+    puts a
+<span class="token keyword">end</span>
+fn
+
+<span class="token comment"># 200</span>
+</code></pre></div><p>函数内部直接使用函数外部定义的local变量，报错</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    puts a
+<span class="token keyword">end</span>
+fn
+
+<span class="token comment"># undefined local variable or method `a' for main:Object (NameError)</span>
+</code></pre></div><h2 id="ruby语法"><a href="#ruby语法" class="header-anchor">#</a> Ruby语法</h2> <p><strong>制御構文</strong></p> <h3 id="判断"><a href="#判断" class="header-anchor">#</a> 判断</h3> <p><strong>条件分岐</strong></p> <h4 id="if-语句"><a href="#if-语句" class="header-anchor">#</a> if 语句</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">if</span> 条件 
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><p>一般省略 then，但若一行内书写 if 式，则必须以 then 隔开</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">if</span> 条件 <span class="token keyword">then</span> xxx <span class="token keyword">end</span>
+</code></pre></div><h4 id="if-修饰符"><a href="#if-修饰符" class="header-anchor">#</a> if 修饰符</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>xxx <span class="token keyword">if</span> 条件
+</code></pre></div><h4 id="if-else-语句"><a href="#if-else-语句" class="header-anchor">#</a> if...else 语句</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">if</span> 条件<span class="token number">1</span>
+  xxx
+<span class="token keyword">else</span>
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><h4 id="if-elsif-else-语句"><a href="#if-elsif-else-语句" class="header-anchor">#</a> if...elsif...else 语句</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">if</span> 条件<span class="token number">1</span>
+  xxx
+<span class="token keyword">elsif</span> 条件<span class="token number">2</span>
+  xxx
+<span class="token keyword">else</span>
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><h4 id="unless-语句"><a href="#unless-语句" class="header-anchor">#</a> unless 语句</h4> <p>if 语句的相反，条件不成立则执行</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">unless</span> 条件
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><h4 id="unless-修饰符"><a href="#unless-修饰符" class="header-anchor">#</a> unless 修饰符</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>xxx <span class="token keyword">unless</span> 条件
+</code></pre></div><h4 id="case-语句"><a href="#case-语句" class="header-anchor">#</a> case 语句</h4> <p>匹配判断</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">case</span> 比較したいオブジェクト
+<span class="token keyword">when</span> 値<span class="token number">1</span><span class="token punctuation">,</span> 値<span class="token number">2</span>
+   xxx
+<span class="token keyword">when</span> 値<span class="token number">3</span><span class="token punctuation">,</span> 値<span class="token number">4</span>
+   xxx
+<span class="token keyword">else</span>
+   xxx
+<span class="token keyword">end</span>
+</code></pre></div><p>一般省略 then，但若一行内书写 if 式，则必须以 then 隔开</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">case</span> 比較したいオブジェクト
+<span class="token keyword">when</span> 値<span class="token number">1</span> <span class="token keyword">then</span> xxx
+<span class="token keyword">when</span> 値<span class="token number">2</span> <span class="token keyword">then</span> xxx
+<span class="token keyword">end</span>
+</code></pre></div><hr> <h3 id="循环"><a href="#循环" class="header-anchor">#</a> 循环</h3> <h4 id="until-语句"><a href="#until-语句" class="header-anchor">#</a> until 语句</h4> <p>直到满足条件前，一直循环执行</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">until</span> 条件
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><p>一般省略do，但若一行内书写 if 式，则必须以 do 隔开</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">until</span> 条件 <span class="token keyword">do</span> xxx <span class="token keyword">end</span>
+</code></pre></div><h4 id="until-修饰符"><a href="#until-修饰符" class="header-anchor">#</a> until 修饰符</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>xxx <span class="token keyword">until</span> 条件
+
+<span class="token keyword">begin</span>
+  xxx
+<span class="token keyword">end</span> <span class="token keyword">until</span> 条件
+</code></pre></div><h4 id="while-语句"><a href="#while-语句" class="header-anchor">#</a> while 语句</h4> <p>满足条件就会一直循环执行（容易出现死循环）</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">while</span> 条件
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><p>一般省略do，但若一行内书写 if 式，则必须以 do 隔开</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">while</span> 条件 <span class="token keyword">do</span> xxx <span class="token keyword">end</span>
+</code></pre></div><h4 id="while-修饰符"><a href="#while-修饰符" class="header-anchor">#</a> while 修饰符</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>xxx <span class="token keyword">while</span> 条件
+  
+<span class="token keyword">begin</span>
+  xxx
+<span class="token keyword">end</span> <span class="token keyword">while</span> 条件
+</code></pre></div><h4 id="for-语句"><a href="#for-语句" class="header-anchor">#</a> for 语句</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">for</span> 计时器变量 <span class="token keyword">in</span> 范围 
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">for</span> num <span class="token keyword">in</span> <span class="token number">0.</span><span class="token punctuation">.</span><span class="token number">.5</span>
+  puts num
+<span class="token keyword">end</span>
+<span class="token comment">=begin
+0,
+1,
+2,
+3,
+4
+=end</span>
+
+<span class="token keyword">for</span> item <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+  puts item
+<span class="token keyword">end</span>
+<span class="token comment">=begin
+1,
+2,
+3,
+4
+=end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>sum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span>
+  sum <span class="token operator">+</span><span class="token operator">=</span> n
+<span class="token keyword">end</span>
+puts sum  <span class="token comment"># 28</span>
+</code></pre></div><h4 id="each-循环"><a href="#each-循环" class="header-anchor">#</a> each 循环</h4> <p>ブロックの中の処理をレシーバの要素の分だけ繰り返す</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token operator">?</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>变量<span class="token operator">|</span>
+  xxx
+<span class="token keyword">end</span>
+
+
+<span class="token operator">?</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token punctuation">{</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+  xxx
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>sum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>n<span class="token operator">|</span>
+  sum <span class="token operator">+</span><span class="token operator">=</span> n
+<span class="token keyword">end</span>
+puts sum  <span class="token comment"># 28</span>
+</code></pre></div><h4 id="times-循环"><a href="#times-循环" class="header-anchor">#</a> times 循环</h4> <p>循环整数次数</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>整数<span class="token punctuation">.</span>times <span class="token keyword">do</span>
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><p>写成一行的话，常用 {}</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>整数<span class="token punctuation">.</span>times <span class="token punctuation">{</span> xxx <span class="token punctuation">}</span>
+</code></pre></div><h4 id="step-循环"><a href="#step-循环" class="header-anchor">#</a> step 循环</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code>开始值<span class="token punctuation">.</span>step<span class="token punctuation">(</span>结束值<span class="token punctuation">,</span> 间隔数<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>变量<span class="token operator">|</span>
+  xxx
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># 从 1 开始到 10，每间隔 3 个数循环一次</span>
+<span class="token number">1.</span>step<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+    p item
+<span class="token keyword">end</span>
+
+<span class="token comment">=begin
+1
+4
+7
+10
+=end</span>
+</code></pre></div><h4 id="upto循环"><a href="#upto循环" class="header-anchor">#</a> upto循环</h4> <p>从 ？升序循环到 ？</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>开始值<span class="token punctuation">.</span>upto<span class="token punctuation">(</span>结束值<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+  xxxx
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># 从 1 循环到 5</span>
+<span class="token number">1.</span>upto<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+    p item
+<span class="token keyword">end</span>
+
+<span class="token comment">=begin
+1
+2
+3
+4
+5
+=end</span>
+</code></pre></div><h4 id="downto循环"><a href="#downto循环" class="header-anchor">#</a> downto循环</h4> <p>从 ？ 降序循环到 ？</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>开始值<span class="token punctuation">.</span>upto<span class="token punctuation">(</span>结束值<span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+  xxxx
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># 从 5 循环到 1</span>
+<span class="token number">5.</span>downto<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
+    p item
+<span class="token keyword">end</span>
+
+<span class="token comment">=begin
+5
+4
+3
+2
+1
+=end</span>
+</code></pre></div><hr> <h4 id="break"><a href="#break" class="header-anchor">#</a> break</h4> <p>终止循环该次迭代</p> <p>繰り返し処理を抜ける装飾子</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">0.</span><span class="token number">.5</span>
+    <span class="token keyword">if</span> i <span class="token operator">&gt;=</span> <span class="token number">3</span> 
+       <span class="token keyword">break</span>
+    <span class="token keyword">end</span>
+    puts i
+<span class="token keyword">end</span>
+<span class="token comment">=begin
+0,
+1,
+2
+=end</span>
+</code></pre></div><h4 id="next"><a href="#next" class="header-anchor">#</a> next</h4> <p>跳到循环的下一个迭代</p> <p>次の繰り返し処理にジャンプ</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">0.</span><span class="token number">.5</span>
+    <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">==</span> <span class="token number">4</span>
+       <span class="token keyword">next</span>
+    <span class="token keyword">end</span>
+    puts i
+<span class="token keyword">end</span>
+<span class="token comment">=begin
+0,
+1,
+2
+5
+=end</span>
+</code></pre></div><h4 id="redo"><a href="#redo" class="header-anchor">#</a> redo</h4> <p>重新开始该次迭代</p> <p>現在行っている繰り返し処理を再度繰り返す</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">0.</span><span class="token number">.5</span>
+   <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">2</span> 
+      puts i
+      <span class="token keyword">redo</span>
+   <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+<span class="token comment">=begin
+0,
+0,
+0,
+...
+死循环
+=end</span>
+</code></pre></div><h2 id="类-class"><a href="#类-class" class="header-anchor">#</a> 类 class</h2> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> クラス名
+<span class="token keyword">end</span>
+インスタンス<span class="token number">01</span> <span class="token operator">=</span> クラス名<span class="token punctuation">.</span><span class="token keyword">new</span>
+インスタンス<span class="token number">02</span> <span class="token operator">=</span> クラス名<span class="token punctuation">.</span><span class="token keyword">new</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Person</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'ruby'</span><span class="token punctuation">)</span>
+        <span class="token variable">@name</span> <span class="token operator">=</span> name   
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">say</span></span>
+        p <span class="token string">&quot;hello,i am #@name&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+ruby <span class="token operator">=</span> <span class="token constant">Person</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+ruby<span class="token punctuation">.</span>say
+<span class="token comment"># &quot;hello,i am ruby&quot;</span>
+
+andy <span class="token operator">=</span> <span class="token constant">Person</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">)</span>
+andy<span class="token punctuation">.</span>say
+<span class="token comment">#	&quot;hello,i am andy&quot;</span>
+
+tom <span class="token operator">=</span> <span class="token constant">Person</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">)</span>
+tom<span class="token punctuation">.</span>say
+<span class="token comment">#	&quot;hello,i am tom&quot;</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h3 id="变量-2"><a href="#变量-2" class="header-anchor">#</a> 变量</h3> <h4 id="类变量"><a href="#类变量" class="header-anchor">#</a> 类变量</h4> <p>类变量在变量名之前放@@</p> <p>类变量被指定了值后，无论生成多少个实例对象，类变量都一致</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+  <span class="token variable">@@a</span> <span class="token operator">=</span> <span class="token number">10</span>
+  <span class="token variable">@@b</span> <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token variable">@@username</span> <span class="token operator">=</span> <span class="token string">&quot;andy&quot;</span>
+    <span class="token variable">@@userage</span> <span class="token operator">=</span> <span class="token number">28</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+        <span class="token keyword">return</span> <span class="token variable">@@username</span><span class="token punctuation">,</span><span class="token variable">@@userage</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+example01 <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p example01<span class="token punctuation">.</span>fn
+<span class="token comment"># [&quot;andy&quot;, 28]</span>
+example02 <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p example02<span class="token punctuation">.</span>fn
+<span class="token comment"># [&quot;andy&quot;, 28]</span>
+</code></pre></div><hr> <h4 id="实例变量"><a href="#实例变量" class="header-anchor">#</a> 实例变量</h4> <p>实例变量在变量名之前放@，由创建实例对象时决定</p> <p>通过new 方法创建实例对象时传入的参数，在 initialize方法中将参数传给实例变量</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+    <span class="token variable">@a</span> <span class="token operator">=</span> a
+    <span class="token variable">@b</span> <span class="token operator">=</span> b
+  <span class="token keyword">end</span> 
+<span class="token keyword">end</span>
+</code></pre></div><p>Ruby的实例变量无法直接在外部获取和修改</p> <p>需要通过getter和setter</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+   <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+    <span class="token variable">@a</span> <span class="token operator">=</span> a
+    <span class="token variable">@b</span> <span class="token operator">=</span> b
+   <span class="token keyword">end</span>  
+   <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    <span class="token keyword">return</span> <span class="token variable">@a</span><span class="token punctuation">,</span><span class="token variable">@b</span>
+   <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+example01 <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">)</span>
+p example01<span class="token punctuation">.</span>fn
+<span class="token comment"># [&quot;andy&quot;, 28]</span>
+example02 <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span>
+p example02<span class="token punctuation">.</span>fn
+<span class="token comment"># [&quot;tom&quot;, 15]</span>
+</code></pre></div><hr> <h4 id="访问器-getter"><a href="#访问器-getter" class="header-anchor">#</a> 访问器 getter</h4> <p>类中的变量不能直接在外部被访问获取</p> <p>可通过定义访问器(getter)方法，在类的外部读取类中变量</p> <p>类中的函数可通过 <strong>#</strong> 直接调用实例变量、类变量、global变量</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> 访问器
+  <span class="token comment">#@实例变量</span>
+	<span class="token comment">#@@类变量</span>
+	<span class="token comment">#$global变量</span>
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token variable">@@a</span> <span class="token operator">=</span> <span class="token string">&quot;a&quot;</span>
+    <span class="token variable">@@b</span> <span class="token operator">=</span> <span class="token string">&quot;b&quot;</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+      <span class="token variable">@a</span> <span class="token operator">=</span> a
+      <span class="token variable">@b</span> <span class="token operator">=</span> b
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">get</span></span> 
+        puts <span class="token string">&quot;#@a,#@b&quot;</span>
+        puts <span class="token string">&quot;#@@a,#@@b&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+p <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>get
+
+<span class="token comment"># 10, 20</span>
+<span class="token comment"># a, b</span>
+</code></pre></div><h4 id="设置器-setter"><a href="#设置器-setter" class="header-anchor">#</a> 设置器 setter</h4> <p>类中的变量不能直接在外部被修改</p> <p>可通过定义设置器(setter)方法，在类的外部将参数传入类中变量</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">def</span> 设置器<span class="token operator">=</span> （参数）
+  @实例变量 <span class="token operator">=</span> 参数
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+      <span class="token variable">@a</span> <span class="token operator">=</span> a
+      <span class="token variable">@b</span> <span class="token operator">=</span> b
+    <span class="token keyword">end</span>
+  
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">setA</span></span><span class="token operator">=</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> 
+      <span class="token variable">@a</span> <span class="token operator">=</span> a
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">setB</span></span><span class="token operator">=</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> 
+      <span class="token variable">@b</span> <span class="token operator">=</span> b
+    <span class="token keyword">end</span>  
+  
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">get</span></span> 
+      <span class="token keyword">return</span> <span class="token variable">@a</span><span class="token punctuation">,</span><span class="token variable">@b</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+p <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+p p<span class="token punctuation">.</span>get 	<span class="token comment"># [1,2]</span>
+p<span class="token punctuation">.</span>setA<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>setB<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+p p<span class="token punctuation">.</span>get 	<span class="token comment"># [3,4]</span>
+</code></pre></div><hr> <h4 id="读写限制"><a href="#读写限制" class="header-anchor">#</a> 读写限制</h4> <p>アクセスメゾット</p> <p>getter和setter很常用，但是写起来麻烦</p> <p>所以Ruby又定义了三种属性声明方法来控制类中属性的可读写</p> <table><thead><tr><th style="text-align:center;">アクセスメゾット</th> <th style="text-align:center;">含义</th></tr></thead> <tbody><tr><td style="text-align:center;"><strong>attr_accessor :变量名</strong></td> <td style="text-align:center;">reader+writer，属性可读写</td></tr> <tr><td style="text-align:center;"><strong>attr_reader :变量名</strong></td> <td style="text-align:center;">属性仅可读</td></tr> <tr><td style="text-align:center;"><strong>attr_writer :变量名</strong></td> <td style="text-align:center;">属性仅可修改</td></tr></tbody></table> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    attr_accessor <span class="token symbol">:name</span><span class="token punctuation">,</span><span class="token symbol">:age</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span>
+        <span class="token variable">@name</span><span class="token punctuation">,</span><span class="token variable">@age</span> <span class="token operator">=</span> name<span class="token punctuation">,</span>age
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+andy <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">)</span>
+p andy<span class="token punctuation">.</span>name  <span class="token comment"># 'andy'</span>
+p andy<span class="token punctuation">.</span>age	 <span class="token comment"># 28</span>
+
+andy<span class="token punctuation">.</span>name<span class="token punctuation">,</span>andy<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token string">'AD'</span><span class="token punctuation">,</span><span class="token number">10</span>
+p andy<span class="token punctuation">.</span>name  <span class="token comment"># 'AD'</span>
+p andy<span class="token punctuation">.</span>age	 <span class="token comment"># 10</span>
+</code></pre></div><h3 id="方法"><a href="#方法" class="header-anchor">#</a> 方法</h3> <h4 id="initialize-方法"><a href="#initialize-方法" class="header-anchor">#</a> initialize 方法</h4> <p>initializeメソッド（初期化メソッド）</p> <p>是类的构造函数</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>params1<span class="token punctuation">,</span>params2<span class="token punctuation">)</span>
+    <span class="token variable">@a</span> <span class="token operator">=</span> params1
+    <span class="token variable">@b</span> <span class="token operator">=</span> params2
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><hr> <h4 id="实例方法"><a href="#实例方法" class="header-anchor">#</a> 实例方法</h4> <p>与其他方法的定义一样，但它们只能通过类实例来使用</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> 类
+  <span class="token keyword">def</span> 函数名
+    xxx
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+实例对象 <span class="token operator">=</span> 类<span class="token punctuation">.</span><span class="token keyword">new</span>
+实例对象<span class="token punctuation">.</span>函数名
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+    p <span class="token string">&quot;hello&quot;</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+a <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+a<span class="token punctuation">.</span>fn  <span class="token comment"># hello</span>
+</code></pre></div><ul><li><strong>调用实例方法</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        say
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+       say
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">say</span></span>
+       p <span class="token string">&quot;hello&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+
+e <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+e<span class="token punctuation">.</span>fn
+</code></pre></div><hr> <h4 id="类方法"><a href="#类方法" class="header-anchor">#</a> 类方法</h4> <blockquote><p>クラスメゾッド</p></blockquote> <p>即静态方法，</p> <p>只能被类本身调用，不能被实例调用</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> 类
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span></span>函数名
+    xxx
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+类<span class="token punctuation">.</span>函数名
+类<span class="token punctuation">:</span><span class="token punctuation">:</span>函数名
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">fn</span></span>
+      p <span class="token string">&quot;hello&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+  
+<span class="token constant">Example</span><span class="token punctuation">.</span>fn  <span class="token comment"># hello</span>
+<span class="token constant">Example</span><span class="token punctuation">:</span><span class="token punctuation">:</span>fn <span class="token comment"># hello</span>
+
+p <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p<span class="token punctuation">.</span>fn  <span class="token comment"># 报错</span>
+<span class="token comment"># undefined method `fn' for #&lt;Example:0x00007ff36304c758&gt; (NoMethodError)</span>
+</code></pre></div><ul><li><strong>大量定义类方法时：</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> 类名
+  <span class="token keyword">class</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token keyword">self</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">a</span></span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">b</span></span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><ul><li><strong>实例方法调用类方法：</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code> 类名<span class="token punctuation">.</span>静态方法
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token constant">Example</span><span class="token punctuation">.</span>say
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+       <span class="token constant">Example</span><span class="token punctuation">.</span>say
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">say</span></span>
+       p <span class="token string">&quot;hello&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+
+e <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+e<span class="token punctuation">.</span>fn
+</code></pre></div><hr> <h4 id="外部调用限制"><a href="#外部调用限制" class="header-anchor">#</a> 外部调用限制</h4> <blockquote><p>呼び出し制限</p></blockquote> <p>Ruby定义了三种权限来控制类中方法的在类外部的调用：</p> <table><thead><tr><th style="text-align:center;">呼び出し制限</th> <th style="text-align:center;">含义</th></tr></thead> <tbody><tr><td style="text-align:center;"><strong>public</strong></td> <td style="text-align:center;">方法作为实例方法，仅可被实例对象调用。<strong>默认</strong></td></tr> <tr><td style="text-align:center;"><strong>private</strong></td> <td style="text-align:center;">方法作为类的静态方法，仅类自身可以使用</td></tr> <tr><td style="text-align:center;"><strong>protected</strong></td> <td style="text-align:center;">不可被调用</td></tr></tbody></table> <ul><li><strong>单个方法：</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">public</span> <span class="token symbol">:methodName</span>
+<span class="token keyword">private</span> <span class="token symbol">:methodName</span> 
+<span class="token keyword">protected</span> <span class="token symbol">:methodName</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">a</span></span>
+        puts <span class="token string">&quot;aaa&quot;</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">public</span> <span class="token symbol">:a</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">b</span></span>
+        puts <span class="token string">&quot;bbb&quot;</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">private</span> <span class="token symbol">:b</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">c</span></span>
+        puts <span class="token string">&quot;ccc&quot;</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">protected</span> <span class="token symbol">:c</span>
+<span class="token keyword">end</span>
+
+p <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p<span class="token punctuation">.</span>a   <span class="token comment"># aaa</span>
+p<span class="token punctuation">.</span>b		<span class="token comment"># 报错</span>
+<span class="token comment"># private method `b' called for #&lt;Example:0x00007ffe35918580&gt; (NoMethodError)</span>
+p<span class="token punctuation">.</span>c		<span class="token comment"># 报错</span>
+<span class="token comment"># protected method `c' called for #&lt;Example:0x00007fc14d920250&gt; (NoMethodError)</span>
+</code></pre></div><ul><li><strong>多个方法：</strong></li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+  <span class="token keyword">public</span>  <span class="token comment"># 后面定义的方法全都是public</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">xx</span></span>
+  <span class="token keyword">end</span>
+  
+	<span class="token keyword">private</span>  <span class="token comment"># 后面定义的方法全都是private</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">xx</span></span>
+  <span class="token keyword">end</span>
+  
+	<span class="token keyword">protected</span>  <span class="token comment"># 后面定义的方法全都是protected</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">xx</span></span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">public</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">a</span></span>
+        puts <span class="token string">&quot;aaa&quot;</span>
+    <span class="token keyword">end</span>
+    
+    <span class="token keyword">private</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">b</span></span>
+        puts <span class="token string">&quot;bbb&quot;</span>
+    <span class="token keyword">end</span>
+    
+    <span class="token keyword">protected</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">c</span></span>
+        puts <span class="token string">&quot;ccc&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+p <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p<span class="token punctuation">.</span>a   <span class="token comment"># aaa</span>
+p<span class="token punctuation">.</span>b		<span class="token comment"># 报错</span>
+<span class="token comment"># private method `b' called for #&lt;Example:0x00007ffe35918580&gt; (NoMethodError)</span>
+p<span class="token punctuation">.</span>c		<span class="token comment"># 报错</span>
+<span class="token comment"># protected method `c' called for #&lt;Example:0x00007fc14d920250&gt; (NoMethodError)</span>
+</code></pre></div><p>用处：实例：</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    attr_accessor <span class="token symbol">:a</span><span class="token punctuation">,</span><span class="token symbol">:b</span>		 <span class="token comment"># 允许在类外访问a,b</span>
+    <span class="token keyword">protected</span> <span class="token symbol">:a</span><span class="token operator">=</span><span class="token punctuation">,</span> <span class="token symbol">:b</span><span class="token operator">=</span>     <span class="token comment"># 不允许在类外调用修改a,b的setter方法</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+        <span class="token variable">@a</span><span class="token punctuation">,</span><span class="token variable">@b</span> <span class="token operator">=</span> a<span class="token punctuation">,</span>b
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+p <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+puts p<span class="token punctuation">.</span>a	<span class="token comment"># 10</span>
+puts p<span class="token punctuation">.</span>b 	<span class="token comment"># 20</span>
+
+p<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">90</span>  <span class="token comment"># 报错</span>
+<span class="token comment"># protected method `a=' called for #&lt;Example:0x00007fa28f898620 @a=10, @b=20&gt; (NoMethodError)</span>
+p<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">90</span>  <span class="token comment"># 报错</span>
+<span class="token comment"># protected method `b=' called for #&lt;Example:0x00007fa28f898620 @a=10, @b=20&gt; (NoMethodError)</span>
+</code></pre></div><h3 id="常量-2"><a href="#常量-2" class="header-anchor">#</a> 常量</h3> <h4 id="常量调用"><a href="#常量调用" class="header-anchor">#</a> 常量调用</h4> <p>在类的外部访问常量，必须使用 <strong>类名::常量名</strong></p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">'0.0.1'</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">showV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">getV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Example</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">VERSION</span>		<span class="token comment"># &quot;0.0.1&quot;</span>
+p <span class="token constant">Example</span><span class="token punctuation">.</span>showV 			<span class="token comment"># &quot;0.0.1&quot;</span>
+
+example <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p example<span class="token punctuation">.</span>getV				<span class="token comment"># &quot;0.0.1&quot;</span>
+</code></pre></div><h3 id="self"><a href="#self" class="header-anchor">#</a> self</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Example</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">fn01</span></span>
+        <span class="token keyword">self</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn02</span></span>
+        <span class="token keyword">self</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Example</span><span class="token punctuation">.</span>fn01
+
+e <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>		<span class="token comment"># Example</span>
+p e<span class="token punctuation">.</span>fn02		<span class="token comment"># 实例对象</span>
+</code></pre></div><h3 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h3> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> 父类
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> 子类 <span class="token operator">&lt;</span> 父类
+<span class="token keyword">end</span>
+</code></pre></div><p>继承父类的所有</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Father</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+      p <span class="token string">&quot;a&quot;</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">fun</span></span>
+      p <span class="token string">&quot;static&quot;</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token operator">&lt;</span> <span class="token constant">Father</span>
+<span class="token keyword">end</span>
+
+son <span class="token operator">=</span> <span class="token constant">Son</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+son<span class="token punctuation">.</span>fn   <span class="token comment"># &quot;a&quot;</span>
+
+<span class="token constant">Son</span><span class="token punctuation">.</span>fun  <span class="token comment"># &quot;static&quot;</span>
+</code></pre></div><hr> <h4 id="确认继承的父类"><a href="#确认继承的父类" class="header-anchor">#</a> 确认继承的父类</h4> <p>通过 <strong>superclass</strong>方法，継承元を確認</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>子类<span class="token punctuation">.</span>superclass
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Father</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token operator">&lt;</span> <span class="token constant">Father</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Son</span><span class="token punctuation">.</span>superclass
+<span class="token comment"># Father</span>
+</code></pre></div><hr> <h4 id="方法重载"><a href="#方法重载" class="header-anchor">#</a> 方法重载</h4> <p>オーバーライド</p> <p>继承了父类的子类中的同名方法，会重写继承过来的方法，但不会修改父类</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> <span class="token class-name">Father</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+      p <span class="token string">'a'</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token operator">&lt;</span> <span class="token constant">Father</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">fn</span></span>
+      p <span class="token string">'b'</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+son <span class="token operator">=</span> <span class="token constant">Son</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+son<span class="token punctuation">.</span>fn	 <span class="token comment"># &quot;b&quot;</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><hr> <h4 id="super"><a href="#super" class="header-anchor">#</a> super</h4> <p><code>super</code>は、親のクラスの同名のメソッド内容をそのまま実行する</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h2 id="模块-module"><a href="#模块-module" class="header-anchor">#</a> 模块 module</h2> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> モジュール名
+<span class="token keyword">end</span>
+</code></pre></div><p>是一种把 方法、常量组合在一起的方式</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> 模块
+  
+  常量 <span class="token operator">=</span> 值
+  
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span></span>静态方法
+  <span class="token keyword">end</span>
+  
+  <span class="token keyword">def</span> 方法
+  <span class="token keyword">end</span>
+  
+<span class="token keyword">end</span>
+</code></pre></div><p>类似class，但是模块不能继承，不能有实例对象</p> <h3 id="模块的静态方法"><a href="#模块的静态方法" class="header-anchor">#</a> 模块的静态方法</h3> <p>模块中的方法通过 <strong>模块名.方法名</strong> 的形式获取</p> <p>其中 的方法也叫做模块的参数</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>模块名<span class="token punctuation">.</span>方法名
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> <span class="token constant">Basic</span>
+    <span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">'0.0.1'</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">showV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">getV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">add</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> a<span class="token operator">+</span>b
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Basic</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">VERSION</span>	<span class="token comment"># '0.0.1'</span>
+
+p <span class="token constant">Basic</span><span class="token punctuation">.</span>showV			<span class="token comment"># '0.0.1'</span>
+p <span class="token constant">Basic</span><span class="token punctuation">:</span><span class="token punctuation">:</span>showV		<span class="token comment"># '0.0.1'</span>
+
+p <span class="token constant">Basic</span><span class="token punctuation">.</span>getV 			<span class="token comment"># 报错</span>
+<span class="token comment"># undefined method `getV' for Basic:Module (NoMethodError)</span>
+p <span class="token constant">Basic</span><span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>  <span class="token comment"># 报错</span>
+<span class="token comment"># undefined method `getV' for Basic:Module (NoMethodError)</span>
+</code></pre></div><h3 id="设定为静态方法"><a href="#设定为静态方法" class="header-anchor">#</a> 设定为静态方法</h3> <p>不是模块的静态方法，无法通过 <strong>模块.方法</strong> 的形式直接获取</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> <span class="token constant">Basic</span>
+    <span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">'0.0.1'</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">getV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Basic</span><span class="token punctuation">.</span>getV  <span class="token comment"># 报错</span>
+<span class="token comment"># undefined method `getV' for Basic:Module (NoMethodError)</span>
+</code></pre></div><p>需要先将其设定为模块的静态方法后，才能通过 <strong>模块.方法</strong> 的形式直接获取</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>module_function <span class="token punctuation">:</span>方法名
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> <span class="token constant">Basic</span>
+    <span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">'0.0.1'</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">getV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">add</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> a<span class="token operator">+</span>b
+    <span class="token keyword">end</span>
+  
+  	module_function <span class="token symbol">:getV</span><span class="token punctuation">,</span> <span class="token symbol">:add</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Basic</span><span class="token punctuation">.</span>getV  			<span class="token comment"># '0.0.1'</span>
+p <span class="token constant">Basic</span><span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>	<span class="token comment"># 30</span>
+</code></pre></div><h3 id="include"><a href="#include" class="header-anchor">#</a> include</h3> <p>把模块导入class类的做法叫做 <strong>Mix-in</strong></p> <p>class类可通过 <strong>include</strong> 调用模块，并使用其方法和常量，</p> <p>无法使用模块的静态方法</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">class</span> 类
+  <span class="token keyword">include</span> 模块
+<span class="token keyword">end</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">module</span> <span class="token constant">Basic</span>
+    <span class="token constant">VERSION</span> <span class="token operator">=</span> <span class="token string">'0.0.1'</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">showV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">getV</span></span>
+        <span class="token keyword">return</span> <span class="token constant">VERSION</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">add</span></span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> a<span class="token operator">+</span>b
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token keyword">include</span> <span class="token constant">Basic</span>
+<span class="token keyword">end</span>
+
+p <span class="token constant">Example</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">VERSION</span>	<span class="token comment"># '0.0.1'</span>
+p <span class="token constant">Example</span><span class="token punctuation">:</span><span class="token punctuation">:</span>showV  <span class="token comment"># 报错</span>
+<span class="token comment"># undefined method `showV' for Example:Class (NoMethodError)</span>
+p <span class="token constant">Example</span><span class="token punctuation">.</span>showV	  <span class="token comment"># 报错 </span>
+<span class="token comment"># undefined method `showV' for Example:Class (NoMethodError)</span>
+
+e <span class="token operator">=</span> <span class="token constant">Example</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+p e<span class="token punctuation">.</span>getV				<span class="token comment"># '0.0.1' </span>
+p e<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>	<span class="token comment"># 30</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h2 id="错误-与-例外处理"><a href="#错误-与-例外处理" class="header-anchor">#</a> 错误 与 例外处理</h2> <h3 id="错误处理"><a href="#错误处理" class="header-anchor">#</a> 错误处理</h3> <h4 id="begin"><a href="#begin" class="header-anchor">#</a> begin</h4> <h4 id="end"><a href="#end" class="header-anchor">#</a> end</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">begin</span>
+  <span class="token comment"># 可能会出错的处理逻辑</span>
+  xxx
+<span class="token keyword">rescue</span> <span class="token operator">=</span><span class="token operator">&gt;</span> 错误信息变量
+  <span class="token comment"># 发生错误时</span>
+  xxxx
+<span class="token keyword">end</span>
+</code></pre></div><h4 id="rescue-else-ensure"><a href="#rescue-else-ensure" class="header-anchor">#</a> rescue/else/ensure</h4> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">begin</span>
+    <span class="token comment"># 可能会出错的处理逻辑</span>
+    xxx
+  
+<span class="token keyword">rescue</span> <span class="token operator">=</span><span class="token operator">&gt;</span> e
+    <span class="token comment"># 发生错误时</span>
+    xxxx
+    puts e <span class="token comment"># 错误信息</span>
+  
+<span class="token keyword">else</span>
+    <span class="token comment"># 正常处理时</span>
+    xxxx
+  
+<span class="token keyword">ensure</span>
+    <span class="token comment"># 最后的收尾工作，</span>
+  	<span class="token comment"># 无论是否出错，都会执行</span>
+    xxxx
+<span class="token keyword">end</span>
+</code></pre></div><p>begin相当与JS的try</p> <p>rescue相当于JS的catch</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">try</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><h2 id="库-library"><a href="#库-library" class="header-anchor">#</a> 库（library）</h2> <p>和其他语言一样，有 库/包 的存在（イブラリ / パッケージ）</p> <p>ruby的库分为三类：</p> <ol><li><strong>核心库</strong>（core）</li> <li><strong>标准库</strong>（Standard Library）</li> <li><strong>第三方库</strong>（third-party）</li></ol> <blockquote><p>ライブラリには三種類に分類され：</p> <ul><li><strong>組み込みライブラリ</strong></li> <li><strong>標準添付ライブラリ</strong></li> <li><strong>外部ライブラリ（gem）</strong></li></ul></blockquote> <ul><li>核心库提供了ruby最基本的类和模块。</li> <li>标准库主要是和网络相关的库。</li> <li>标准库和第三方库都需要require 才可以使用</li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">require</span> <span class="token string">&quot;date&quot;</span>
+p <span class="token constant">Date</span><span class="token punctuation">.</span>today
+</code></pre></div><h3 id="库的导入"><a href="#库的导入" class="header-anchor">#</a> 库的导入</h3> <p>标准库和第三方库都需要require 才可以使用</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">require</span> <span class="token string">&quot;date&quot;</span>
+p <span class="token constant">Date</span><span class="token punctuation">.</span>today
+</code></pre></div><hr> <h4 id="require"><a href="#require" class="header-anchor">#</a> require</h4> <ul><li>导入 library</li> <li>导入自定义 .rb 文件</li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token keyword">require</span> 库名
+<span class="token keyword">require</span> <span class="token string">'文件名'</span>
+</code></pre></div><p>require是以当前目录为基准，调用导入文件/库</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>reuqire <span class="token string">'./test'</span>
+</code></pre></div><hr> <h4 id="require-relative"><a href="#require-relative" class="header-anchor">#</a> require_relative</h4> <ul><li>导入 library</li> <li>导入自定义 .rb 文件</li></ul> <div class="language-ruby extra-class"><pre class="language-ruby"><code>require_relative 库名
+require_relative <span class="token string">'test.rb'</span>
+</code></pre></div><p>require_relative是以当前文件为基准，<strong>相对路径</strong></p> <div class="language-rbuy extra-class"><pre class="language-text"><code>xxx
+|- 02
+		|- 02.rb
+|- 01
+		|- 01.rb
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># 在01.rb 导入 02.rb</span>
+
+require_relative <span class="token string">'../02/02.rb'</span>
+
+<span class="token keyword">require</span> <span class="token string">'../02/02.rb'</span> 
+<span class="token comment"># cannot load such file -- ../02/02.rb (LoadError)</span>
+</code></pre></div><hr> <h4 id="load"><a href="#load" class="header-anchor">#</a> load</h4> <ul><li><p>reuqire只会读取第一次</p></li> <li><p>load会多次读取</p></li></ul> <p>但是load导入时必须带有文件的后缀名</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>load <span class="token string">'./text/rb'</span>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><h3 id="第三方库-gem"><a href="#第三方库-gem" class="header-anchor">#</a> 第三方库（gem）</h3> <blockquote><p>第三方库（サードパーティのライブラリ）</p></blockquote> <p>第三方库主要是 <strong>gem</strong> 。存放于 <a href="https://rubygems.org/" target="_blank" rel="noopener noreferrer">RubyGems.org<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>RubyGems</strong> 是管理 gem 安装卸载的工具</p> <p>但是已经用的很少了，主要用 <strong>bundler</strong> 这个工具了</p> <hr> <h4 id="下载"><a href="#下载" class="header-anchor">#</a> 下载</h4> <div class="language-bash extra-class"><pre class="language-bash"><code>gem <span class="token function">install</span> rails
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>gem <span class="token function">install</span> rails --version <span class="token number">5.0</span>
+<span class="token comment">#或</span>
+gem <span class="token function">install</span> rails -v <span class="token number">5.0</span>
+</code></pre></div><hr> <h4 id="卸载"><a href="#卸载" class="header-anchor">#</a> 卸载</h4> <div class="language-bash extra-class"><pre class="language-bash"><code>gem uninstall rails
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>gem uninstall rails -v <span class="token number">5.0</span>
+</code></pre></div><hr> <h4 id="列出下载的gem"><a href="#列出下载的gem" class="header-anchor">#</a> 列出下载的gem</h4> <p>所有</p> <div class="language- extra-class"><pre class="language-text"><code>gem list -l
+</code></pre></div><p>指定搜索关键字</p> <div class="language-bash extra-class"><pre class="language-bash"><code>gem list 包含的关键字
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>gem list rail
+
+*** LOCAL GEMS ***
+
+autoprefixer-rails <span class="token punctuation">(</span><span class="token number">10.2</span>.5.1<span class="token punctuation">)</span>
+jquery-rails <span class="token punctuation">(</span><span class="token number">4.4</span>.0<span class="token punctuation">)</span>
+rails <span class="token punctuation">(</span><span class="token number">6.1</span>.4<span class="token punctuation">)</span>
+rails-dom-testing <span class="token punctuation">(</span><span class="token number">2.0</span>.3<span class="token punctuation">)</span>
+rails-html-sanitizer <span class="token punctuation">(</span><span class="token number">1.3</span>.0<span class="token punctuation">)</span>
+railties <span class="token punctuation">(</span><span class="token number">6.1</span>.4<span class="token punctuation">)</span>
+sass-rails <span class="token punctuation">(</span><span class="token number">6.0</span>.0<span class="token punctuation">)</span>
+sassc-rails <span class="token punctuation">(</span><span class="token number">2.1</span>.2<span class="token punctuation">)</span>
+sprockets-rails <span class="token punctuation">(</span><span class="token number">3.2</span>.2<span class="token punctuation">)</span>
+</code></pre></div><h2 id="正则表达式"><a href="#正则表达式" class="header-anchor">#</a> 正则表达式</h2> <p>正規表現オブジェクト</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div><div class="language-ruby extra-class"><pre class="language-ruby"><code>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-studynotes/guide/" class="prev">
+        Guide List
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress-studynotes/assets/js/app.8a208b05.js" defer></script><script src="/vuepress-studynotes/assets/js/2.cb5dfabd.js" defer></script><script src="/vuepress-studynotes/assets/js/14.932a0b00.js" defer></script>
+  </body>
+</html>
