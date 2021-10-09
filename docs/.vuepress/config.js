@@ -1,7 +1,7 @@
 module.exports = {
     title: 'BlaxBerry',
     description: "Chen's Program Study Note",
-    logo: '/public/logo.jpg',
+    // logo: '/logo.jpg',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
@@ -10,10 +10,13 @@ module.exports = {
             { text: 'Github', link: 'https://github.com/BlaxBerry/vuepress-studynotes' },
         ],
         sidebar: 'auto',
-        sidebarDepth: 3,
+        sidebarDepth: 4,
         displayAllHeaders: true,
         activeHeaderLinks: true,
-        lastUpdated: 'Last Updated', // string | boolean
+        lastUpdated: 'Last Updated',
+        nextLinks: true,
+        prevLinks: true,
+        smoothScroll: true
     },
     plugins: [
         '@vuepress/active-header-links',
