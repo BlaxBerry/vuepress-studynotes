@@ -2,6 +2,7 @@ module.exports = {
     title: 'BlaxBerry',
     description: "Chen's Program Study Note",
     // logo: '/logo.jpg',
+    base: '/vuepress-studynotes/',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
