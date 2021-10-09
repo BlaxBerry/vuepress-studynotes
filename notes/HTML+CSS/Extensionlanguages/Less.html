@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Less语法 | BlaxBerry</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="Personal Program Study Notes">
+    
+    <link rel="preload" href="/assets/css/0.styles.97e70cb6.css" as="style"><link rel="preload" href="/assets/js/app.d02b5cb6.js" as="script"><link rel="preload" href="/assets/js/2.3ac227d8.js" as="script"><link rel="preload" href="/assets/js/9.b2e21bda.js" as="script"><link rel="prefetch" href="/assets/js/10.9ca672b0.js"><link rel="prefetch" href="/assets/js/11.3ac0f294.js"><link rel="prefetch" href="/assets/js/12.07b8c622.js"><link rel="prefetch" href="/assets/js/13.b8048614.js"><link rel="prefetch" href="/assets/js/14.5555c05d.js"><link rel="prefetch" href="/assets/js/15.18e5d8a0.js"><link rel="prefetch" href="/assets/js/16.44ecb1d0.js"><link rel="prefetch" href="/assets/js/17.7f31557f.js"><link rel="prefetch" href="/assets/js/18.ff0a77eb.js"><link rel="prefetch" href="/assets/js/19.9f7ac9bf.js"><link rel="prefetch" href="/assets/js/20.6d3ee68b.js"><link rel="prefetch" href="/assets/js/21.9e0d5d9c.js"><link rel="prefetch" href="/assets/js/22.865ae468.js"><link rel="prefetch" href="/assets/js/23.8cfa0d47.js"><link rel="prefetch" href="/assets/js/24.1c6686da.js"><link rel="prefetch" href="/assets/js/25.65fe93a1.js"><link rel="prefetch" href="/assets/js/26.4e416385.js"><link rel="prefetch" href="/assets/js/27.543f4d63.js"><link rel="prefetch" href="/assets/js/28.0bea1b4b.js"><link rel="prefetch" href="/assets/js/29.06b1337e.js"><link rel="prefetch" href="/assets/js/3.792b1cb3.js"><link rel="prefetch" href="/assets/js/30.c5fca057.js"><link rel="prefetch" href="/assets/js/31.41ef80c2.js"><link rel="prefetch" href="/assets/js/32.72cede2e.js"><link rel="prefetch" href="/assets/js/33.96eed739.js"><link rel="prefetch" href="/assets/js/34.8d83271f.js"><link rel="prefetch" href="/assets/js/35.d6e2c78b.js"><link rel="prefetch" href="/assets/js/36.dde319bb.js"><link rel="prefetch" href="/assets/js/37.3d3ada5d.js"><link rel="prefetch" href="/assets/js/38.77abfb31.js"><link rel="prefetch" href="/assets/js/39.2179958a.js"><link rel="prefetch" href="/assets/js/4.8254e268.js"><link rel="prefetch" href="/assets/js/40.f214e6cc.js"><link rel="prefetch" href="/assets/js/41.cba8dbb6.js"><link rel="prefetch" href="/assets/js/42.ff0226b1.js"><link rel="prefetch" href="/assets/js/43.11750b85.js"><link rel="prefetch" href="/assets/js/5.9601426f.js"><link rel="prefetch" href="/assets/js/6.ae87bb0c.js"><link rel="prefetch" href="/assets/js/7.ddd83936.js"><link rel="prefetch" href="/assets/js/8.8ea9633f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.97e70cb6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="BlaxBerry" class="logo"> <span class="site-name can-hide">BlaxBerry</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Guide" class="dropdown-title"><span class="title">Guide</span> <span class="arrow down"></span></button> <button type="button" aria-label="Guide" class="mobile-dropdown-title"><span class="title">Guide</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/HTML+CSS/" class="nav-link router-link-active">
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/jQuery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/notes/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Nodejs/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Ruby/" class="nav-link">
+  Ruby
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Others/" class="nav-link">
+  Others
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/Javascript/" class="nav-link">
+  JavaScript基础
+</a></li><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/Vue/Vue2/" class="nav-link">
+  Vue2基础
+</a></li><li class="dropdown-subitem"><a href="/notes/Vue/Vue3/" class="nav-link">
+  Vue3基础
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/React/" class="nav-link">
+  React基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://blaxberry.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Portfolio
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Guide" class="dropdown-title"><span class="title">Guide</span> <span class="arrow down"></span></button> <button type="button" aria-label="Guide" class="mobile-dropdown-title"><span class="title">Guide</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/HTML+CSS/" class="nav-link router-link-active">
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/jQuery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/notes/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Nodejs/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Ruby/" class="nav-link">
+  Ruby
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Others/" class="nav-link">
+  Others
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/Javascript/" class="nav-link">
+  JavaScript基础
+</a></li><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/Vue/Vue2/" class="nav-link">
+  Vue2基础
+</a></li><li class="dropdown-subitem"><a href="/notes/Vue/Vue3/" class="nav-link">
+  Vue3基础
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/React/" class="nav-link">
+  React基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://blaxberry.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Portfolio
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Less语法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#less简介" class="sidebar-link">Less简介</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#css的弊端" class="sidebar-link">css的弊端</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#css代码冗余不便维护" class="sidebar-link">css代码冗余不便维护</a></li><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#css没有计算能力" class="sidebar-link">css没有计算能力</a></li></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#less文件" class="sidebar-link">.less文件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#注释" class="sidebar-link">注释</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#变量" class="sidebar-link">变量</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#less编译为css" class="sidebar-link">Less编译为CSS</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#元素嵌套" class="sidebar-link">元素嵌套</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#子元素" class="sidebar-link">子元素</a></li><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#伪类-hover" class="sidebar-link">伪类 :hover</a></li><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#伪元素" class="sidebar-link">伪元素</a></li><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#伪元素伪类" class="sidebar-link">伪元素伪类</a></li></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#运算" class="sidebar-link">运算</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#导入" class="sidebar-link">导入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/HTML+CSS/Extensionlanguages/Less.html#import" class="sidebar-link">@import</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="less语法"><a href="#less语法" class="header-anchor">#</a> Less语法</h1> <p><img src="https://www.ryadel.com/wp-content/uploads/2018/06/less-logo-css-tutorial-guide-735x300.jpg" alt=""></p> <h2 id="less简介"><a href="#less简介" class="header-anchor">#</a> Less简介</h2> <p>Less（leaner Style Sheets）是css的一门扩展语言</p> <p>也称为css预处理器</p> <p><strong>常见css预处理器：Less、Sass、Stylus</strong></p> <p>在css的基础上引入了 变量、函数、运算、Mixmin混入等</p> <p>可用更少的代码做更多的事</p> <p><a href="https://less.bootcss.com/" target="_blank" rel="noopener noreferrer">Less文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="css的弊端"><a href="#css的弊端" class="header-anchor">#</a> css的弊端</h2> <h3 id="css代码冗余不便维护"><a href="#css代码冗余不便维护" class="header-anchor">#</a> css代码冗余不便维护</h3> <p>代码重复的情况多，修改维护不便</p> <p>如下图，重复的代码</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  XXXX<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  XXXX<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">span</span> <span class="token punctuation">{</span>
+  XXXX<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+  XXXX<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+.........
+</code></pre></div><h3 id="css没有计算能力"><a href="#css没有计算能力" class="header-anchor">#</a> css没有计算能力</h3> <p>尤其体现在rem和媒体查询时</p> <p>如下，img原图100*100，若使用rem单位响应式布局，</p> <p>必须要计算</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token comment">/*width: 82px;
+  height: 82px;*/</span>
+  <span class="token comment">/*只能用计算器 82/50=1.64*/</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1.64rem<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span>1.64rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="less文件"><a href="#less文件" class="header-anchor">#</a> .less文件</h2> <p>在<code>.less文件</code>文件中书写Less语句</p> <h2 id="注释"><a href="#注释" class="header-anchor">#</a> 注释</h2> <p>不同于css的<code>/**/</code>，Less使用双斜杠<code>//</code>注释</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// 我是less的注释</span>
+</code></pre></div><h2 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h2> <p>放入颜色、数值等，<strong>方便统一修改维护</strong></p> <div class="language-less extra-class"><pre class="language-less"><code>@变量名：值；
+</code></pre></div><p>变量名必须用 <strong>@为前缀</strong></p> <p>不能包含特殊字符</p> <p>不能以数字开头</p> <p><strong>大小写敏感</strong></p> <p>如下：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@backgroundColor<span class="token punctuation">:</span></span> crimson<span class="token punctuation">;</span>
+<span class="token variable">@boxHeight<span class="token punctuation">:</span></span> 100px<span class="token punctuation">;</span>
+<span class="token variable">@font14<span class="token punctuation">:</span></span> 14px<span class="token punctuation">;</span>
+
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@boxHeight</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">@backgroundColor</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div p</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@boxHeight</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@backgroundColor</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">@font14</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@boxHeight</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">@backgroundColor</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.son</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">@backgroundColor</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">@font14</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="less编译为css"><a href="#less编译为css" class="header-anchor">#</a> Less编译为CSS</h2> <p>html页面不识别Less，需要把less文件编译转换为css文件</p> <p>可以用VSCode的插件<strong>easyless</strong></p> <p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4142202966,2456002797&amp;fm=11&amp;gp=0.jpg" alt=""></p> <p>安装该插件后，</p> <p><strong>每次.less文件保存，会在同级目录生成一个同名.css文件</strong></p> <p>然后html页面引入该.css文件即可</p> <p>每次在.less修改后，只要保存，修改会一起保存到.css文件</p> <h2 id="元素嵌套"><a href="#元素嵌套" class="header-anchor">#</a> 元素嵌套</h2> <h3 id="子元素"><a href="#子元素" class="header-anchor">#</a> 子元素</h3> <p>css的嵌套</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father .son .grandson</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red
+<span class="token punctuation">}</span>
+</code></pre></div><p>less中的内层选择器直接放到外层选择器中</p> <p>如下：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father</span> <span class="token punctuation">{</span>
+  <span class="token selector">.son</span><span class="token punctuation">{</span>
+    <span class="token selector">.grandson</span><span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <p>再比如：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.father</span> <span class="token punctuation">{</span>
+ <span class="token property">font-size</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token selector">.son</span><span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token selector">.grandson</span><span class="token punctuation">{</span>
+      <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>编译为css如下：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.father .son</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.father .son .grandson</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="伪类-hover"><a href="#伪类-hover" class="header-anchor">#</a> 伪类 :hover</h3> <p>写在当前元素中，并在前面加上&amp;</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">选择器</span> <span class="token punctuation">{</span>
+	<span class="token selector">&amp;:hover</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如下：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.father</span> <span class="token punctuation">{</span>
+  <span class="token selector">.son</span><span class="token punctuation">{</span>
+    <span class="token selector">&amp;:hover</span><span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>编译为css如下：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father .son:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="伪元素"><a href="#伪元素" class="header-anchor">#</a> 伪元素</h3> <p>写在当前元素中，并在前面加上&amp;</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">选择器</span> <span class="token punctuation">{</span>
+	<span class="token selector">&amp;::before</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token selector">&amp;::after</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如下：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.father</span> <span class="token punctuation">{</span>
+  <span class="token selector">.son</span><span class="token punctuation">{</span>
+    <span class="token selector">&amp;::after</span><span class="token punctuation">{</span>
+      <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>      
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father .son::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="伪元素伪类"><a href="#伪元素伪类" class="header-anchor">#</a> 伪元素伪类</h3> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.father</span> <span class="token punctuation">{</span>
+  <span class="token selector">.son</span><span class="token punctuation">{</span>
+
+    <span class="token selector">&amp;::after</span><span class="token punctuation">{</span>
+      <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+      <span class="token selector">&amp;:hover</span><span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father .son::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.father .son::after:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="运算"><a href="#运算" class="header-anchor">#</a> 运算</h2> <p>Less中的变量都可以参与运算</p> <p>Less中提供了<code>+ - * /</code>算数运算</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@border<span class="token punctuation">:</span></span> 5px <span class="token operator">+</span> 5<span class="token punctuation">;</span>
+
+<span class="token selector">.father</span> <span class="token punctuation">{</span>
+  <span class="token selector">.son</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px <span class="token operator">-</span> 10<span class="token punctuation">;</span>
+  	<span class="token property">height</span><span class="token punctuation">:</span> 100px <span class="token operator">*</span> 2<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> <span class="token variable">@border</span> solid crimson<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>编译为css如下：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.father .son</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 90px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 10px solid crimson<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <p>再比如，</p> <p>在响应式布局中，rem布局中</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>82 <span class="token operator">/</span> 50rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>82 <span class="token operator">/</span> 50rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>解析为css如下：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1.64rem<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1.64rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <p><strong>注意</strong>，<strong>Less除法必须用括号扩起来</strong>，不然不会进行计算</p> <hr> <p><strong>运算符必须用空格隔开</strong></p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token property">width</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token variable">@width</span> <span class="token operator">+</span> 10<span class="token punctuation">)</span> <span class="token operator">*</span> 2
+</code></pre></div><hr> <p>Less运算<strong>结果的的单位以第一个数为准</strong></p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>82px <span class="token operator">/</span> 50rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>解析为css如下：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1.64px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="导入"><a href="#导入" class="header-anchor">#</a> 导入</h2> <h3 id="import"><a href="#import" class="header-anchor">#</a> @import</h3> <p>把一个样式文件导入另一个样式文件中</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@import</span> <span class="token string">&quot;要导入的less文件名&quot;</span>
+</code></pre></div><p>如下，在<code>02.less</code>中导入公共样式的<code>common.less</code>文件：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// common.less</span>
+<span class="token selector">*</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">box-sizing</span><span class="token punctuation">:</span> border<span class="token operator">-</span>box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// 02.less</span>
+
+<span class="token variable">@import</span> <span class="token string">&quot;common.less&quot;</span><span class="token punctuation">;</span>
+
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+    <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d02b5cb6.js" defer></script><script src="/assets/js/2.3ac227d8.js" defer></script><script src="/assets/js/9.b2e21bda.js" defer></script>
+  </body>
+</html>

@@ -3,92 +3,80 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>本地存储 LocalStorage | StudyNotes</title>
+    <title>本地存储 LocalStorage | BlaxBerry</title>
     <meta name="generator" content="VuePress 1.8.2">
-    <link rel="icon" href="/vuepress-studynotes/avatar.png">
-    <meta name="description" content="Program Study Notes">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="Personal Program Study Notes">
     
-    <link rel="preload" href="/vuepress-studynotes/assets/css/0.styles.573e5b30.css" as="style"><link rel="preload" href="/vuepress-studynotes/assets/js/app.8a208b05.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/2.cb5dfabd.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/31.598f250d.js" as="script"><link rel="prefetch" href="/vuepress-studynotes/assets/js/10.06eca73c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/11.c36905f2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/12.55d1ca9c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/13.a495c5f0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/14.932a0b00.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/15.1c04baaf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/16.871bd1e0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/17.b97f8caf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/18.b5f14d30.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/19.3fe8aeae.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/20.fd330509.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/21.b0d128a9.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/22.d75fceae.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/23.ab664138.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/24.125937c2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/25.de4e2105.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/26.e58d22a2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/27.af0dba26.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/28.1bc70958.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/29.9b446062.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/3.52eb4948.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/30.9bff19c0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/32.e3f7ed47.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/33.e5542dd4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/34.ad624811.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/4.32120fa5.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/5.a40522bf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/6.1e0a47e6.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/7.0d01b1c8.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/8.e147f4a7.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/9.4edc41f7.js">
-    <link rel="stylesheet" href="/vuepress-studynotes/assets/css/0.styles.573e5b30.css">
+    <link rel="preload" href="/assets/css/0.styles.97e70cb6.css" as="style"><link rel="preload" href="/assets/js/app.d02b5cb6.js" as="script"><link rel="preload" href="/assets/js/2.3ac227d8.js" as="script"><link rel="preload" href="/assets/js/29.06b1337e.js" as="script"><link rel="prefetch" href="/assets/js/10.9ca672b0.js"><link rel="prefetch" href="/assets/js/11.3ac0f294.js"><link rel="prefetch" href="/assets/js/12.07b8c622.js"><link rel="prefetch" href="/assets/js/13.b8048614.js"><link rel="prefetch" href="/assets/js/14.5555c05d.js"><link rel="prefetch" href="/assets/js/15.18e5d8a0.js"><link rel="prefetch" href="/assets/js/16.44ecb1d0.js"><link rel="prefetch" href="/assets/js/17.7f31557f.js"><link rel="prefetch" href="/assets/js/18.ff0a77eb.js"><link rel="prefetch" href="/assets/js/19.9f7ac9bf.js"><link rel="prefetch" href="/assets/js/20.6d3ee68b.js"><link rel="prefetch" href="/assets/js/21.9e0d5d9c.js"><link rel="prefetch" href="/assets/js/22.865ae468.js"><link rel="prefetch" href="/assets/js/23.8cfa0d47.js"><link rel="prefetch" href="/assets/js/24.1c6686da.js"><link rel="prefetch" href="/assets/js/25.65fe93a1.js"><link rel="prefetch" href="/assets/js/26.4e416385.js"><link rel="prefetch" href="/assets/js/27.543f4d63.js"><link rel="prefetch" href="/assets/js/28.0bea1b4b.js"><link rel="prefetch" href="/assets/js/3.792b1cb3.js"><link rel="prefetch" href="/assets/js/30.c5fca057.js"><link rel="prefetch" href="/assets/js/31.41ef80c2.js"><link rel="prefetch" href="/assets/js/32.72cede2e.js"><link rel="prefetch" href="/assets/js/33.96eed739.js"><link rel="prefetch" href="/assets/js/34.8d83271f.js"><link rel="prefetch" href="/assets/js/35.d6e2c78b.js"><link rel="prefetch" href="/assets/js/36.dde319bb.js"><link rel="prefetch" href="/assets/js/37.3d3ada5d.js"><link rel="prefetch" href="/assets/js/38.77abfb31.js"><link rel="prefetch" href="/assets/js/39.2179958a.js"><link rel="prefetch" href="/assets/js/4.8254e268.js"><link rel="prefetch" href="/assets/js/40.f214e6cc.js"><link rel="prefetch" href="/assets/js/41.cba8dbb6.js"><link rel="prefetch" href="/assets/js/42.ff0226b1.js"><link rel="prefetch" href="/assets/js/43.11750b85.js"><link rel="prefetch" href="/assets/js/5.9601426f.js"><link rel="prefetch" href="/assets/js/6.ae87bb0c.js"><link rel="prefetch" href="/assets/js/7.ddd83936.js"><link rel="prefetch" href="/assets/js/8.8ea9633f.js"><link rel="prefetch" href="/assets/js/9.b2e21bda.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.97e70cb6.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-studynotes/" class="home-link router-link-active"><!----> <span class="site-name">StudyNotes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-studynotes/" class="nav-link">
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="BlaxBerry" class="logo"> <span class="site-name can-hide">BlaxBerry</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
   Home
-</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/" class="nav-link">
-  Guide
-</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-End" class="dropdown-title"><span class="title">Front-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-End" class="mobile-dropdown-title"><span class="title">Front-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Guide" class="dropdown-title"><span class="title">Guide</span> <span class="arrow down"></span></button> <button type="button" aria-label="Guide" class="mobile-dropdown-title"><span class="title">Guide</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/HTML+CSS/" class="nav-link">
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/jQuery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/notes/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Nodejs/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Ruby/" class="nav-link">
+  Ruby
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Others/" class="nav-link router-link-active">
+  Others
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/Javascript/" class="nav-link">
+  JavaScript基础
+</a></li><li class="dropdown-item"><h4>
           Vue.js
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue3+Vue-cli.html" class="nav-link">
-  Vue3 + Vue-Cli
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vuex.html" class="nav-link">
-  Vue2 + Vuex
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vue-Router.html" class="nav-link">
-  Vue-Router
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/Vue/Vue2/" class="nav-link">
+  Vue2基础
+</a></li><li class="dropdown-subitem"><a href="/notes/Vue/Vue3/" class="nav-link">
+  Vue3基础
 </a></li></ul></li><li class="dropdown-item"><h4>
           React.js
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Basic.html" class="nav-link">
-  React-JSX
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Components.html" class="nav-link">
-  React-Components
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Router.html" class="nav-link">
-  React-Router-Dom
-</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Back-End" class="dropdown-title"><span class="title">Back-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Back-End" class="mobile-dropdown-title"><span class="title">Back-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
-          Node.js
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Node.js-Basic.html" class="nav-link">
-  Node.js
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Express.js-Basic.html" class="nav-link">
-  Express.js
-</a></li></ul></li><li class="dropdown-item"><h4>
-          Ruby
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html" class="nav-link">
-  Ruby
-</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DataBase" class="dropdown-title"><span class="title">DataBase</span> <span class="arrow down"></span></button> <button type="button" aria-label="DataBase" class="mobile-dropdown-title"><span class="title">DataBase</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-studynotes/notes/database/SQL.html" class="nav-link">
-  SQL
-</a></li><li class="dropdown-item"><!----> <a href="https://mongodb.net.cn/manual/" target="_blank" rel="noopener noreferrer" class="nav-link external">
-  MongoDB
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Links" class="dropdown-title"><span class="title">Links</span> <span class="arrow down"></span></button> <button type="button" aria-label="Links" class="mobile-dropdown-title"><span class="title">Links</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
-  Github
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blaxberry.github.io/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/React/" class="nav-link">
+  React基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://blaxberry.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
   Portfolio
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-studynotes/" class="nav-link">
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
   Home
-</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/" class="nav-link">
-  Guide
-</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Front-End" class="dropdown-title"><span class="title">Front-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Front-End" class="mobile-dropdown-title"><span class="title">Front-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Guide" class="dropdown-title"><span class="title">Guide</span> <span class="arrow down"></span></button> <button type="button" aria-label="Guide" class="mobile-dropdown-title"><span class="title">Guide</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/HTML+CSS/" class="nav-link">
+  HTML+CSS
+</a></li><li class="dropdown-item"><!----> <a href="/notes/jQuery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/notes/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Nodejs/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Ruby/" class="nav-link">
+  Ruby
+</a></li><li class="dropdown-item"><!----> <a href="/notes/Others/" class="nav-link router-link-active">
+  Others
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/Javascript/" class="nav-link">
+  JavaScript基础
+</a></li><li class="dropdown-item"><h4>
           Vue.js
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue3+Vue-cli.html" class="nav-link">
-  Vue3 + Vue-Cli
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vuex.html" class="nav-link">
-  Vue2 + Vuex
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/vue/Vue2+Vue-Router.html" class="nav-link">
-  Vue-Router
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/Vue/Vue2/" class="nav-link">
+  Vue2基础
+</a></li><li class="dropdown-subitem"><a href="/notes/Vue/Vue3/" class="nav-link">
+  Vue3基础
 </a></li></ul></li><li class="dropdown-item"><h4>
           React.js
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Basic.html" class="nav-link">
-  React-JSX
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Components.html" class="nav-link">
-  React-Components
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/frontend/react/React-Router.html" class="nav-link">
-  React-Router-Dom
-</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Back-End" class="dropdown-title"><span class="title">Back-End</span> <span class="arrow down"></span></button> <button type="button" aria-label="Back-End" class="mobile-dropdown-title"><span class="title">Back-End</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
-          Node.js
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Node.js-Basic.html" class="nav-link">
-  Node.js
-</a></li><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/nodejs/Express.js-Basic.html" class="nav-link">
-  Express.js
-</a></li></ul></li><li class="dropdown-item"><h4>
-          Ruby
-        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vuepress-studynotes/notes/backend/ruby/Ruby-Basic.html" class="nav-link">
-  Ruby
-</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DataBase" class="dropdown-title"><span class="title">DataBase</span> <span class="arrow down"></span></button> <button type="button" aria-label="DataBase" class="mobile-dropdown-title"><span class="title">DataBase</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-studynotes/notes/database/SQL.html" class="nav-link">
-  SQL
-</a></li><li class="dropdown-item"><!----> <a href="https://mongodb.net.cn/manual/" target="_blank" rel="noopener noreferrer" class="nav-link external">
-  MongoDB
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Links" class="dropdown-title"><span class="title">Links</span> <span class="arrow down"></span></button> <button type="button" aria-label="Links" class="mobile-dropdown-title"><span class="title">Links</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
-  Github
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blaxberry.github.io/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes/React/" class="nav-link">
+  React基础
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://blaxberry.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
   Portfolio
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>本地存储 LocalStorage</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-studynotes/notes/others/LocalStorage.html#setitem" class="sidebar-link">setItem()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/others/LocalStorage.html#getitem" class="sidebar-link">getItem()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/others/LocalStorage.html#removeitem" class="sidebar-link">removeItem()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/others/LocalStorage.html#clear" class="sidebar-link">clear()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/others/LocalStorage.html#json-stringify" class="sidebar-link">JSON.stringify()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/others/LocalStorage.html#json-parse" class="sidebar-link">JSON.parse()</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="本地存储-localstorage"><a href="#本地存储-localstorage" class="header-anchor">#</a> 本地存储 LocalStorage</h1> <p>localStorage 是<strong>永久存于浏览器的本地储存</strong></p> <p>浏览器页面关闭并不会删除localStorage本地存储的内容 ，</p> <p>需要手动调用删除方法去删除</p> <p>一般5M大小</p> <hr> <p>在浏览器的application中打开 localStorage 查看，如下：</p> <p><img src="https://www.granfairs.com/blog/upload/staff-2017-10-26-local-storage-01-06.png" alt=""></p> <h2 id="setitem"><a href="#setitem" class="header-anchor">#</a> setItem()</h2> <p><strong>存入</strong></p> <p>以 **键值对 **的形式存入</p> <blockquote><p>localStorage.<strong>setItem(key,value)</strong></p></blockquote> <p>其中的 <code>key</code> 和 <code>value</code> 值都必须是<strong>字符串形式</strong></p> <p>数字形式会被隐式转换为字符串形式</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/BlaxBerry" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>本地存储 LocalStorage</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/Others/Localstorage.html#setitem" class="sidebar-link">setItem()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/Others/Localstorage.html#getitem" class="sidebar-link">getItem()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/Others/Localstorage.html#removeitem" class="sidebar-link">removeItem()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/Others/Localstorage.html#clear" class="sidebar-link">clear()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/Others/Localstorage.html#json-stringify" class="sidebar-link">JSON.stringify()</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/Others/Localstorage.html#json-parse" class="sidebar-link">JSON.parse()</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="本地存储-localstorage"><a href="#本地存储-localstorage" class="header-anchor">#</a> 本地存储 LocalStorage</h1> <p>localStorage 是<strong>永久存于浏览器的本地储存</strong></p> <p>浏览器页面关闭并不会删除localStorage本地存储的内容 ，</p> <p>需要手动调用删除方法去删除</p> <p>一般5M大小</p> <hr> <p>在浏览器的application中打开 localStorage 查看，如下：</p> <p><img src="https://www.granfairs.com/blog/upload/staff-2017-10-26-local-storage-01-06.png" alt=""></p> <h2 id="setitem"><a href="#setitem" class="header-anchor">#</a> setItem()</h2> <p><strong>存入</strong></p> <p>以 **键值对 **的形式存入</p> <blockquote><p>localStorage.<strong>setItem(key,value)</strong></p></blockquote> <p>其中的 <code>key</code> 和 <code>value</code> 值都必须是<strong>字符串形式</strong></p> <p>数字形式会被隐式转换为字符串形式</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
   localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'str'</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
@@ -145,11 +133,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// Andy</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'obj'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 28</span>
-</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
-      ←
-      <a href="/vuepress-studynotes/guide/" class="prev">
-        Guide List
-      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/vuepress-studynotes/assets/js/app.8a208b05.js" defer></script><script src="/vuepress-studynotes/assets/js/2.cb5dfabd.js" defer></script><script src="/vuepress-studynotes/assets/js/31.598f250d.js" defer></script>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d02b5cb6.js" defer></script><script src="/assets/js/2.3ac227d8.js" defer></script><script src="/assets/js/29.06b1337e.js" defer></script>
   </body>
 </html>
