@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hooks | BlaxBerry</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Chen's Program Study Note">
+    
+    <link rel="preload" href="/vuepress-studynotes/assets/css/0.styles.6ab362df.css" as="style"><link rel="preload" href="/vuepress-studynotes/assets/js/app.4e165c53.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/2.4e3782e5.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/38.f356dc6a.js" as="script"><link rel="prefetch" href="/vuepress-studynotes/assets/js/10.358c7aa7.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/11.b97b6f36.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/12.1f5359c5.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/13.768bc392.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/14.2f0138e9.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/15.ba698604.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/16.e5fe222d.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/17.03453cce.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/18.f7d5e745.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/19.1a911a90.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/20.c0f59506.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/21.44320d2b.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/22.ff5cbb2f.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/23.931b287f.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/24.b3401fa5.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/25.c1892c37.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/26.890e06d2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/27.2543616b.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/28.5100ae39.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/29.32f44748.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/3.c52a9118.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/30.f38fa2c4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/31.a23bd8a2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/32.65c07fa4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/33.350f4e9c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/34.eee94a3d.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/35.c45c0c2c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/36.2d3358bd.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/37.0481104a.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/39.f898c6cb.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/4.eae2ed54.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/40.a7fcab87.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/41.b30e72bc.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/42.f3e73b2e.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/43.36f237b4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/44.21757e15.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/45.77a7e8cf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/46.4fc3a278.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/47.192286a4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/48.e8acceed.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/49.7fa5f633.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/5.f5d2ae05.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/50.d5c1d478.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/51.02ca386c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/52.282937e1.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/53.56494b40.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/54.fdae74c7.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/55.65f9a464.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/56.f92f9840.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/57.8711f069.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/6.8bf2eab4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/7.1c9e1e68.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/8.0587de54.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/9.70e4b891.js">
+    <link rel="stylesheet" href="/vuepress-studynotes/assets/css/0.styles.6ab362df.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-studynotes/" class="home-link router-link-active"><!----> <span class="site-name">BlaxBerry</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-studynotes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="https://blaxberry.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Portfolio
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/BlaxBerry/vuepress-studynotes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-studynotes/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="https://blaxberry.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Portfolio
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/BlaxBerry/vuepress-studynotes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Hooks</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-studynotes/notes/React/Hooks.html#state-hook" class="sidebar-link">State Hook</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/React/Hooks.html#react-usestate" class="sidebar-link">React.useState()</a></li></ul></li><li><a href="/vuepress-studynotes/notes/React/Hooks.html#effect-hook" class="sidebar-link">Effect Hook</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/React/Hooks.html#react-useeffect" class="sidebar-link">React.useEffect()</a></li></ul></li><li><a href="/vuepress-studynotes/notes/React/Hooks.html#ref-hook" class="sidebar-link">Ref Hook</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/React/Hooks.html#react-useref" class="sidebar-link">React.useRef()</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="hooks"><a href="#hooks" class="header-anchor">#</a> Hooks</h1> <p>React16.8之前时，函数式组件因为没有this，只可以接收props，无法使用组件的state和生命周期函数，所以比起函数组件用的更多的是类组件</p> <p>但，<strong>React16.8+ 提出了 Hooks</strong></p> <ul><li>State Hook</li> <li>Effect Hook</li> <li>Ref Hook</li></ul> <p>使函数式组件也可以使用state状态和生命周期</p> <h2 id="state-hook"><a href="#state-hook" class="header-anchor">#</a> State Hook</h2> <h3 id="react-usestate"><a href="#react-usestate" class="header-anchor">#</a> React.useState()</h3> <p>函数组件本没有状态state也无法修改状态</p> <p>通过 React.useState()，使函数组件也拥有状态state也可修改该状态</p> <div class="language-react extra-class"><pre class="language-text"><code>function Demo(props){
+  
+  const [状态, 状态处理函数] = React.useSate(状态初始值)
+  
+  // 状态处理函数的使用
+  // 修改后的新状态不依赖原状态
+  function 方法(){
+    状态处理函数(新状态)
+  }
+  
+  // 状态处理函数使用
+  // 修改后的新状态依赖原状态
+  function 方法(){
+    状态处理函数((旧状态)=&gt; {return 处理 旧状态 后的新状态})
+    // 简写
+    状态处理函数((旧状态)=&gt; 处理 旧状态 后的新状态)
+  }
+  
+}
+</code></pre></div><blockquote><p>State Hook 补充：</p> <p>第一步调用useState()创建的状态会被缓存到函数内部,并不是每次函数调用都初始化状态,这是有React做的底层处理，后面可以放心使用</p></blockquote> <hr> <h4 id="例子"><a href="#例子" class="header-anchor">#</a> 例子</h4> <ul><li>修改后的新状态不依赖原状态</li></ul> <div class="language-react extra-class"><pre class="language-text"><code>import React from 'react'
+function FunComponent() {
+
+    const [name,setName] = React.useState('andy')
+
+    const changeName = () =&gt; { setName('Tom') }
+
+    return (
+        &lt;div&gt;
+            &lt;h3&gt;{name}&lt;/h3&gt;
+            &lt;button onClick={changeName}&gt;改名&lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><ul><li>修改后的新状态依赖原状态</li></ul> <div class="language-react extra-class"><pre class="language-text"><code>function FunComponent() {
+
+    const [num, setNum] = React.useState(10)
+
+    const addNum = () =&gt; {
+        setNum(num =&gt; num + 1)
+    }
+
+    return (
+        &lt;div&gt;
+            &lt;h3&gt;{num}&lt;/h3&gt;
+            &lt;button onClick={addNum}&gt; +1 &lt;/button&gt;
+				&lt;/div&gt;
+    )
+}
+</code></pre></div><blockquote><p>对比类组件的state修改</p> <div class="language-react extra-class"><pre class="language-text"><code>class classComponent extends Component {
+    state = { num: 0, age: 20 }
+    addNum = () =&gt; {
+        this.setState({ num: this.state.num + 1 })
+    }
+    addAge = () =&gt;{
+      	this.setState({age: this.state.age + 1})
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;{this.state.num}&lt;/h3&gt;
+                &lt;button onClick={this.addNum}&gt;
+                  num+1
+            		&lt;/button&gt;
+            
+            		&lt;h3&gt;{this.state.age}&lt;/h3&gt;
+            		&lt;button onClick={this.addAge}&gt;
+                  age+1
+            		&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre></div></blockquote> <h2 id="effect-hook"><a href="#effect-hook" class="header-anchor">#</a> Effect Hook</h2> <h3 id="react-useeffect"><a href="#react-useeffect" class="header-anchor">#</a> React.useEffect()</h3> <p>函数组件中本没有生命周期</p> <p>使用React.useEffect()使函数组件可使用生命周期来发送Ajax和订阅发布</p> <p>useEffect Hook可看作3个生命周期的综合：</p> <ul><li><strong>componentDidMount</strong></li> <li>componentDidUpdate</li> <li><strong>componentWillMount</strong></li></ul> <p>可设定检查的状态来决定</p> <p>是 <strong>componentDidMount</strong> 还是 componentDidUpdate</p> <div class="language-react extra-class"><pre class="language-text"><code>// 检测所有状态的改变
+// 除了组件加载时执行一次，后面只要有状态变化就执行
+React.useEffect(() =&gt; {
+	console.log('执行了');
+})
+
+// 谁都不检测，组件加载时也不执行
+React.useEffect(() =&gt; {
+	console.log('执行了');
+}, [])
+
+// 只检测指定状态
+// 除了组件加载时执行一次，后面只要指定状态改变时就执行
+React.useEffect(() =&gt; {
+	console.log('执行了');
+}, [指定状态])
+</code></pre></div><p>至于 <strong>componentWillMount</strong>生命周期</p> <p>需要让 React.useEffect() return 返回一个函数，</p> <p>这个函数就相当于componentWillMount</p> <div class="language-js extra-class"><pre class="language-js"><code>React<span class="token punctuation">.</span><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	xxx<span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'相当于componentDidMount生命周期'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>但是综上，虽然可以使函数组件使用生命周期，</p> <p>但是看起来不是很直观，略显麻烦</p> <p>至于生命周期还是建议类组件</p> <h4 id="例子-2"><a href="#例子-2" class="header-anchor">#</a> 例子</h4> <p>在函数组件，开启一个记时器，并设定在组件卸载后清除定时器</p> <p>计时器是以自己为准，若不设定检测的状态，会因为其他状态state的数据有变化就重复调用，导致计时器以指数级别增加，所以不但要设定检查状态，还要设定为谁也不检测，即【】</p> <div class="language-react extra-class"><pre class="language-text"><code>import React from 'react'
+import ReactDom from 'react-dom';
+
+function FunComponent() {
+    const [num, setNum] = React.useState(0)
+
+    React.useEffect(() =&gt; {
+      
+        let timer = setInterval(() =&gt; {
+            setNum(num =&gt; num + 1)
+        }, 1000);
+        return () =&gt; {
+            clearInterval(timer)
+        }
+    }, [])
+
+    const unmount = () =&gt; {
+        ReactDom.unmountComponentAtNode(document.getElementById('root'))
+    }
+
+    return (
+        &lt;div&gt;
+            &lt;h3&gt;{num}&lt;/h3&gt;
+            &lt;button onClick={unmount}&gt;
+              卸载组件
+        		&lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><blockquote><p>对比类组件中，生命周期中的定时器控制状态自增长</p> <div class="language-react extra-class"><pre class="language-text"><code>import React, { Component } from 'react'
+import ReactDom from 'react-dom';
+
+class classComponent extends Component {
+    state = { num: 0 }
+
+    componentDidMount() {
+        this.timer = setInterval(() =&gt; {
+            this.setState({ num: this.state.num + 1 })
+        }, 1000);
+    }
+
+    componentWillUnmount(){clearInterval(this.timer)}
+
+    unmount(){
+        ReactDom.unmountComponentAtNode(document.getElementById('root'))
+    }
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;{this.state.num}&lt;/h3&gt;
+                &lt;button onClick={this.unmount}&gt;卸载组件&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre></div></blockquote> <h2 id="ref-hook"><a href="#ref-hook" class="header-anchor">#</a> Ref Hook</h2> <h3 id="react-useref"><a href="#react-useref" class="header-anchor">#</a> React.useRef()</h3> <p>通过Ref Hook 使函数组件可获取元素节点并非受控组件的方式操作元素上的数据，通过类似React.createRef()</p> <p>如下：获取 input元素的value输入值</p> <div class="language-react extra-class"><pre class="language-text"><code>function FunComponent() {
+
+    const myRef = React.useRef()
+
+    const show = () =&gt; {
+        console.log(myRef.current.value);
+    }
+
+    return (
+        &lt;div&gt;
+            &lt;input type=&quot;text&quot; ref={myRef} /&gt;
+            &lt;button onClick={show}&gt;show&lt;/button&gt;
+        &lt;/div&gt;
+    )
+}
+</code></pre></div><blockquote><p>类比 类组件中的ref</p> <div class="language-react extra-class"><pre class="language-text"><code>class classComponent extends Component {
+
+    myRef = React.createRef()
+
+    show = () =&gt; {
+        console.log(this.myRef.current.value);
+    }
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;input type=&quot;text&quot; ref={this.myRef} /&gt;
+                &lt;button onClick={this.show}&gt;show&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre></div></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/9/2021, 11:17:19 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress-studynotes/assets/js/app.4e165c53.js" defer></script><script src="/vuepress-studynotes/assets/js/2.4e3782e5.js" defer></script><script src="/vuepress-studynotes/assets/js/38.f356dc6a.js" defer></script>
+  </body>
+</html>
