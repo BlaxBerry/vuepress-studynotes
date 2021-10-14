@@ -22,7 +22,7 @@ React16.8之前时，函数式组件因为没有this，只可以接收props，�
 
 通过 React.useState()，使函数组件也拥有状态state也可修改该状态
 
-```react
+```jsx
 function Demo(props){
   
   const [状态, 状态处理函数] = React.useSate(状态初始值)
@@ -54,7 +54,7 @@ function Demo(props){
 
 - 修改后的新状态不依赖原状态
 
-```react
+```jsx
 import React from 'react'
 function FunComponent() {
 
@@ -73,7 +73,7 @@ function FunComponent() {
 
 - 修改后的新状态依赖原状态
 
-```react	
+```jsx	
 function FunComponent() {
 
     const [num, setNum] = React.useState(10)
@@ -93,7 +93,7 @@ function FunComponent() {
 
 > 对比类组件的state修改
 >
-> ```react
+> ```jsx
 > class classComponent extends Component {
 >     state = { num: 0, age: 20 }
 >     addNum = () => {
@@ -146,7 +146,7 @@ useEffect Hook可看作3个生命周期的综合：
 
 是 **componentDidMount** 还是 componentDidUpdate
 
-```react
+```jsx
 // 检测所有状态的改变
 // 除了组件加载时执行一次，后面只要有状态变化就执行
 React.useEffect(() => {
@@ -195,7 +195,7 @@ React.useEffect(() => {
 
 计时器是以自己为准，若不设定检测的状态，会因为其他状态state的数据有变化就重复调用，导致计时器以指数级别增加，所以不但要设定检查状态，还要设定为谁也不检测，即【】
 
-```react
+```jsx
 import React from 'react'
 import ReactDom from 'react-dom';
 
@@ -229,7 +229,7 @@ function FunComponent() {
 
 > 对比类组件中，生命周期中的定时器控制状态自增长
 >
-> ```react
+> ```jsx
 > import React, { Component } from 'react'
 > import ReactDom from 'react-dom';
 > 
@@ -273,7 +273,7 @@ function FunComponent() {
 
 如下：获取 input元素的value输入值
 
-```react
+```jsx
 function FunComponent() {
 
     const myRef = React.useRef()
@@ -293,7 +293,7 @@ function FunComponent() {
 
 > 类比 类组件中的ref
 >
-> ```react
+> ```jsx
 > class classComponent extends Component {
 > 
 >     myRef = React.createRef()

@@ -166,7 +166,7 @@ root容器中只放一个组件，即 App.js
 
 相当于Vue的**main.js**
 
-```react
+```jsx
 // 引入核心库
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -209,7 +209,7 @@ src
 
 index.js
 
-```react
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
@@ -223,7 +223,7 @@ ReactDOM.render(
 
 App.js
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 import Hello from './components/Hello/Hello'
@@ -244,7 +244,7 @@ export default class App extends Component {
 
 Hello.js
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 import './Hello.css'
@@ -305,7 +305,7 @@ src
 
 自定义组件在主组件App.js文件中的引入时的路径和写法不变
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 import Hello from './components/Hello/Hello'
@@ -345,7 +345,7 @@ src
 
 在主组件App.js中引入时可以简写
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 import Hello from './components/Hello'
@@ -393,7 +393,7 @@ src
 
 再使用样式的节点上通过“该模块的类名”设置类名样式
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 import hello from './Hello.module.css'

@@ -2281,7 +2281,7 @@ require_relative 'test.rb'
 
 require_relative 是以当前文件为基准，**相对路径**
 
-```rbuy
+```ruby
 xxx
 |- 02
 		|- 02.rb

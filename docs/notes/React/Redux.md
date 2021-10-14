@@ -312,7 +312,7 @@ componentDidMount(){
 
 借助diff，监听Redux状态只要发生改就重新渲染用到了该状态的组件
 
-```react
+```jsx
 store.subscribe(()=>{
   ReactDOM.render(<App/>, doucment.getElementDyId('root'))
 })

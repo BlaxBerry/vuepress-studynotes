@@ -16,7 +16,7 @@ npm i react-router-dom
 
 导入项目
 
-```react
+```jsx
 import {BrowserRouter as Router} from 'react-router-dom';
 ```
 
@@ -32,7 +32,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 整个项目只会使用Router组件一次
 
-```react
+```jsx
 ReactDOM.render(
   <Router>
     	<App/>
@@ -69,7 +69,7 @@ Router组件 分为两类：
 
 路由内部会对URL地址与path指定的URL进行匹配，符合规则才会展示对应组件，详见 路由的两种 [匹配模式]()
 
-```react
+```jsx
 ReactDOM.render(
   <Router>
     <App>
@@ -105,7 +105,7 @@ ReactDOM.render(
 - Route
 - Link
 
-```react
+```jsx
 import {
   BrowserRouter as Router,
   Route,
@@ -123,7 +123,7 @@ import {
 
 Link组件最终被解析为 a标签，to属性被解析为href属性
 
-```react
+```jsx
 <Link to="/first">页面一</Link>
 <Link to="/second">页面二</Link>
 <Link to="/third">页面三</Link>
@@ -139,7 +139,7 @@ Link组件最终被解析为 a标签，to属性被解析为href属性
 
 - **component 属性** 即URL地址对应展示的组件
 
-```react
+```jsx
 ReactDOM.render(
   <Router>
     <div>
@@ -160,7 +160,7 @@ ReactDOM.render(
 
 ### 全貌
 
-```react
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -276,7 +276,7 @@ First页面和Second页面中各有一个button按钮，
 
 点击后分别跳转到对应的URL，然后展现对应的组件内容到页面
 
-```react
+```jsx
 class First extends React.Component {
   goSecond = () => {
     // console.log(this.props);
@@ -366,7 +366,7 @@ this.props.history.go(-1)	// 根据访问记录后退一页
 
 **Route组件匹配路由规则为 / 并展示对应的组件**
 
-```react
+```jsx
  <Route path="/" component={ 默认展示的组件} />
 ```
 
@@ -374,7 +374,7 @@ this.props.history.go(-1)	// 根据访问记录后退一页
 
 页面没有展示内容
 
-```react
+```jsx
 class Home extends React.Component {
   render() {
     return (
@@ -395,7 +395,7 @@ ReactDOM.render(
 
 匹配路由规则为 **/** 之后，首页显示Home组件内容
 
-```react
+```jsx
 class Home extends React.Component {
   render() {
     return (
@@ -455,7 +455,7 @@ Route组件匹配规则path属性设置的值都是以 / 开头，
 
 并按照Route组件的定义顺序展现
 
-```react
+```jsx
 class Home extends React.Component {
   render() {
     return (
@@ -509,7 +509,7 @@ ReactDOM.render(
 
 依然可以匹配上父路由 /first 对应的组件
 
-```react
+```jsx
 class Login extends React.Component {
   render() {
     return (
@@ -543,7 +543,7 @@ ReactDOM.render(
 
 可以**对默认路由进行精确匹配**，仅在Route组件的匹配规则path属性值与URL地址完全一致时，才展示默认路由对应组件
 
-```react
+```jsx
 /
 
 <Route exact path="/" component={First} />
@@ -553,7 +553,7 @@ ReactDOM.render(
 
 通过exact属性，使默认路由对应的组件仅在URL地址为 / 使显示
 
-```react
+```jsx
 class Home extends React.Component {
   render() {
     return (
@@ -600,7 +600,7 @@ ReactDOM.render(
 
 页面加载时，所有路由组件都被引入页面中了
 
-```react
+```jsx
 import Component01 from './Component01'
 import Component02 from './Component02'
 ```
@@ -611,7 +611,7 @@ import Component02 from './Component02'
 
 如下： 
 
-```react
+```jsx
 import { lazy, Suspense } from 'react';
 
 
@@ -647,7 +647,7 @@ const Component02 = lazy(()=> impor'./Component02');
 
 可使用withRouter方法将一般组件转换为路由组件
 
-```react
+```jsx
 import { withRouter } from 'react-router';
 
 function demo(props){

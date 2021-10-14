@@ -103,7 +103,7 @@ React对Javascript基础要求高
 - babel.js
 - prop-types.js
 
-```react
+```jsx
 <body>
   <!-- 创建容器 -->  
     <div id="root"></div>
@@ -157,13 +157,13 @@ React对Javascript基础要求高
 
 需要通过`React.createElement()`创建虚拟DOM
 
-```react
+```jsx
 React.createElement(component, props, ...children)
 ```
 
 繁琐，代码量太多
 
-```react
+```jsx
 <body>
   <!-- 创建容器 -->  
     <div id="root"></div>
@@ -232,7 +232,7 @@ ReactDOM.render(
 
 可以理解为原生JS的语法糖
 
-```react
+```jsx
 <body>
     <!-- 创建容器 -->
     <div id="root"></div>
@@ -340,7 +340,7 @@ JSX并不是创建HTML标签，而是将虚拟DOM转换为HTML标签
 
   - 若不存在该组件则报错
 
-```react
+```jsx
 const VDOM = (
   <div>
     
@@ -438,7 +438,7 @@ JSX创建虚拟DOM时，如果插入的JS表达式是个数组
 
 React会自动把所有元素遍历出
 
-```react
+```jsx
 const data = ["Reacr", "Vue", "angular"]; 
 
 ReactDOM.render(
@@ -545,7 +545,7 @@ ReactDOM.render(
 
 #### 实例：
 
-```react
+```jsx
 export default class List extends Component {
 
     state = {
@@ -665,7 +665,7 @@ map有一个return返回值返回一个新数组
 
 可理解为简化版的 forEach() 拼接字符串（但是正经人不会用这个）
 
-```react
+```jsx
 const data = ["Reacr", "Vue", "angular"]; 
 
 ReactDOM.render(
@@ -763,7 +763,7 @@ index也会可以作为key属性的
 
 并需要驼峰命名法
 
-```react
+```jsx
 ReactDOM.render(
 	<div style={{
       color: 'orangered',
@@ -793,7 +793,7 @@ ReactDOM.render(
 
 并需要驼峰命名法
 
-```react
+```jsx
 import "./style/01.css";
 
 ReactDOM.render(

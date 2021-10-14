@@ -12,7 +12,7 @@ module.exports = {
         ],
         sidebar: 'auto',
         sidebarDepth: 4,
-        displayAllHeaders: true,
+        collapsable: true,
         activeHeaderLinks: true,
         lastUpdated: 'Last Updated',
         nextLinks: true,

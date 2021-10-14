@@ -23,7 +23,7 @@
 
   若不需要返回值，也要写上null，不会渲染任何内容
 
-```react
+```jsx
 const HelloComponent = () => (
   	<div>Hello Component</div>
   )
@@ -38,7 +38,7 @@ const NullComponent = () => null
 
 可以双标签，可以单标签
 
-```react
+```jsx
 ReactDOM.render(
   <div>
 
@@ -73,7 +73,7 @@ ReactDOM.render(
 
 同函数组件一样，若不想返回JSX结构就返回一个null（正经人不会这么做）
 
-```react
+```jsx
 import React from 'react';
 
 class Hello extends React.Component {
@@ -93,7 +93,7 @@ class Hello extends React.Component {
 
 可以双标签，可以单标签
 
-```react
+```jsx
 ReactDOM.render(
   <div>
 
@@ -114,7 +114,7 @@ ReactDOM.render(
 
 - 每个组件必须要被 **export default导出**，以供其他使用
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -130,7 +130,7 @@ export default class Hello extends Component {
 
 使用时，import导入组件的文件后使用该组件
 
-```react
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -167,7 +167,7 @@ ReactDOM.render(
 
 关于props属性 详见 [props]()
 
-```react
+```jsx
 class App extends React.Component {
   render() {
     console.log(this.props);	// {}
@@ -185,7 +185,7 @@ ReactDOM.render(
 
 有children属性
 
-```react
+```jsx
 class App extends React.Component {
   render() {
     console.log(this.props);	
@@ -229,7 +229,7 @@ on事件名称 = { 处理函数 }
 on事件名称 = { this.类组件的方法 }
 ```
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -259,11 +259,11 @@ export default class Hello extends Component {
 
 #### 函数组件
 
-```react
+```jsx
 on事件名称 = { 函数组件的方法 }
 ```
 
-```react
+```jsx
 const Hello = () => {
   function click() {
     console.log('Clicked');
@@ -308,7 +308,7 @@ on事件名称 = { 方法() }
 
 不用通过虚拟DOM节点调用事件时传入，事件定义时就可获取
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -335,7 +335,7 @@ React的已经封装好，事件对象兼容任意浏览器
 
 如下：阻止a连接的跳转行为
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -382,7 +382,7 @@ export default class Hello extends Component {
 
 类方法中 this指向 **undefined**（babel严格模式导致不指向window），并不是指向类自己本身，如下：
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -431,7 +431,7 @@ export default class Hello extends Component {
 >
 > 所以此时方法中的this是指向当前类，即可以对当前类进行操作
 
-```react
+```jsx
 import React, { Component } from 'react'
 export default class Hello extends Component {
 
@@ -465,7 +465,7 @@ export default class Hello extends Component {
 
 可在每次虚拟DMO调用方法时修改指向
 
-```react
+```jsx
 export default class Hello extends Component {
 
     fn() {
@@ -486,7 +486,7 @@ export default class Hello extends Component {
 
 或，预先在类组件的constructor构造器中定义该方法的指向
 
-```react
+```jsx
 export default class Hello extends Component {
 
     constructor(){
@@ -525,7 +525,7 @@ export default class Hello extends Component {
 
 **也是推荐的做法**
 
-```react
+```jsx
 export default class Hello extends Component {
 
     fn = () => {
@@ -605,7 +605,7 @@ state定义在类组件的 **constructor构造函数中**
 
 #### 构造函数中
 
-```react
+```jsx
 constructor() {
   super();
   
@@ -618,7 +618,7 @@ constructor() {
 
 如下：
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -645,7 +645,7 @@ export default class Hello extends Component {
 
 也可以使用ES6的属性转化语法，简写：
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -670,7 +670,7 @@ export default class Hello extends Component {
 
 setState() 自动实现了state状态的修改，然后自动渲染页面更新UI（数据驱动视图）
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -695,13 +695,13 @@ export default class Hello extends Component {
 
 以对象的键值对形式写入要修改的数据和修改后的值
 
-```react
+```jsx
 this.setState({
   state中的数据: 修改后的值
 })
 ```
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -734,7 +734,7 @@ JSX 结构主要是展示视图，逻辑处理最好单独放入类方法
 
 详见 [修改 this指向 的3种方法]()
 
-```react
+```jsx
 import React, { Component } from 'react'
 
 export default class Hello extends Component {
@@ -788,7 +788,7 @@ change=()=>{
 
 该回调函数在状态更新完毕切页面渲染完毕后才会被调用
 
-```react
+```jsx
 this.setState({state中数据: 修改后的值}, [callback] )
 ```
 
@@ -894,7 +894,7 @@ React中有两种表单处理的方式：
 <input type="text" value=""/>
 ```
 
-```react
+```jsx
 export default class Hello extends Component {
 
     state = {
@@ -934,7 +934,7 @@ export default class Hello extends Component {
 <textarea value=""></textarea>
 ```
 
-```react
+```jsx
 export default class Hello extends Component {
 
     state = {
@@ -974,7 +974,7 @@ export default class Hello extends Component {
 </select>
 ```
 
-```react
+```jsx
 export default class Hello extends Component {
 
     state = {
@@ -1009,7 +1009,7 @@ export default class Hello extends Component {
 
 通过this.state.属性、onChange事件、this.setState() 来控制表单check属性
 
-```react
+```jsx
 export default class Hello extends Component {
 
     state = {
@@ -1048,7 +1048,7 @@ export default class Hello extends Component {
 
   将组件状态state中的数据分名别和表单value/checked属性的值统一
 
-```react
+```jsx
 export default class Hello extends Component {
 
     state = {
@@ -1115,7 +1115,7 @@ export default class Hello extends Component {
 
 这是通过操作DMO的方式获取数据，React更推荐的还是受控组件的方式
 
-```react
+```jsx
 export default class Hello extends Component {
     constructor(){
         super()
@@ -1166,7 +1166,7 @@ export default class Hello extends Component {
 
 除了字符串类型的数据可直接传入以外，其余数据表达式需要使用 **{ }** 
 
-```react
+```jsx
 <Father>
 		<Son 
     	name = "andy"
@@ -1194,7 +1194,7 @@ props属性在子组件内是只读属性，不能被修改
 
 作为函数组件的参数
 
-```react
+```jsx
 function Son(props) {
   
   console.log(props);		//{name="andy",age:29}
@@ -1226,7 +1226,7 @@ ReactDOM.render(
 
 在类组件中通过 **this.props **获取父组件传入的数据
 
-```react
+```jsx
 class Son extends React.Component {
   
   render() {
@@ -1258,7 +1258,7 @@ ReactDOM.render(
 
 否则无法在该类组件中使用props属性，props会成为undefined
 
-```react
+```jsx
 class Son extends React.Component {
   constructor(props){
     super(props)
@@ -1294,7 +1294,7 @@ ReactDOM.render(
 
 比如分页组件，默认的每页显示条数
 
-```react
+```jsx
 组件名.defaultProps = {
   属性: 值
 }
@@ -1304,7 +1304,7 @@ ReactDOM.render(
 
 即使没有给Demo组件传入数值，依然能获取数据
 
-```react
+```jsx
 class Demo extends React.Component {
   render() {
     return (
@@ -1338,7 +1338,7 @@ ReactDOM.render(
 
 优先以传入的为准，最后渲染到页面的是tommy 16	
 
-```react
+```jsx
 class Demo extends React.Component {
   render() {
     return (
@@ -1379,7 +1379,7 @@ ReactDOM.render(
 
 原本需要数据类型是个数组，但是传入了一个数值，于是报错
 
-```react
+```jsx
 class Demo extends React.Component {
   render() {
     return (
@@ -1446,7 +1446,7 @@ import PropTypes from "prop-types"
 
    给指定组件的指定数据们添加校验规则
 
-```react
+```jsx
 组件名.propTypes = {
   数据名: PropTypes.数据类型
 }
@@ -1478,7 +1478,7 @@ string
 
    如下：
 
-```react
+```jsx
 import PropTypes from "prop-types"
 
 class Demo extends React.Component {
@@ -1544,7 +1544,7 @@ context也是组件实例上的一个属性，
 
    并通过 **value** 传递数据
 
-   ```react
+   ```jsx
    <XxxContext.Provider value={ 数据 }>
    		<后代组件/>
    </XxxContext.Provider>
@@ -1641,7 +1641,7 @@ class Child2 extends React.Component {
 
    并通过 **value** 传递数据
 
-   ```react
+   ```jsx
    <XxxContext.Provider value={ 数据 }>
    		<后代组件/>
    </XxxContext.Provider>
@@ -1671,7 +1671,7 @@ class Child2 extends React.Component {
 
 如下：
 
-```react
+```jsx
 const { Provider, Consumer } = React.createContext()
 
 class Father extends React.Component {
@@ -1826,7 +1826,7 @@ const Child2 = props => {
 
 父组件内接收到并通过setState存入自身的状态，完成子传父
 
-```react
+```jsx
 class Son extends React.Component {
   state = {
     name: 'andy'
@@ -1884,7 +1884,7 @@ class Father extends React.Component {
 
 3. 子组件通过props接受状态和操作方法
 
-```react
+```jsx
 class Father extends React.Component {
   state = {
     num: 100
@@ -1986,7 +1986,7 @@ Redux
 2. **render()** ——>
 3. **componentDidMount()**
 
-```react
+```jsx
 class Demo extends React.Component {
   constructor(){
     super()
@@ -2044,7 +2044,7 @@ class Demo extends React.Component {
 2. **componentDidMount**
 3. **render** \* N
 
-```react
+```jsx
 class Demo extends React.Component {
 
   state = { num: 0 }
@@ -2116,7 +2116,7 @@ class Demo extends React.Component {
 1. 抽离公共状态
 2. 抽离公共UI
 
-```react
+```jsx
 <组件
   	render={ (公共状态) => (
   		使用了公共状态的公共JSX结构
@@ -2152,7 +2152,7 @@ HOC
 
 ( Fragment在遍历时也可加上唯一标识 key属性 )
 
-```react
+```jsx
 import React, { Fragment } from 'react';
 
 class Demo extends Component {

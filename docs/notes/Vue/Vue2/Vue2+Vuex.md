@@ -1,6 +1,6 @@
 # VueX
 
-<img src="https://ichi.pro/assets/images/max/724/1*kCXAQpCAX2PGtWAjVKEUow.jpeg" style="zoom: 50%;" />
+<img src="https://ichi.pro/assets/images/max/724/1*kCXAQpCAX2PGtWAjVKEUow.jpeg"  />
 
 集中管理组件之间的共享的数据。
 
