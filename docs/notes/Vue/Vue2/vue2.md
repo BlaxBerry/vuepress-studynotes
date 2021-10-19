@@ -2248,6 +2248,123 @@ export default {
 
 
 
+
+## ref 属性
+
+在Vue中直接操作DOM不符合前端框架数据驱动的思想
+
+所以Vue提供了ref属性来**获取元素或组件的信息**（可视作id的代替者）
+
+::: warning 操作DOM，通过ID获取DOM节点信息（不推荐）
+```vue
+<template>
+	<div>
+ 		<div id="target">Hello</div>
+ 		<button @click="getDOM">获取目标DOM</button>
+	</div>
+</template>
+
+<script>
+export default {
+  methods: {
+    getDOM() {
+      console.log(document.getElementById("target"));
+    },
+  }
+};
+</script>
+```
+:::
+
+
+
+
+### 标识目标 
+
+```vue
+<div ref="自定义名"></div>
+
+<组件 ref="自定义名"></组件>
+```
+
+::: tip ref属性可标识一般元素标签或子组件：
+
+- 绑定元素标签：获取的是**DOM元素节点**
+
+- 绑定组件：获取的是**组件实例对象**
+
+:::
+
+
+### 获取信息
+
+标识的元素或组件的信息被存到了**父组件的实例对象**上
+
+通过父组件的 `$refs` 对象获取表示的信息
+
+```js
+this.$refs.自定义名
+```
+
+
+### 实例
+
+因为可通过`ref` + `$refs `获取子组件的实例对象，
+
+因此可直接调用子组件上的方法或获取数据
+
+```vue
+<template>
+  <div>
+    <div ref="td1">No1</div>
+    <div ref="td2">No2</div>
+    <Component ref="vc"/>
+
+    <button @click="getDOM">获取目标DOM</button>
+    <button @click="childSay">调用子组件方法</button>
+  </div>
+</template>
+
+<script>
+import Component from './components/Component.vue'
+export default {
+  components:{ Component },
+  
+  methods: {
+    getDOM() {
+      console.log(this.$refs.td1);
+      console.log(this.$refs.td2);
+    },
+    say(){
+      this.$refs.vc.sayHello()
+    }
+  },
+};
+</script>
+```
+
+```vue
+<template>
+  <div>Child Component</div>
+</template>
+
+<script>
+export default {
+  methods: {
+    sayHello() {
+      console.log("hello");
+    },
+  },
+};
+</script>
+```
+
+
+
+
+
+
+
 ## 生命周期（生命周期钩子）
 
 [生命周期钩子 官方文档](https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)

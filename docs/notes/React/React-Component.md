@@ -1,13 +1,21 @@
+# React 组件化开发
+
+![](https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2019/07/react.jpg)
+
+
+[[toc]]
+
 ## 组件创建
 
-有两种常见组件的方式：
+::: tip 创建件的两种方式
 
-- 函数创建（**函数组件**）
-- 类创建（**类组件**）
+- **函数创建：函数组件**
+- **类创建：类组件**<br>
+  相当于创建JS的[Class类]('../Javascript/ES6+/Class.md)
 
-> 类组件的创建的组件相当于创建JS的类，
->
-> 详见 [ JavaScript Class类]()
+:::
+
+
 
 
 

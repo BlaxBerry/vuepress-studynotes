@@ -16,11 +16,13 @@
 
 [Vue2 基础](./Vue2/vue2.md)
 
-[Vue2 + Vue-Cli 组件化开发](./Vue2/s)
+[Vue2 组件化开发：Vue-Cli](./Vue2/ComponentsDevelopment.md)
 
-[Vue2 + Vue-Router](./Vue2/Vue2+Vue-Router.md)
+[Vue2 脚手架：Vue-Cli](./Vue2/Vue2+Vue-Cli.md)
 
-[Vue2 + Vuex](./Vue2/Vue2+Vuex.md)
+[Vue2 路由：Vue-Router](./Vue2/Vue2+Vue-Router.md)
+
+[Vue2 集中状态管理：Vuex](./Vue2/Vue2+Vuex.md)
 
 ## Vue3
 
@@ -58,6 +60,3 @@
 [Vue.js 性能优化技巧 —— 9 Performance Secrets Revealed](./extra-01.md)
 :::
 
-::: tip <h3>Vue 的常用插件（VSCode）</h3>
-Vue3 Snippets(Vue3 代码片段)
-:::

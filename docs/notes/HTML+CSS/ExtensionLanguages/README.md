@@ -10,9 +10,42 @@
 
 [Less 基础](./Less.md)
 
-[Vue-Cli + Less]()
+::: tip <h3>Vue-Cli + Less</h3>
+vue-cli 生成项目时勾选 CSS Pre-processors (CSS 预处理器)
 
-[Create-React-App + Less]()
+**1. 组件中使用**
+```vue
+<style lang="less" scoped></style>
+
+<!-- 删除scoped 全局范围内生效 -->
+<style lang="less"></style>
+```
+
+**2. 组件中/Scss 文件中导入**
+
+```scss
+@import "../src/static/common.less";
+```
+
+**3. main.js 中导入**
+
+```js
+import "./static/common.less";
+```
+
+若生成项目时没配置，需要安装 `less` 和 `less-loader`
+
+但直接安装`less-loader`会报错，因为Vue-Cli4采用的是`webpack4`，而直接安装的`less-loader`的最新版本是面向`webpack5+`，所以需要给`less-loader`降级，建议版本7
+
+```npm
+npm i less-loader@7.0.0
+```
+因为修改了配置文件，需要重起脚手架
+:::
+
+::: tip <h3>Create-React-App + Less</h3>
+
+:::
 
 ## Sass
 
@@ -30,13 +63,13 @@ vue-cli 生成项目时勾选 CSS Pre-processors (CSS 预处理器)
 <style lang="scss"></style>
 ```
 
-**2. 组件中/Scss 文件中使用**
+**2. 组件中/Scss 文件中导入**
 
 ```scss
 @import "../src/static/common.scss";
 ```
 
-**3. main.js 中使用**
+**3. main.js 中导入**
 
 ```js
 import "./static/common.scss";
@@ -56,8 +89,6 @@ yarn add sass
 ```
 2. 因为修改了配置文件，需要重起脚手架
 
-
-<br>
 
 > <span style="color:red">Module build failed: TypeError: this.getResolve is not a function</span>
 

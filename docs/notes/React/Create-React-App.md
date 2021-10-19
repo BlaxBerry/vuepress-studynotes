@@ -1,20 +1,14 @@
 # create-react-app 
 
+![](https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2019/07/react.jpg)
+
 React脚手架create-react-app
 
 可以快速创建一个急于React脚手架的模版项目
 
-<img src="https://staging-qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F484272%2F52cfad2d-ef8c-b70d-3aa5-ec79b0576737.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=1bb6e4bac443e2d9d368f6b114b249a2" style="zoom:50%;" />
-
-- 整体技术框架：
-
-  react + **webpack** + ES6 + eslint
-
-- 特点：
-
-  模块化、组件化、工程化
 
 
+[[toc]]
 
 
 
@@ -549,3 +543,77 @@ You may serve it with a static server:
 
 然后开启`  http://localhost:5000    `打开该服务器
 
+
+
+
+
+## 脚手架配置
+
+### Sass 导入
+
+::: danger
+
+Cannot find module 'sass'
+
+:::
+
+React 提前配置了 loader，但是没有配置 Sass 模块，需要手动下载 Sass
+
+1. 下载
+
+```bash
+npm i sass
+# or
+yarn add sass
+```
+
+2. 重起脚手架
+
+
+### Proxy 反向代理
+
+后端提供的接口会有跨越问题，需要配置反向代理
+
+React 中有 **http-proxy-middleware** 模块处理代理
+
+1. 下载
+
+```bash
+yarn add http-proxy-middleware
+```
+
+2. 配置 **`src/setupProxy.js`** 文件
+
+
+```js
+const { createProxyMiddleware } = require("http-proxy-middleware");
+
+module.exports = function(app) {
+  app.use(
+    "/api",
+    createProxyMiddleware({
+      target: "http://目标请求地址域名",
+      changeOrigin: true,
+    })
+  );
+};
+```
+
+3. ajax 请求访问 /api
+
+```jsx
+import React, { useEffect } from "react";
+import axios from "axios";
+
+export default function Test() {
+  useEffect(() => {
+    axios.get("/api/xxxxx").then((res) => {
+      console.log(res.data);
+    });
+  }, []);
+
+  return <div></div>;
+}
+```
+
+4. 因为修改了配置文件，要重启脚手架
