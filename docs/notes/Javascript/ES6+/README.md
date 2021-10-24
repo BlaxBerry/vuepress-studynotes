@@ -7,8 +7,10 @@
 ## 基础
 [ES6+基础](./ES6.md)
 
-## Class
-[Class基础](./Class.md)
+## 面向对象
+[ES6 Class类](./Class.md)
+
+[ES5 构造函数](../Constructor-Function.md)
 
 ## Promise
 [Promise](./Promise.md)

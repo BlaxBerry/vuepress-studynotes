@@ -11,16 +11,13 @@
 
 [ES6+](./ES6+/)
 
-[DOM、BOM]()
 
-## JS常用 API
+## 常用 API
 
 [常用 API - Array](./APIs/API-Array.md)
 
 [常用 API - String](./APIs/API-String.md)
 
-## JQuery
-[jQuery]()
 
 ## JS框架
 
