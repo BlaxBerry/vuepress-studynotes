@@ -1,4 +1,4 @@
-## mysql模块 与 MySQL数据库
+# mysql模块
 
 mysql是npm的一个第三方模块
 
@@ -13,7 +13,7 @@ mysql是npm的一个第三方模块
 
 ---
 
-### 安装配置与链接测试
+## 安装配置与链接测试
 
 1. 安装：
 
@@ -24,9 +24,9 @@ npm i mysql
 2. 然后链接数据库需要配置：
    - **host**：数据库IP地址（哪一个电脑上的MySQL数据）
    - **user**：登陆数据库的账号
-   - **password：**登陆数据库的密码
-   - **database：**指定操作的数据库名
-
+   - **password：** 登陆数据库的密码
+   - **database：** 指定操作的数据库名
+ 
 ```js
 // 1. 导入
 const mysql = require('mysql')
@@ -75,7 +75,7 @@ db.query('SELECT 1', (err, res) => {
 
 
 
-### mysql模块查询数据
+## mysql模块查询数据
 
 ```js
 const sqlStr = 'SELECT 字段 FROM 表名';
@@ -150,7 +150,7 @@ db.query(sqlStr, (err, res) => {
 
 
 
-### mysql模块插入数据
+## mysql模块插入数据
 
 1. 先声明要执行的SQL语句字符串，
 2. 然后通过SQL语句的 **? 占位符** 空出数据的具体值
@@ -196,7 +196,7 @@ db.query(sqlStr, [people.name, people.age], (err,res)=>{
 
 ---
 
-#### 简写
+### 简写
 
 若插入的数据对象的**属性**和数据库中的**字段** 是**一一对应**的话
 
@@ -245,7 +245,7 @@ db.query(sqlStr, [people.name, people.age], (err,res)=>{
 
 
 
-### mysql模块更新数据
+## mysql模块更新数据
 
 1. 先声明要执行的SQL语句字符串，
 
@@ -293,7 +293,7 @@ db.query(sqlStr, [people.name, people.age, people.id], (err, res) => {
 
 ---
 
-#### 简写
+### 简写
 
 若插入的数据对象的**属性**和数据库中的**字段** 是**一一对应**的话
 
@@ -338,7 +338,7 @@ db.query(sqlStr, [people, people.id], (err, res) => {
 
 
 
-### mysql模块删除数据
+## mysql模块删除数据
 
 建议使用唯一标识 **id** 来指定删除的数据
 
@@ -378,7 +378,7 @@ db.query(sqlStr, 8, (err, res) => {
 
 ---
 
-#### 标记删除（重要）
+### 标记删除（重要）
 
 因为DELETE会直接从数据表中删除数据，不安全，无法恢复
 

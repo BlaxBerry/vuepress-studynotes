@@ -6,21 +6,26 @@
 [Rails](https://ruby-china.github.io/rails-guides/getting_started.html)
 :::
 
-## Ruby
-[Ruby](./Ruby.md)
+## 基础
 
-[常用API - Array](./API-Array.md)
+[Ruby 基础](./Ruby.md)
 
-[常用API - String](./API-String.md)
+::: tip 常用 API
 
-[常用API - Hash](./API-Hash.md)
+[Array](./API-Array.md)
 
-[常用API - Number](./API-Number.md)
+[String](./API-String.md)
 
+[Hash](./API-Hash.md)
 
-## Rails
-[Ruby on Rails](../notes/Rails/md)
+[Number](./API-Number.md)
 
+:::
+
+## Ruby on Rails
+
+[Ruby on Rails 基础](../notes/Rails/md)
 
 ## Gem
+
 [Gem](../notes/Rails/md)

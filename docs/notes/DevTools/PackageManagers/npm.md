@@ -1,37 +1,27 @@
 # package 和 npm
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png" style="zoom: 33%;" />
-
-
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png)
 
 ## 简介
 
-npm（node package manager）是指，
-
-Node中的第三方模块（包）管理工具
+npm（node package manager）是指，Node 中的第三方模块（包）管理工具
 
 有两种形式：
 
-- JS文件的形式（body-parser）
+- JS 文件的形式（body-parser）
 
-  提供具体功能的API方法函数接口
+  提供具体功能的 API 方法函数接口
 
 - 命令行工具的形式（nodemon）
 
   负责项目开发
-
-
-
-
-
-
 
 ## 安装
 
 ### 安装指定的包
 
 ```bash
-npm install xxxx 
+npm install xxxx
 ```
 
 简写：
@@ -40,7 +30,7 @@ npm install xxxx
 npm i xxxx
 ```
 
-下载的包的名称和版本号会自动记录到package.json的dependencies中
+下载的包的名称和版本号会自动记录到 package.json 的 dependencies 中
 
 ---
 
@@ -78,17 +68,17 @@ npm i moment@2.22.2
 
 项目初次安装包后，会在项目目录下新建
 
-- **node_modules的目录**
+- **node_modules 的目录**
 
   存放所有已经安装到项目中的包
 
   项目中导入第三方模块时，就从这个目录中查找并加载
 
-- **package-lock.json的配置文件**
+- **package-lock.json 的配置文件**
 
   记录每一个包的下载信息（名字、版本号、下载地址）
 
-不要手动修改这两个，npm会自动维护
+不要手动修改这两个，npm 会自动维护
 
 ---
 
@@ -96,7 +86,7 @@ npm i moment@2.22.2
 
 多人协作开发时，项目成员拿到项目源代码后，
 
-应首先下载packegr.json文件中的dependencies节点中记录的该项目所有依赖的包
+应首先下载 packegr.json 文件中的 dependencies 节点中记录的该项目所有依赖的包
 
 ```bash
 npm install
@@ -140,19 +130,9 @@ npm install xxx -g
 npm i nodemon -g
 ```
 
-Windows中全局包会被安装到
+Windows 中全局包会被安装到
 
 C:\User\用户目录\AppData\Roaming npm\node_modules 下
-
-
-
-
-
-
-
-
-
-
 
 ## 卸载
 
@@ -166,7 +146,7 @@ npm uninstall xxx
 npm uninstall moment
 ```
 
-卸载的包的名称和版本号会自动从package.json的dependencies中删除
+卸载的包的名称和版本号会自动从 package.json 的 dependencies 中删除
 
 ---
 
@@ -178,13 +158,7 @@ npm uninstall moment
 npm uninstall xxx -g
 ```
 
-
-
-
-
-
-
-## node_modules文件夹
+## node_modules 文件夹
 
 **node_modules**目录下存放所有已经安装到项目中的包，
 
@@ -196,15 +170,11 @@ npm uninstall xxx -g
 
 上传时应剔除该文件，只需上传项目源代码即可
 
-即，将该目录添加到 **.gitognore文件**中
+即，将该目录添加到 **.gitognore 文件**中
 
 项目成员只是下载项目源代码，
 
-然后通过**npm install** 下载package.json文件中记录的所有依赖的包
-
-
-
-
+然后通过**npm install** 下载 package.json 文件中记录的所有依赖的包
 
 ## package.json 管理配置文件
 
@@ -221,7 +191,7 @@ npm uninstall xxx -g
 
 ### 项目初始化配置
 
-创建了项目文件夹后，应当首先通过` npm init -y`
+创建了项目文件夹后，应当首先通过`npm init -y`
 
 生成**package.json**包管理配置文件
 
@@ -231,13 +201,13 @@ npm init -y
 
 创建的项目只能是英文名，不能出现中文和空格
 
-不然初始化package.json文件是会报错
+不然初始化 package.json 文件是会报错
 
 ---
 
 ### 信息内容
 
-生成的package.json文件内容如下：
+生成的 package.json 文件内容如下：
 
 ```json
 {
@@ -270,25 +240,25 @@ npm init -y
 
 - author：项目作者
 
-- license：项目遵循的协议，默认开放源代码ISC
+- license：项目遵循的协议，默认开放源代码 ISC
 
 ---
 
-### dependencies节点（项目依赖）
+### dependencies 节点（项目依赖）
 
-新创建的package.json文件默认没有dependencies节点
+新创建的 package.json 文件默认没有 dependencies 节点
 
-通过npm install 下载了包后，
+通过 npm install 下载了包后，
 
-npm会自动将包的名称和版本号记录到dependencies节点
+npm 会自动将包的名称和版本号记录到 dependencies 节点
 
 若下载的包在开发和项目上线后都需要用到（**项目依赖**）
 
-则应记录到dependencies节点
+则应记录到 dependencies 节点
 
 其中记录**npm install**下载的包和版本号
 
-如下：下载了jQuery、art-template、moment
+如下：下载了 jQuery、art-template、moment
 
 ```json
 {
@@ -312,21 +282,21 @@ npm会自动将包的名称和版本号记录到dependencies节点
 
 多人协作开发时，项目成员拿到项目源代码后，
 
-应首先通过**npm install** 下载dependencies节点中记录的项目所有依赖的包
+应首先通过**npm install** 下载 dependencies 节点中记录的项目所有依赖的包
 
 ---
 
-### devDependencies节点（开发依赖）
+### devDependencies 节点（开发依赖）
 
 若下载的包仅仅只在开发阶段使用到，项目部署上线之后并不会用到
 
-则可以记录到package.json文件的devDependencies节点中
+则可以记录到 package.json 文件的 devDependencies 节点中
 
 若下载的包在开发和项目上线后都需要用到（**开发依赖**）
 
-则应记录到dependencies节点
+则应记录到 dependencies 节点
 
-devDependencies节点中记录**npm install -D**下载的包和版本号
+devDependencies 节点中记录**npm install -D**下载的包和版本号
 
 ```json
 {
@@ -352,7 +322,7 @@ devDependencies节点中记录**npm install -D**下载的包和版本号
 
 ---
 
-### scripts选项
+### scripts 选项
 
 当项目中的命令特别长时，
 
@@ -387,11 +357,7 @@ npm run 命令别名
 npm run open
 ```
 
-
-
-
-
-## pack-lock.json文件
+## pack-lock.json 文件
 
 详细记录模块与模块之间的依赖关系
 
@@ -432,21 +398,15 @@ npm run open
   }
 ```
 
-
-
-
-
-
-
 ## 包的规范
 
 ### 包的分类
 
-npm下载的包答题分为两类：
+npm 下载的包答题分为两类：
 
 - **项目包**
 
-  被下载到项目的node_modules目录下
+  被下载到项目的 node_modules 目录下
 
   项目包分为两大类：
 
@@ -454,7 +414,7 @@ npm下载的包答题分为两类：
 
     开发阶段和项目上线后都依赖的包
 
-    被记录到package.json文件的dependencies节点中
+    被记录到 package.json 文件的 dependencies 节点中
 
     ```bash
     npm i xxx
@@ -464,7 +424,7 @@ npm下载的包答题分为两类：
 
     仅在开发阶段使用到的包
 
-    被记录到package.json文件的devDependencies节点中
+    被记录到 package.json 文件的 devDependencies 节点中
 
     ```bash
     npm i xxx -D
@@ -474,7 +434,7 @@ npm下载的包答题分为两类：
 
   一般是命令行工具性质的包
 
-  被下载到全局的node_modules目录下
+  被下载到全局的 node_modules 目录下
 
 ---
 
@@ -504,23 +464,23 @@ npm下载的包答题分为两类：
 
 ### 包结构规范
 
-一个规范的包，结构必须有以下3点要求：
+一个规范的包，结构必须有以下 3 点要求：
 
 - 包是必须以单独的目录存在
 
-- 包的顶级目录下必须有package.json文件
+- 包的顶级目录下必须有 package.json 文件
 
-- package.json文件中必须有
+- package.json 文件中必须有
 
-  - name属性：包的名字
+  - name 属性：包的名字
 
-  - version属性：版本号
+  - version 属性：版本号
 
-  - **main属性**：包的入口文件
+  - **main 属性**：包的入口文件
 
     包被导入时被加载的是该文件
 
-包的package.json：
+包的 package.json：
 
 ```json
 {
@@ -533,7 +493,7 @@ npm下载的包答题分为两类：
   // 入口文件
   "main": "index.js",
   // 搜索关键字
-  "keywords": ["","",""],
+  "keywords": ["", "", ""],
   // 许可协议
   "license": "ISC"
 }
@@ -541,33 +501,25 @@ npm下载的包答题分为两类：
 
 ---
 
-
-
-
-
 ## 常用工具包
 
 - **nodemon**
 
-  原本Node.js项目在调试时若修改了代码，必须停掉手动重启，
+  原本 Node.js 项目在调试时若修改了代码，必须停掉手动重启，
 
-  通过nodemon会监听项目文件变化，若修由保存操作，则会**自动重启**
+  通过 nodemon 会监听项目文件变化，若修由保存操作，则会**自动重启**
 
-  代换node命令执行JS文件
+  代换 node 命令执行 JS 文件
 
   通过 ctrl + C 停止
 
   需全局安装
 
-  
+* **i5ting_toc**
 
-- **i5ting_toc**
-
-  可将MarkDown文档转为HTML页面
+  可将 MarkDown 文档转为 HTML 页面
 
   需全局安装
-  
-  
 
 - **formidable**
 

@@ -16,7 +16,7 @@
 
 [Vue2 基础](./Vue2/vue2.md)
 
-[Vue2 组件化开发：Vue-Cli](./Vue2/ComponentsDevelopment.md)
+[Vue2 组件化开发 + Vue-Cli](./Vue2/ComponentsDevelopment.md)
 
 [Vue2 脚手架：Vue-Cli](./Vue2/Vue2+Vue-Cli.md)
 

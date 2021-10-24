@@ -1,4 +1,4 @@
-# Less语法
+# Less
 
 ![](https://www.ryadel.com/wp-content/uploads/2018/06/less-logo-css-tutorial-guide-735x300.jpg)
 

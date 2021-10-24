@@ -1,4 +1,4 @@
-## mongoose模块 和 MongoDB
+# mongoose模块
 
 使用Node.js操作MongoDB数据库，需要依赖第三方包mongoose
 

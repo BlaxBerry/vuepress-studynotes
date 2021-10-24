@@ -1,31 +1,21 @@
-
-
-
-
 # SCSS（Sass）
 
-<img src="https://www.sass.hk/images/sass.png" style="zoom:50%;" />
+![](https://www.willstyle.co.jp/w/wp-content/uploads/2017/11/sass-2000x1000.jpg)
 
-传统CSS的缺点：
+传统 CSS 的缺点：
 
 - 无法写嵌套，导致要写很多重复的选择器名，不利于维护
 
 - 没有变量和复用机制，代码冗余
 
-*（目前CSS已经可以定义变量）*
+_（目前 CSS 已经可以定义变量）_
 
-
-
-使用SCSS（Sass）可以实现：
+使用 SCSS（Sass）可以实现：
 
 - 层级嵌套
 - 变量
 - 混合复用
 - 颜色函数
-
-
-
-
 
 ## 简介
 
@@ -33,15 +23,15 @@
 
 - **SCSS/Sass**
 
-  Sass出现最早，后来进化到SCSS
+  Sass 出现最早，后来进化到 SCSS
 
-  有Ruby社区支持，
+  有 Ruby 社区支持，
 
   （.scss）
 
 - **Less**
 
-  上手快，比起Sass编程功能弱
+  上手快，比起 Sass 编程功能弱
 
   （.less）
 
@@ -49,29 +39,21 @@
 
   缩进的方式
 
-  主要给Node.js项目，人气偏低
+  主要给 Node.js 项目，人气偏低
 
   （.styl）
-
-
-
-
-
-
-
-
 
 ## 安装
 
 ### 依靠编辑器
 
-VSCode的插件 EasySass(编辑)和Sass(提示)
+VSCode 的插件 EasySass(编辑)和 Sass(提示)
 
 ---
 
-### Node环境下安装
+### Node 环境下安装
 
-全局安装node-sass依赖包
+全局安装 node-sass 依赖包
 
 ```bash
 npm i -g node-sass
@@ -86,17 +68,11 @@ libsass         3.5.5   (Sass Compiler) [C/C++]
 
 ---
 
-通过Ruby的Sass模块
-
-
-
-
-
-
+通过 Ruby 的 Sass 模块
 
 ## 编译
 
-将 .scss文件编译为 .css 文件
+将 .scss 文件编译为 .css 文件
 
 ```scss
 // SCSS
@@ -118,8 +94,6 @@ div.father .son {
 }
 ```
 
-
-
 ### 单文件编译
 
 #### 同目录下编译
@@ -128,7 +102,7 @@ div.father .son {
 node-sass SCSS文件 CSS文件
 ```
 
-如下：将a.scss编译为a.css并存在同目录下
+如下：将 a.scss 编译为 a.css 并存在同目录下
 
 ```bash
 # 编译前
@@ -165,7 +139,7 @@ xxx
 |- b
 ```
 
-- 在a目录下，将该目录中的a.scss编译为b.css，并存在a目录的同级b目录下
+- 在 a 目录下，将该目录中的 a.scss 编译为 b.css，并存在 a 目录的同级 b 目录下
 
 ```bash
 pwd
@@ -183,7 +157,7 @@ xxx
    |- b.css
 ```
 
-- 在b目录下，将该目录的同级b目录中的a.scss编译为b.css，并存在该目录下
+- 在 b 目录下，将该目录的同级 b 目录中的 a.scss 编译为 b.css，并存在该目录下
 
 ```bash
 pwd
@@ -211,7 +185,7 @@ node-sass ?/?/SCSS文件 ?/?/CSS文件
 
 如下：
 
-将a目录下的a.scss编译为b.css，并存入a目录的同级b目录下
+将 a 目录下的 a.scss 编译为 b.css，并存入 a 目录的同级 b 目录下
 
 ```bash
 xxx
@@ -220,7 +194,7 @@ xxx
 ```
 
 ```bash
-pwd 
+pwd
 xxx
 
 node-sass a/a.scss b/b.css
@@ -234,8 +208,6 @@ xxx
 	 |- b.css
 ```
 
-
-
 ### 多文件编译
 
 即编译整个目录
@@ -244,11 +216,11 @@ xxx
 node-sass SCSS文件目录 CSS文件目录
 ```
 
-若CSS文件目录不存在会自动生成
+若 CSS 文件目录不存在会自动生成
 
 如下：
 
-将a目录下的SCSS文件全部编译为SCC文件，并存放在a目录的同级b目录下
+将 a 目录下的 SCSS 文件全部编译为 SCC 文件，并存放在 a 目录的同级 b 目录下
 
 ```bash
 xxx
@@ -259,7 +231,7 @@ xxx
 ```
 
 ```bash
-pwd 
+pwd
 xxx
 
 node-sass a -o b
@@ -274,14 +246,12 @@ xxx
 |- b
    |- 01.css
    |- 01.css
-   |- 01.css  
+   |- 01.css
 ```
-
-
 
 ### 文件监听
 
-会占用着终端监视着SCSS文件或SCSS文件目录的变化
+会占用着终端监视着 SCSS 文件或 SCSS 文件目录的变化
 
 档文件内容被保存时，就执行文件编译
 
@@ -293,23 +263,13 @@ node-sass -w SCSS文件 -o CSS文件目录
 node-sass -w SCSS文件目录 -o CSS文件目录
 ```
 
-
-
-
-
-
-
-
-
-
-
-# Scss语法
+# Scss 语法
 
 ## 1. 注释
 
--   **/* xxxxx */**
--  **// xxxx**
-- **/*!  xxxxxx */**
+- **/_ xxxxx _/**
+- **// xxxx**
+- **/_! xxxxxx _/**
 
 ```scss
 /*会被编译*/
@@ -321,20 +281,18 @@ Author: #{$author}
 */
 ```
 
-多行注释 **/**/** 会被完整编译到 .css文件中,
+多行注释 **/**/\*\* 会被完整编译到 .css 文件中,
 
 单行注释 **//** 则不会
 
-加有叹号的多行注释**/*!  */** 中可以使用变量，可用来添加版权信息
-
-
+加有叹号的多行注释**/_! _/** 中可以使用变量，可用来添加版权信息
 
 ## 2. 变量
 
-用 **$** 声明变量
+用 **\$** 声明变量
 
 ```scss
-$变量名: 值；
+$变量名: 值；;
 ```
 
 ```scss
@@ -356,8 +314,6 @@ div {
 }
 ```
 
-
-
 ## 3. 作用域
 
 变量支持块极作用域
@@ -376,27 +332,23 @@ div {
 }
 
 span {
-    color: $color1;
-    background-color: $color2; // 报错
+  color: $color1;
+  background-color: $color2; // 报错
 }
 ```
-
-
-
-
 
 ## 4. 数据类型
 
 ### 分类
 
-Scss是弱类型语法，
+Scss 是弱类型语法，
 
 对于字符串和数字的限制不很明确，定义时务必明确
 
 比如：数字可以带单位，字符串可单双引号或不带
 
-- 数字：1，2，3, ...,  **10px**
-- 字符串：“foo”，'foo'，  foo
+- 数字：1，2，3, ..., **10px**
+- 字符串：“foo”，'foo'， foo
 - 布尔值：true，false
 - 颜色：white，#fff，rgb(250,250,250)
 - 空值：null
@@ -404,24 +356,17 @@ Scss是弱类型语法，
 - maps（对象）：（key: value, key: value）
 
 ```scss
-
 ```
-
-
 
 ### 判断数据类型
 
-**type-of（$变量）**
+**type-of（\$变量）**
 
 ```scss
-
 ```
 
 ```scss
-
 ```
-
-
 
 ### 字符串（String）
 
@@ -444,7 +389,7 @@ $alignItems3: "center";
 }
 ```
 
-但是编译为CSS文件时会保持SCSS文件内容原始样式输出
+但是编译为 CSS 文件时会保持 SCSS 文件内容原始样式输出
 
 ```css
 /* CSS */
@@ -460,8 +405,6 @@ $alignItems3: "center";
   align-items: "center";
 }
 ```
-
-
 
 ### 数字（Number）
 
@@ -492,8 +435,6 @@ div {
 }
 ```
 
-
-
 ### 布尔值（Boolean）
 
 ```scss
@@ -502,10 +443,7 @@ $b: false;
 ```
 
 ```scss
-
 ```
-
-
 
 ### 空值（Null）
 
@@ -516,45 +454,36 @@ $falg: null;
 ```
 
 ```scss
-
 ```
-
-
 
 ### 数组（List）
 
 ```scss
 // 一维数组
 $padding: 10rem 20rem 30rem;
-  
+
 // 二维
 $list1: 1px 2px, 3px 4px;
-$list2: (1px 2px)(3px 4px);
+$list2: (1px 2px) (3px 4px);
 ```
 
 ```scss
-
 ```
-
-
 
 ### Maps
 
-就是JS的对象
+就是 JS 的对象
 
 ```scss
 $map: (
-	key1: value1,
-	key2: value2,
-	key3: value3,
-)
+  key1: value1,
+  key2: value2,
+  key3: value3,
+);
 ```
 
 ```scss
-
 ```
-
-
 
 ### 颜色（Colors）
 
@@ -567,24 +496,18 @@ $color3: darken($color1, 10%);
 $color4: saturate($color1, 10%);
 $color5: desaturate($color1, 10%);
 
-$color6: (red, green)
+$color6: (red, green);
 ```
 
 ```scss
-$color:rgba(#2343, 0.5)
+$color: rgba(#2343, 0.5);
 ```
-
-
-
-
-
-
 
 ## 5. 运算
 
 ### 5.1 数字运算
 
-+-*/%运算符必须与数值之间有空格
++-\*/%运算符必须与数值之间有空格
 
 #### + 运算
 
@@ -643,7 +566,7 @@ div {
 }
 ```
 
-- **数字类型  + 字符串类型**
+- **数字类型 + 字符串类型**
 
 ```scss
 // Scss
@@ -663,7 +586,7 @@ div {
 div {
   width: "12";
   width: "12";
-  width: "12"; 
+  width: "12";
 }
 ```
 
@@ -719,7 +642,7 @@ div {
 
 ---
 
-#### * 运算
+#### \* 运算
 
 只能有一个值带单位，
 
@@ -745,7 +668,7 @@ div {
 div {
   width: 2;
   width: 2px;
-  width: 2px; 
+  width: 2px;
 }
 ```
 
@@ -754,11 +677,9 @@ div {
 #### / 运算
 
 ```scss
-
 ```
 
 ```scss
-
 ```
 
 ---
@@ -766,14 +687,10 @@ div {
 #### %运算
 
 ```scss
-
 ```
 
 ```scss
-
 ```
-
-
 
 ### 5.2 关系运算
 
@@ -803,14 +720,11 @@ div {
   width: true;
   width: true;
 }
-
 ```
-
-
 
 ### 5.3 相等运算符
 
-==  !=
+== !=
 
 返回值是 布尔值 true false
 
@@ -836,8 +750,6 @@ div {
 }
 ```
 
-
-
 ### 5.4 布尔运算符
 
 **and or not**
@@ -860,15 +772,13 @@ div {
 div {
   width: false;
   width: true;
-  width: false; 
+  width: false;
 }
 ```
 
-
-
 ### 5.5 颜色运算符
 
-- **16进制颜色值 与 16进制颜色值**
+- **16 进制颜色值 与 16 进制颜色值**
 
 ```scss
 // scss
@@ -882,11 +792,11 @@ div {
 ```scss
 // css
 div {
-  color: #ff00ff; 
+  color: #ff00ff;
 }
 ```
 
-- **16进制颜色值 与 数字**
+- **16 进制颜色值 与 数字**
 
 ```scss
 // scss
@@ -902,49 +812,40 @@ div {
 ```scss
 // css
 div {
-  color: #ff0202; 
+  color: #ff0202;
   color: #020406;
 }
 ```
 
 - **RGBA 与 HSLA**
 
-两个值必须统一是rgb或hsl
+两个值必须统一是 rgb 或 hsl
 
-若有alpha值，则必须alpha值相等的颜色才能进行运算
+若有 alpha 值，则必须 alpha 值相等的颜色才能进行运算
 
 ```scss
 //scss
 $col1: rgba(255, 0, 0, 0.5) + rgba(255, 0, 100, 0.5);
-$col2: rgba(255, 0, 0, 0.5) + rgba(255, 0, 100, 0.9);// 报错
+$col2: rgba(255, 0, 0, 0.5) + rgba(255, 0, 100, 0.9); // 报错
 
 div {
   color: $col1;
 }
-
 ```
 
 ```scss
 // css
 div {
-  color: rgba(255, 0, 100, 0.5); 
+  color: rgba(255, 0, 100, 0.5);
 }
 ```
-
-
 
 ### 运算优先级
 
 1. **( )**
-2. *** / %**
+2. **\* / %**
 3. **+ -**
 4. **> < >= <=**
-
-
-
-
-
-
 
 ## 6. 嵌套语法 （重要）
 
@@ -959,7 +860,7 @@ div {
     width: 60%;
     height: 60%;
     background-color: chartreuse;
-    
+
     .a3 {
       width: 60%;
       height: 60%;
@@ -967,7 +868,6 @@ div {
     }
   }
 }
-
 ```
 
 ```scss
@@ -989,12 +889,6 @@ div {
 }
 ```
 
-
-
-
-
-
-
 ## 7.补充
 
 ### 插值语法
@@ -1013,7 +907,7 @@ $color2: blue;
 
 div.#{$name1} {
   background-color: $color1;
- 
+
   .#{$name2} {
     background-color: $color2;
   }
@@ -1052,10 +946,6 @@ div.a1 .a2 {
 }
 ```
 
-
-
-
-
 ### 伪类选择器、伪元素选择器
 
 在嵌套语法中的伪类选择器、伪元素选择器前面必须有**&**
@@ -1085,13 +975,9 @@ div::after {
 }
 ```
 
-
-
-
-
 ### !default
 
-SCSS中后定义的内容会覆盖之前的，如下：
+SCSS 中后定义的内容会覆盖之前的，如下：
 
 同名变量最后的值是 blue
 
@@ -1100,7 +986,7 @@ SCSS中后定义的内容会覆盖之前的，如下：
 $color1: red;
 $color1: blue;
 
-div{
+div {
   color: $color1;
 }
 ```
@@ -1108,13 +994,13 @@ div{
 ```scss
 // css
 div {
-  color: blue; 
+  color: blue;
 }
 ```
 
 若 !default 之前的值已经被被定义，则采用之前的值
 
-但若值没有被定义过或者是个null，则采用当前的值
+但若值没有被定义过或者是个 null，则采用当前的值
 
 ```scss
 // scss
@@ -1138,11 +1024,9 @@ div {
 }
 ```
 
-
-
 ### !global
 
-因为SCSS存在变量作用域，
+因为 SCSS 存在变量作用域，
 
 在块级作用域中定义的变量无法被作用域外使用
 
@@ -1154,7 +1038,7 @@ div {
 }
 
 .a2 {
-  background-color: $color2;// 报错
+  background-color: $color2; // 报错
 }
 ```
 
@@ -1183,24 +1067,17 @@ div {
 .a2 {
   background-color: green;
 }
-
 ```
-
-
-
-
-
-
 
 ## @ 指令
 
 ### @import
 
-通过 @import 导入其他的SCSS/SASS文件
+通过 @import 导入其他的 SCSS/SASS 文件
 
-最终会被编译为一个CSS文件
+最终会被编译为一个 CSS 文件
 
-导入的必须是.sass/.scss文件，不能是.css文件
+导入的必须是.sass/.scss 文件，不能是.css 文件
 
 ```scss
 @import "01.scss";
@@ -1213,13 +1090,9 @@ div {
 @import "01.scss", "01";
 ```
 
-
-
 ### @mdeia
 
-媒体查询，和css一样，但是可以使用嵌套了
-
-
+媒体查询，和 css 一样，但是可以使用嵌套了
 
 ### @extend
 
@@ -1240,7 +1113,7 @@ div {
 }
 .a2 {
   @extend .a1;
-  font-size: 20px
+  font-size: 20px;
 }
 .a3 {
   @extend .a2;
@@ -1249,21 +1122,24 @@ div {
 
 ```scss
 // css
-.a1, .a2, .a3 {
+.a1,
+.a2,
+.a3 {
   color: blue;
   width: 100px;
   height: 100px;
-  background-color: brown; 
+  background-color: brown;
 }
 
-.a2, .a3 {
-  font-size: 20px; 
+.a2,
+.a3 {
+  font-size: 20px;
 }
 ```
 
 #### 选择器占位符
 
-**%**，仅充当一个通用标签，不会被编译到css中
+**%**，仅充当一个通用标签，不会被编译到 css 中
 
 ```scss
 //scss
@@ -1283,17 +1159,14 @@ div {
 
 ```scss
 // css
-.a2, .a3 {
+.a2,
+.a3 {
   color: blue;
   width: 100px;
   height: 100px;
-  background-color: brown; 
+  background-color: brown;
 }
 ```
-
-
-
-
 
 ## 控制指令
 
@@ -1309,7 +1182,7 @@ if(判断, 判断为true时的值, 判断为false时的值)
   color: if(1+1==2, green, red);
 }
 .a2 {
-  color: if(1+1!=2, green, red);
+  color: if(1 + 1!=2, green, red);
 }
 ```
 
@@ -1323,16 +1196,14 @@ if(判断, 判断为true时的值, 判断为false时的值)
 }
 ```
 
-
-
 ### @if、@else if、@else
 
 ```scss
 @if 判断 {
   xxx: xxx;
-}@else if {
+} @else if {
   xxx: xxx;
-}@else {
+} @else {
   xxx: xxx;
 }
 ```
@@ -1362,10 +1233,6 @@ if(判断, 判断为true时的值, 判断为false时的值)
 }
 ```
 
-
-
-
-
 ### @for
 
 ```scss
@@ -1379,7 +1246,7 @@ if(判断, 判断为true时的值, 判断为false时的值)
 }
 ```
 
-- @for xxx  from a through b { }
+- @for xxx from a through b { }
 
 ```scss
 /// scss
@@ -1405,7 +1272,7 @@ if(判断, 判断为true时的值, 判断为false时的值)
 }
 ```
 
-- @for xxx  from a to b { }
+- @for xxx from a to b { }
 
 ```scss
 // scss
@@ -1426,8 +1293,6 @@ if(判断, 判断为true时的值, 判断为false时的值)
   width: 4rem;
 }
 ```
-
-
 
 ### @while
 
@@ -1450,46 +1315,45 @@ $num: 5;
 
 ```scss
 // css
-.item-5 { width: 10rem; }
+.item-5 {
+  width: 10rem;
+}
 
-.item-4 { width: 8rem; }
+.item-4 {
+  width: 8rem;
+}
 
-.item-3 { width: 6rem; }
+.item-3 {
+  width: 6rem;
+}
 
-.item-2 { width: 4rem; }
+.item-2 {
+  width: 4rem;
+}
 
-.item-1 { width: 2rem; }
+.item-1 {
+  width: 2rem;
+}
 ```
 
-
-
 [scss gihub note](https://github.com/ggdream/scss/blob/master/3%E3%80%81SassScript.md)
-
-
 
 ### @each
 
 ```scss
-
 ```
 
 ```scss
-
 ```
 
 ```scss
-
 ```
 
 ```scss
-
 ```
 
 ```scss
-
 ```
 
 ```scss
-
 ```
-

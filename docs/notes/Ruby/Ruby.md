@@ -1,6 +1,6 @@
 # Ruby 基础
 
-<img src="https://kitsune.blog/wp-content/uploads/ruby-logo.png" style="zoom:50%;" />
+![](https://i2.wp.com/softwareengineeringdaily.com/wp-content/uploads/2016/01/ruby-community.jpg?fit=720%2C200&ssl=1)
 
 ## 变量
 
