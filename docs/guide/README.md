@@ -6,8 +6,6 @@
 
 [查看](../notes/HTML/README.md)
 
-[Forms and Validation]()
-
 ::: tip Storage
 [LocalStorage]()
 

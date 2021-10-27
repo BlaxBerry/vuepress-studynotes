@@ -12,19 +12,23 @@ sidebarDepth: 2
 [Redux](https://www.redux.org.cn/)
 :::
 
-## 基础
+## JSX语法
 
-[JSX](./JSX.md)
+[JSX 语法基础](./JSX.md)
+
+## 脚手架
+
+[脚手架 Create-React-App](./Create-React-App.md)
 
 ## 组件化开发
 
-[Create-React-App](./Create-React-App.md)
+[React 类组件（Class Component）](./ComponentsDev/ClassComponent.md)
 
-[React 组件化开发](./React-Component.md)
+[React 函数组件（Functional Component）](./ComponentsDev/FunctionalComponent.md)
 
-[Hooks 钩子函数](./Hooks.md)
+[Hooks 钩子](./ComponentsDev/Hooks.md)
 
-## 路由
+## 路由管理
 
 [React-Router-Dom](./React-Router-Dom.md)
 
@@ -32,10 +36,20 @@ sidebarDepth: 2
 
 [Redux 基础](./Redux.md)
 
-<br>
+[PubSub 消息订阅发布]()
+
+
+## React Native
+
+[React Native 基础]()
+
 
 ## 注意事项
 
 ::: tip
- <br>
+[虚拟 DOM 与 Diff 算法](./)
+
+[setState() 方法补充]()
+
+[组件性能优化]()
 :::
