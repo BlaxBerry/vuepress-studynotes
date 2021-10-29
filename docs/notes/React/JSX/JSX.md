@@ -6,9 +6,11 @@
 
 ## JSX 简介
 
-**JSX**（**J**ava**S**cript **X**ML）可理解为原生 JS 的语法扩展，是**语法糖**
+**JSX**（**J**ava**S**cript **X**ML）可理解为原生 JS 的语法扩展
 
 React 使用 JSX 替代常规的 JavaScript，使其可以在 JS 中书写 XML/HTML 来描述用户界面。
+
+是`createElement`创建组件方式的 **语法糖**
 
 ::: tip CDN 引入（正经开发不会用）
 
@@ -539,3 +541,42 @@ key 必须要是唯一标识，比如 id，但最好不要用可变的 index
 >   }
 > }
 > ```
+
+## JSX 转换机制
+
+::: tip JSX 在 React 内部的转化步骤：
+
+> JSX —> React.createElement() —> React 对象
+
+1. 脚手架通过内置的 **@babel/preset-react** 插件
+
+   将 JSX 语法编译为原生 JS 的 `createElement()` 方法创建组件 UI
+
+   ```jsx
+   const element = (
+     <h1 className="title">
+      Hello JSX
+     </h1>
+   );
+   ```
+
+   ```js
+   const element = React.createElement(
+     "h1",
+     { className: "title" },
+     "Hello JSX"
+   );
+   ```
+
+2. `createElement()` 方法 内部转化 JS 对象形式的 React 元素
+   ```js
+   const element = {
+     type: "h1",
+     props: {
+       className: "title",
+       children: "Hello JSX",
+     },
+   };
+   ```
+
+:::

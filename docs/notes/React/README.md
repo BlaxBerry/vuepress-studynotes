@@ -14,11 +14,11 @@ sidebarDepth: 2
 
 ## JSX语法
 
-[JSX 语法基础](./JSX.md)
+[JSX 语法基础](./JSX/JSX.md)
 
 ## 脚手架
 
-[脚手架 Create-React-App](./Create-React-App.md)
+[脚手架 Create-React-App](./Cli/Create-React-App.md)
 
 ## 组件化开发
 
@@ -30,7 +30,7 @@ sidebarDepth: 2
 
 ## 路由管理
 
-[React-Router-Dom](./React-Router-Dom.md)
+[React-Router-Dom](./Router/React-Router-Dom.md)
 
 ## 状态管理
 
@@ -49,7 +49,7 @@ sidebarDepth: 2
 ::: tip
 [虚拟 DOM 与 Diff 算法](./)
 
-[setState() 方法补充]()
+[setState() 方法补充](./extra-01.md)
 
 [组件性能优化]()
 :::
