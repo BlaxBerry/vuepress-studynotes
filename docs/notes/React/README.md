@@ -12,7 +12,7 @@ sidebarDepth: 2
 [Redux](https://www.redux.org.cn/)
 :::
 
-## JSX语法
+## JSX 语法
 
 [JSX 语法基础](./JSX/JSX.md)
 
@@ -36,20 +36,18 @@ sidebarDepth: 2
 
 [Redux 基础](./Redux.md)
 
-[PubSub 消息订阅发布]()
-
+[消息订阅发布 PubSub.js](./StateManage/PubSub.md)
 
 ## React Native
 
-[React Native 基础]()
-
+[React Native 基础](./ReactNative.md)
 
 ## 注意事项
 
 ::: tip
-[虚拟 DOM 与 Diff 算法](./)
 
 [setState() 方法补充](./extra-01.md)
 
-[组件性能优化]()
+[组件性能优化](./extra-02.md)
+
 :::

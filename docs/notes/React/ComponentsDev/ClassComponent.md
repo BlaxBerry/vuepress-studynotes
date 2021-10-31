@@ -1191,10 +1191,9 @@ React 中可通过 `ref` 属性标记真实 DOM 节点或组件实例对象
 ```jsx
 import React, { Component } from "react";
 export default class Demo extends Component {
-  constructor(props) {
-    super(props);
-    this.自定义ref名 = React.createRef();
-  }
+
+  this.自定义ref名 = React.createRef();
+
   render() {
     return (
       <div>
@@ -1211,11 +1210,9 @@ export default class Demo extends Component {
 > ```jsx
 > import React, { Component } from "react";
 > export default class Demo extends Component {
->   constructor(props) {
->     super(props);
->     this.myRef01 = React.createRef();
->     this.myRef02 = React.createRef();
->   }
+>   this.myRef01 = React.createRef();
+>   this.myRef02 = React.createRef();
+>
 >   show = () => {
 >     console.log(this);
 >     console.log(this.myRef01);
@@ -1256,15 +1253,13 @@ React16.3 之前版本中 `ref` 定义多使用回调函数形式
 元素标签通过 `ref` 属性绑定回调
 
 ```jsx
-constructor(props){
-  super(props)
-  this.设置ref的回调函数 = (currentNode) => {
-    this.自定义ref名 = currentNode
-  }
-  this.设置ref的回调函数 = (currentNode) => {
-    this.自定义ref名 = currentNode
-  }
+this.设置ref的回调函数 = (currentNode) => {
+  this.自定义ref名 = currentNode
 }
+this.设置ref的回调函数 = (currentNode) => {
+  this.自定义ref名 = currentNode
+}
+
 render(){
   return (
   	<div>
@@ -2006,355 +2001,6 @@ export default class Demo extends Component {
 >       </div>
 >     );
 >   }
-> }
-> ```
-
-## 组件复用的模式
-
-::: tip 可通过两种模式复用组件：
-
-- render props 模式
-
-  > 也可直接利用传递子节点，通过 `props.children`
-
-- 高阶组件（HOC）模式
-
-:::
-
-### render props 模式
-
-通过利用函数在组件外获取 组件的状态、方法 的做法
-
-::: tip 使用：
-
-使用组件时，将一个函数作为属性传递进去。函数的参数是组件的状态，该函数在组件内部被调用时便可暴露组件状态。函数的内容是要渲染的 JSX 结构，组件内不设定 UI 结构，渲染内容取决于组件调用时传入的函数
-
-```jsx
-<组件
-  render={(要复用的组件状态) => {
-    return <div>{/* 使用了公共状态的公共 JSX 结构 */}</div>;
-  }}
-/>
-```
-
-:::
-
-> 如下：
->
-> ```jsx
-> import React, { Component } from "react";
-> import pic from "src目录下地址";
-> export default class Father extends Component {
->   render() {
->     return (
->       <div>
->         {/* 复用 */}
->         <Common
->           render={(state) => {
->             return (
->               <div>
->                 x:<p>{state.x}</p>
->                 y:<p>{state.y}</p>
->               </div>
->             );
->           }}
->         />
->
->         {/* 复用 */}
->         <Common
->           render={(state) => {
->             return (
->               <img
->                 src={pic}
->                 style={{
->                   position: "absolute",
->                   top: state.y,
->                   left: state.x,
->                 }}
->               />
->             );
->           }}
->         />
->       </div>
->     );
->   }
-> }
-> ```
->
-> ```jsx
-> import React, { Component } from "react";
-> export default class Common extends Component {
->   state = {
->     x: 0,
->     y: 0,
->   };
->
->   move = (e) => {
->     this.setState({
->       x: e.clientX,
->       y: e.clientY,
->     });
->   };
->
->   componentDidMount() {
->     window.addEventListener("mousemove", this.move);
->   }
->   componentWillUnmount() {
->     window.removeEventListener("mousemove", this.move);
->   }
->   render() {
->     return this.props.render(this.state);
->   }
-> }
-> ```
-
-也通过 `props.children`，详见 [组件 props 属性 的 children 属性]()
-
-比起 render props 模式以 `prop`属性的方式传入函数的做法更直观
-
-将函数作为组件的子节点传入，组件内通过的`props.children`获取函数并传入状态、方法
-
-通过 props.children 实现组件复用：
-
-```jsx
-<组件>
-  {(复用的组件状态) => {
-    return <div>{/* 使用了公共状态的公共 JSX 结构 */}</div>;
-  }}
-</组件>
-```
-
-> 如下：
->
-> ```jsx
-> import React, { Component } from "react";
-> import pic from "../assets/logo.jpeg";
->
-> export default class Father extends Component {
->   render() {
->     return (
->       <div>
->         {/* 复用 */}
->         <Common>
->           {(state) => {
->             return (
->               <div>
->                 x:<p>{state.x}</p>
->                 y:<p>{state.y}</p>
->               </div>
->             );
->           }}
->         </Common>
->
->         {/* 复用 */}
->         <Common>
->           {(state) => {
->             return (
->               <img
->                 src={pic}
->                 style={{
->                   position: "absolute",
->                   top: state.y,
->                   left: state.x,
->                 }}
->               />
->             );
->           }}
->         </Common>
->       </div>
->     );
->   }
-> }
-> ```
->
-> ```jsx
-> import React, { Component } from "react";
-> export default class Common extends Component {
->   state = {
->     x: 0,
->     y: 0,
->   };
->
->   move = (e) => {
->     this.setState({
->       x: e.clientX,
->       y: e.clientY,
->     });
->   };
->
->   componentDidMount() {
->     window.addEventListener("mousemove", this.move);
->   }
->   componentWillUnmount() {
->     window.removeEventListener("mousemove", this.move);
->   }
->   render() {
->     return this.props.children(this.state);
->   }
-> }
-> ```
-
-### 高阶组件 (HOC) 模式
-
-高阶组件（High-Order-Component）实际是个函数，
-
-通过包裹包装其他组件的方式，来传递自身的状态最终实现复用高级组件
-
-> 可理解为通过高级组件函数创建一个【通用外壳】组件
->
-> 用该【通用外壳】来包装别的组件生成增强的组件
->
-> 然后使用包装后的组件，实现组件的复用
-
-::: tip 高阶组件的使用步骤：
-
-1. 创建
-
-   1. 创建一个的函数，命名以 `with` 开头
-
-   2. 将需要被包装的组件作为参数传入该高阶组件函数
-
-   3. 在函数内创建并返回一个类组件
-
-   4. 该类组件中提供了要复用的状态 `state` 和状态处理代码
-
-      并将状态 `state` 通过 `prop` 属性传递给参数接收的要被包装的组件
-
-   5. 给高阶组件设定 `display` 属性
-
-      被高级组件包装后的组件名由传入组件名决定
-
-2. 使用
-
-   1. 创建要被包装的组件
-
-   2. 调用高级组件，传入要被包装的组件
-
-      生成被高级组件包装后的增强组件
-
-   3. 最后将该包装增强后的组件导入需要的组件
-
-      实现对组件的复用
-
-```jsx
-// 创建高阶组件
-function with自定义函数名(要被包装的组件) {
-  class 组件 extends React.Component {
-    state = {
-      /* 状态 */
-    };
-    实例方法函数 = () => {
-      /* 状态处理 */
-    };
-
-    render() {
-      return <要被包装的组件 {...this.state} {...this.props} />;
-    }
-  }
-
-  组件.displayName = "with自定义函数名" + getDisplayName(要被包装的组件);
-
-  return 组件;
-}
-
-// 设置 高阶组件的 displayName
-function getDisplayName(ComponentWarpped) {
-  return ComponentWarpped.displayeName || ComponentWarpped.name;
-}
-
-// 创建要被包装的组件
-const 要被包装的组件 = (props) => <div>{/* 内容 */}</div>;
-
-// 获取被高级组件包装增强后的组件
-const 被包装后的组件 = 高级组件(要被包装的组件);
-
-// 使用
-class 使用被包装后组件的组件 extends React.Component {
-  render() {
-    return (
-      <div>
-        {/* 其余内容 */}
-        <被包装后的组件 />
-        {/* 其余内容 */}
-      </div>
-    );
-  }
-}
-```
-
-:::
-
-> 如下：
->
-> ```jsx
-> function withMouse(ComponentWarpped) {
->     class Mouse extends React.Component {
->         state = {
->             x: 0,
->             y: 0
->         }
->         handle = e => {
->             this.setState({
->                 x: e.clientX,
->                 y: e.clientY,
->             })
->         }
->         componentDidMount() {
->             window.addEventListener('mousemove', this.handle)
->         }
->         componentWillUnmount() {
->             window.removeEventListener('mousemove', this.handle)
->         }
->         render() {
->             return (
->                 <ComponentWarpped
->                   {...this.state}
->                   {...this.props}
->                 />
->             )
->         }
->     }
-> 		Mouse.displayName = `WithMouse ${getDisplayName(ComponentWarpped)}`
->
-> 		return Mouse
-> }
-> // 设置 高阶组件的 displayName
-> function getDisplayName(ComponentWarpped){
->   return ComponentWarpped.displayeName || ComponentWarpped.name
-> }
->
->
-> const MousePosition = props => (
-> 	<div>
->   	x: <p>{this.props.x}</p>
->     y: <p>{this.props.y}</p>
->   </div>
-> )
-> const PicMovement = props => (
-> 	<img
->     src={pic}
->     style={{
->       postion: 'absolute'
->       top: props.y
->       left: props.x
->     }}
->   />
-> )
->
-> const EnhancedMousePosition = withMouse(MousePosition)
-> const EnhancedPicMovement = withMouse(PicMovement)
->
-> class Demo01 extends React.Component {
->   render(){
->     return (
->     	<div>
->         { /* 复用例 */}
->         <EnhancedMousePosition />
->         { /* 复用例 */}
->         <EnhancedPicMovement />
->       </div>
->     )
-> 	}
 > }
 > ```
 
