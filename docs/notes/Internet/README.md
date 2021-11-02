@@ -1,5 +1,9 @@
 # Internet
 
+::: tip 官方文档
+[JWT](https://jwt.io/)
+:::
+
 ## 基础
 
 [HTTP]()
@@ -8,10 +12,13 @@
 
 ## 网络安全
 
-[CORS]()
+[解决跨域 CORS]()
 
-[JSONP]()
+[解决跨域 JSONP]()
 
-[Cookie、Session]()
+[身份验证 Cookie、Session]()
+
+[跨域身份验证 JWT]()
 
 [OWASP]()
+
