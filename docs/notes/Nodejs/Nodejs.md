@@ -1674,3 +1674,118 @@ async function run() {
 
 run();
 ```
+
+
+
+## util模块
+
+###  promisify
+
+```js
+const { promisify } = require("util");
+```
+
+`util`模块中的`promisify`方法可以将`callback`回调函数转换为为 `Promise` 形式，防止回调地狱
+
+> 如下：
+>
+> `readFile`代码重复，可以进行封装
+>
+> ```js
+> const express = require("express");
+> const fs = require("fs");
+> const app = express();
+> 
+> app.get("/", (req, res) => {
+> fs.readFile("./db.json", "utf-8", (err, data) => {
+>  if (err) {
+>    return res.status(500).send({
+>      errro: err,
+>    });
+>  }
+>  const db = JSON.parse(data);
+>  res.status(200).send(db.list);
+> });
+> });
+> 
+> app.get("/:name", (req, res) => {
+> fs.readFile("./db.json", "utf-8", (err, data) => {
+>  if (err) {
+>    return res.status(500).send({
+>      errro: err,
+>    });
+>  }
+>  const db = JSON.parse(data);
+>  const name = req.params.name;
+>  const person = db.list.find((item) => item.name === name);
+>  if (!person) {
+>    return res.status(404).end();
+>  }
+>  res.status(200).send(person);
+> });
+> });
+> 
+> app.listen(3000, () => {
+> console.log("server running at http://localhost:3000");
+> });
+> ```
+>
+> 可借助`promisify`将`readFile`封装为 `Promise` 形式防止回调地狱
+>
+> ```js
+> const fs = require("fs");
+> const { promisify } = require("util");
+> const readFile = promisify(fs.readFile);
+> 
+> const path = require("path");
+> const DBPath = path.join(__dirname, "./db.json");
+> 
+> const getDB = async () => {
+> const data = await readFile(DBPath, "utf-8");
+> return JSON.parse(data);
+> };
+> module.exports = getDB;
+> ```
+>
+> 导入后，通过`async await` 获取数据
+>
+> 文件读取时的错误可不在封装的模块内逐一处理，而是在外面直接通过`try catch` 处理
+>
+> ```js
+> const express = require("express");
+> const app = express();
+> 
+> const getDB = require("./getDB");
+> 
+> app.get("/", async (req, res) => {
+> try {
+>  const db = await getDB();
+>  res.status(200).send(db.list);
+> } catch (err) {
+>  res.status(500).send({
+>    errro: err.message,
+>  });
+> }
+> });
+> 
+> app.get("/:name", async (req, res) => {
+> try {
+>  const db = await getDB();
+>  const name = req.params.name;
+>  const person = db.list.find((item) => item.name === name);
+>  if (!person) {
+>    return res.status(404).end();
+>  }
+>  res.status(200).send(person);
+> } catch (err) {
+>  res.status(500).send({
+>    errro: err.message,
+>  });
+> }
+> });
+> 
+> app.listen(3000, () => {
+> console.log("server running at http://localhost:3000");
+> });
+> ```
+

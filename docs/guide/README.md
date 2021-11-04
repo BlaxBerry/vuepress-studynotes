@@ -186,13 +186,11 @@
 
 [查看](../notes/Internet/README.md)
 
-::: tip Web Security
+::: tip Authentication
 
-[CORS]()
+[Session + Cookie](../notes/Internet/Authentication/Session+Cookie.md)
 
-[JSONP]()
-
-[Cookie、Session]()
+[JWT](../notes/Internet/Authentication/JWT.md)
 
 [OWASP]()
 

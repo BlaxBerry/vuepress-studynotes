@@ -262,7 +262,13 @@ app.get("/", (req, res) => {
 });
 ```
 
-## 操作数据
+## 客户端渲染（CSR）
+
+`Express.js`根据客户端请求地址进行数据的增删改查操作
+
+服务器向客户端返回的是`JSON`对象形式的数据
+
+对数据进行处理渲染页面是在客户端完成的
 
 ### 获取数据
 
@@ -780,49 +786,88 @@ app.get("/", (req, res) => {
 > });
 > ```
 
-## 自定义模块
+## 服务端渲染（SSR）
 
-```js
-const { promisify } = require("util");
-```
+`Express.js`根据客户端请求地址进行数据的增删改查操作
 
-`util`模块中的`promisify`方法可以将`callback`回调函数转换为为 `Promise` 形式，防止回调地狱
+向客户端返回的是`HTML`页面模版字符串
+
+客户端浏览器解析字符串为`HTML`页面
+
+### 静态渲染
+
+静态渲染不常用，多用数据动态渲染模版的方式
+
+`Express.js`读取服务器目录中的静态`HTML`文件后响应给客户端
+
+> 如下：客户端发送`/`地址请求时，服务器读取`views`目录下的`index.html`并响应
+>
+> ```js
+> |- views
+> 	|- index.html
+> |- index.js
+> ```
+>
+> ```js
+> const express = require("express");
+> const app = express();
+> const fs = require("fs");
+>
+> app.get("/", (req, res) => {
+>   fs.readFile("./views/index.html", "utf-8", (err, data) => {
+>     if (err) {
+>       return res.status(404).send("404, not Found.");
+>     }
+>     res.end(data);
+>   });
+> });
+>
+> app.listen(3000, () => {
+>   console.log("server running at http://localhost:3000");
+> });
+> ```
+
+### 动态渲染
+
+`Express.js`将数据 + 模版结合动态生成`HTML`页面后响应给浏览器
+
+#### 模版引擎
+
+`Node.js`中常用的引擎：EJS、handlebar、Pug、art-template...
+
+#### 自定义占位符
+
+服务端可以在`HTML`文件内容中使用占位符。（正经人不会用）
+
+在服务器中将数据拼接字符串动态生成的 HTML 模版结构，然后替换 HTML 文件中的占位符，最后根据请求响应给客户端
 
 > 如下：
 >
-> `readFile`代码重复，可以进行封装
->
 > ```js
 > const express = require("express");
-> const fs = require("fs");
 > const app = express();
+> const fs = require("fs");
+>
+> const list = [
+>   { name: "jack", age: 29 },
+>   { name: "andy", age: 28 },
+> ];
 >
 > app.get("/", (req, res) => {
->   fs.readFile("./db.json", "utf-8", (err, data) => {
+>   fs.readFile("./views/index.html", "utf-8", (err, data) => {
 >     if (err) {
->       return res.status(500).send({
->         errro: err,
->       });
+>       return res.status(404).send("404, not Found.");
 >     }
->     const db = JSON.parse(data);
->     res.status(200).send(db.list);
->   });
-> });
 >
-> app.get("/:name", (req, res) => {
->   fs.readFile("./db.json", "utf-8", (err, data) => {
->     if (err) {
->       return res.status(500).send({
->         errro: err,
->       });
->     }
->     const db = JSON.parse(data);
->     const name = req.params.name;
->     const person = db.list.find((item) => item.name === name);
->     if (!person) {
->       return res.status(404).end();
->     }
->     res.status(200).send(person);
+>     // 动态拼接字符串生成HTML结构
+>     let template = ``;
+>     list.forEach((item) => {
+>       template += `<li>${item.name}-${item.age}</li>`;
+>     });
+>     // 替换原HTML中的占位符
+>     const newData = data.replace("{占位符}", template);
+>
+>     res.end(newData);
 >   });
 > });
 >
@@ -831,61 +876,21 @@ const { promisify } = require("util");
 > });
 > ```
 >
-> 可借助`promisify`将`readFile`封装为 `Promise` 形式防止回调地狱
+> ```html
+> <!DOCTYPE html>
+> <html lang="en">
+>   <head>
+>     <meta charset="UTF-8" />
+>     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+>     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+>     <title>Home</title>
+>   </head>
+>   <body>
+>     <div>Header</div>
 >
-> ```js
-> const fs = require("fs");
-> const { promisify } = require("util");
-> const readFile = promisify(fs.readFile);
+>     {占位符}
 >
-> const path = require("path");
-> const DBPath = path.join(__dirname, "./db.json");
->
-> const getDB = async () => {
->   const data = await readFile(DBPath, "utf-8");
->   return JSON.parse(data);
-> };
-> module.exports = getDB;
-> ```
->
-> 导入后，通过`async await` 获取数据
->
-> 文件读取时的错误可不在封装的模块内逐一处理，而是在外面直接通过`try catch` 处理
->
-> ```js
-> const express = require("express");
-> const app = express();
->
-> const getDB = require("./getDB");
->
-> app.get("/", async (req, res) => {
->   try {
->     const db = await getDB();
->     res.status(200).send(db.list);
->   } catch (err) {
->     res.status(500).send({
->       errro: err.message,
->     });
->   }
-> });
->
-> app.get("/:name", async (req, res) => {
->   try {
->     const db = await getDB();
->     const name = req.params.name;
->     const person = db.list.find((item) => item.name === name);
->     if (!person) {
->       return res.status(404).end();
->     }
->     res.status(200).send(person);
->   } catch (err) {
->     res.status(500).send({
->       errro: err.message,
->     });
->   }
-> });
->
-> app.listen(3000, () => {
->   console.log("server running at http://localhost:3000");
-> });
+>     <div>Footer</div>
+>   </body>
+> </html>
 > ```
