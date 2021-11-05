@@ -1,304 +1,557 @@
-# Redux
+# Redux 基础
 
-统一管理组件的状态
+![](https://miro.medium.com/max/800/1*2dJ3D8gz4CVy3EtOJQNZvw.png)
 
-<img src="https://pbs.twimg.com/media/E2ysTjGUYAglrhI?format=jpg&name=medium" style="zoom:50%;" />
+[[toc]]
 
-1. 组件通过**store.dispatch()** 传递action给store
+## 简介说明
 
-   可以在组件中手写action对象
+![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fcss-tricks.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fredux-article-3-03.svg?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=3759e30c2034337af7e0bdfe089f038b)
 
-   或调用action creators函数生成action对象（常用）
+**Redux 设计思想**
 
-2. store传递旧状态+action 给指reducers
+Web 应用是个状态机，视图与状态一一对应
 
-3. reducer根据action处理旧状态，并返回新状态
+所有状态保存在一个对象里
 
-4. 组件通过**store.getState()** 获取返回的状态
+**Resdux 不是必须**
 
+`Redux`适合多交互多数据源的场合，若项目的 UI 层非常简单且没有很多互动的话，用了`Redux`反而增加复杂性
 
+## 执行原理
 
+![](https://res.cloudinary.com/practicaldev/image/fetch/s--EirMc8cO--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pyhm0w8sbuo75op77md2.jpg)
 
+::: tip Redux 执行原理：
 
-## Redux核心概念
+1. 由`store`对象统一管理需要被托管的状态
+2. 组件通过固定 API 从`store`获取状态
+3. 组件通过固定 API 发送`action`动作对象给`store`实现修改状态
+4. `store`通过调用`reducer`函数操作状态
+5. 组件通过固定 API 监测`store`中状态的变化并更新渲染 UI
 
-- Components
-- Action Creator**s**
+:::
+因为状态并不是直接由`store`操作，实际操作状态的是`reducer`函数，所以`Redux`的执行流程也可理解为：
 
-- Store
+![](https://blog.codecentric.de/files/2017/12/Bildschirmfoto-2017-12-01-um-08.56.48.png)
 
-- Reducer**s**
+## 核心概念
 
+::: tip Redux 3 大核心概念：
 
+- [Store 对象](#store)
 
+- [Action 动作对象](#action)
 
+- [Reducer 函数](#reducer)
 
-### State 状态
+:::
 
-> - 将需要被统一管理的状态，从组件自身的state中取出
-> - 状态在reducer函数中被初始化和修改
->
-> - 组件内的事件中调用**store.dispatch()** 传递action动作描述给store
->
-> - 组件通过**store.getState()** 获取初始化状态或处理后的状态
+### store
 
+一个应用只能有一个`store`
 
+`store`对象内存放各个组件内需要被统一管理的状态
 
+通过`Redux`提供的`createStore()`方法创建
 
+```js
+import { createStore } from "redux";
+import Reducer from "reducer函数位置";
 
-### Actions 动作对象
+const store = createStore(Reducer);
+```
 
-> - 通过action creator函数创建并返回action对象给组件
->
-> - 组件内通过调用**store.dispatch()** 传递action动作描述给store
-> - reducer函数接收 旧状态+action 给指reducers
+::: tip store 给组件提供了 3 个方法来获取和操作状态：
+
+- [store.getState()](#store.getState)
+- [store.dispatch(action)](#store.dispatch)
+- [store.subscribe](#store.subscribe)
+
+:::
+
+#### store.getState
+
+组件中通过`store.getState()`实时获取`store`中状态数据
+
+详见[获取 Store 中状态]()
 
 ---
 
-action是个对象，**仅用于对动作的描述**，告知reducer函数要进行何种操作
+#### store.dispatch
 
-reducer函数判断并根据type属性内容，对状态执行相对应处理
+组件中通过`store.dispatch()`将`action`动作对象传入`reducer`函数
+
+详见[更新 Store 中状态]()
 
 ---
 
-#### action构成
+#### store.subscribe
 
-- 必须包含有type属性。用于描述。常写为字符串常量
+组件中通过`store.subscribe()`监测`store`中状态数据的变化
 
-- 除了type以外可任意定义其他属性来携带数据
+详见[监测 Store 中状态变化]() 并 [更新页面 UI]()
+
+### action
+
+`action`对象用于描述动作
+
+告知`reducer`函数要对`store`中状态进行何种操作
+
+#### 构成
+
+`action`动作对象中必须包含`type`属性
+
+除了`type`属性外可定义任意其他属性携带数据
 
 ```js
 {
-  type: "描述",
-  data:数据
+  type: "具体动作描述";
 }
 ```
+
+`type`属性的值为字符串常量，用于描述动作的具体行为
+
+`reducer`函数内根据接收的`action`动作对象的`type`属性值对状态进行操作
+
+#### 创建
+
+自定义`Action Creator`函数创建并返回`action`对象
 
 ```js
-{
-  type: "ADD_NUM",
-  data:{
-    num: 1
-  }
-}
+const 动作对象名 = () => ({
+  type: "具体动作描述",
+});
 ```
 
----
-
-#### action creator
-
-> 可以在组件中手写一个action对象，然后通过store.dispatch() 传给store
+> 如下：
 >
 > ```js
-> add = () => {
->   const action = {
->     type: "ADD_NUM",
->     data:{
->       num: 1
->     }
->   };
->   store.dispatch(action)
-> }
-> ```
+> const INCREMENT_ACTION = "increment number";
 >
+> const addNum = (params) => ({
+>   type: INCREMENT_ACTION,
+>   data: params,
+> });
+>
+> const action = addNum(1);
+> ```
 
-但开发中多通过自定义的**action creators函数**生成action动作对象
+#### 发送
 
-函数返回值是action动作对象，并分别暴露出所有的action creator函数，
-
-组件中导入需要的action creator函数，事件中调用函数获取返回值action，
-
-然后通过s**tore.dispatch()** 把action传给store
-
-```js
-function addNum_Action(){
-  return {
-    type: "ADD_NUM",
-    data:{
-      num: 1
-    }
-  }
-}
-```
+组件内调用该动作对象生成器函数获取`action`对象后传递给`store`
 
 ```js
-add = () => {
-  const action = addNum_Action()
-  store.dispatch(action)
-}
+组件方法 = () => {
+  const action = 动作对象生成器函数();
+  store.dispatch(action);
+};
 ```
 
+### reducer
 
+`reducer`函数由`store`对象调用
 
+用于对`store`中的状态进行初始化和修改操作
 
-
-### Reducers 状态处理函数
-
-> - 组件内通过调用**store.dispatch()** 传递action动作描述给store
-> - store立刻将action动作对象 + 旧状态 传给reducer函数处理
-> - 处理完后将状态返回store
-
----
-
-reducer是个函数，一个组件对应一个reducer
-
-用来对Redux管理的状态初进行始化和修改
-
-- 修改旧状态
-- 初始化状态
-
-Reducer第一次触发是store出发，用于初始化状态
-
-后面只要组件发送action就会触发，根据发送来的action的type描述处理状态
-
-然后**return**返回 处理后的新状态 和 状态默认值 给store
-
----
+默认初始化初始化时调用一次，此后每次组件传递`action`时调用
 
 #### 参数
 
-默认接收store传来的两个参数
+::: tip reducer 函数接收两个参数：
 
-- perState旧的状态（默认undefined）
-- action对象描述对象
+- 当前状态`state`
+- 组件发送给`store`的`action`对象
+
+:::
 
 ```js
-function xxx_reducer(state, action) {
-  console.log(state) // undefined
-  console.log(action)  // dispatch传入的action对象
+const initialState = 初始值;
+function Reducer(state = initialState, action) {
+  console.log(action);
 }
 ```
 
----
+#### 处理状态
 
-#### reducer内容
-
-reducer函数中还要进行对状态值的初始化
-
-因为reducer函数接收的旧状态默认**undefined**
-
-所以需要定义状态的初始值，并在swtich中return返回
+`store`对象不会直接对状态进行修改，而是在接收到组件传递的`action`对象时，调用`reducer`函数并传递`action`动作对象，`reducer`函数根据`action`对象的`type`属性和携带的数据对状态进行处理，然后将数据后返回给`store`对象
 
 ```js
-const init = { 初始化状态 }
-
-function xxx_reducer(state=init, action) {
-  // console.log(state) // 定义的初始化状态
-  
-    switch (action){
-    case "action描述":
-       处理state
-       return 处理后的数据;
-    case "action描述":
-       处理state
-       return 处理后的数据;
-    case "action描述":
-       处理state
-       return 处理后的数据;
+function Reducer(state = 初始值, action) {
+  switch (action.type) {
+    case type属性值:
+      return state 操作 action.自定义属性;
     default:
-      return state      
-  }      
+      return state;
+  }
 }
 ```
 
+> 如下：
+>
+> ```js
+> export default function reducer(state = 0, action) {
+>   switch (action.type) {
+>     case "INCREMENT_NUM":
+>       return state + action.data.num;
+>     case "DECREMENT_NUM":
+>       return state - action.data.num;
+>     case "CHANGE_NAME":
+>       return "Andy";
+>     default:
+>       return state;
+>   }
+> }
+> ```
 
+#### 拆分 reducers
 
+建议为了防止`reducer`函数过于庞大，建议拆分来写
 
-
-### Store对象
-
-Store负责连接  组件—action—reducer
-
-#### 使用
-
-导入Redux的 createStore方法，
-
-调用方法并传入某一个Reducer创建Store对象
+通过`combineReducers()` 方法将`reducers`集合为一个`rootReducer`函数
 
 ```js
-// 引入createStore方法，
-import { createStore } from 'redux'
-
-// 引入自定义的reducer
-import reducer from '../reducer/index'
-
-// 创建并暴露store对象
-export default createStore(reducer)
+const rootReducer = combineReducers({
+  自定义属性名: 拆分的reducer函数,
+  自定义属性名: 拆分的reducer函数,
+});
+export default rootReducer;
 ```
 
----
+创建`store`时接收`rootReducer`作为参数
 
-- **store.getState()**
-- **store.dispatch(action)**
-- **store.subscribe()**
+```js
+const store = createStore(rootReducer);
+```
 
----
-
-#### getState()
-
-组件中通过 **store.getState()**获取被Redux管理的状态
-
-为了可以及时加载修改后的状态到页面，
-
-还必须借助subscribe() 和 this.setState()   详见 [subscribe()]()
+组件中要通过`store.getState().自定义属性名`获取状态
 
 ```jsx
-render() {
-  return (
-    <div>
-      <p>{ store.getState().data }</p>
-    </div>
-  )
+console.log(store.getState());
+// {自定义属性名: 初始状态, 自定义属性名: 初始状态}
+
+{
+  store.getState().自定义属性名;
 }
 ```
 
----
+> 如下：
+>
+> ```js
+> import { combineReducers } from "redux";
+>
+> const rootReducer = combineReducers({
+>   number: numberHandler,
+>   name: nameChanger,
+> });
+> export default rootReducer;
+>
+> function numberHandler(state = 0, action) {
+>   switch (action.type) {
+>     case "INCREMENT_NUM":
+>       return state + action.data.num;
+>     case "DECREMENT_NUM":
+>       return state - action.data.num;
+>     default:
+>       return state;
+>   }
+> }
+>
+> function nameChanger(state = "Jack", action) {
+>   switch (action.type) {
+>     case "CHANGE_NAME":
+>       return state === "Jack" ? "Andy" : "Jack";
+>     default:
+>       return state;
+>   }
+> }
+> ```
 
-#### dispatch()
+详见 [创建 reducer]()
 
-组件中通过**store.dispatch(action) **将状态修改描述action对象传入Store
+## 安装配置
 
-一般开发中多调用action creator函数，将其返回值action对象传入
+### 脚手架安装
 
-```jsx
-fn = () => {
-  const action = {
-    type: "描述",
-    data: xxxxx
+```bash
+yarn add redux
+```
+
+### 脚手架目录
+
+```bash
+src
+|-App.jsx
+|-index.js
+|-redux
+  |-store
+    |-index.js
+  |-actions
+    |-index.js
+    |-actionExample.js
+    ...
+  |-reducers
+    |-index.js
+    |-reducerFunction.js
+    ...
+```
+
+## 基本用法
+
+### 创建 reducer
+
+#### 单一 reducer
+
+```js
+function Reducer(state = 初始值, action) {
+  switch (action.type) {
+    case type属性值:
+      return state 操作 action.自定义属性;
+    default:
+      return state;
   }
-  store.dispatch(action)
 }
 ```
 
----
+> 如下：
+>
+> ```js
+> export default function reducer(state = 0, action) {
+>   switch (action.type) {
+>     case "INCREMENT_NUM":
+>       return state + action.data.num;
+>     case "DECREMENT_NUM":
+>       return state - action.data.num;
+>     case "CHANGE_NAME":
+>       return "Andy";
+>     default:
+>       return state;
+>   }
+> }
+> ```
 
-#### subscribe()
+#### 拆分 reducers
 
-组件中通过**store.subscribe()** 监听Redux中状态的修改
+为了防止`reducer`函数过于庞大，建议拆分来写
 
-里面是个回调函数，只要Redux中管理的状态被修改就会自动调用该函数
+通过`combineReducers()` 方法将`reducers`集合为一个`rootReducer`函数
 
-放在声明周期函数中
+```js
+const rootReducer = combineReducers({
+  自定义属性名: 拆分的reducer函数,
+  自定义属性名: 拆分的reducer函数,
+});
+export default rootReducer;
+```
 
-- 用来监听状态变化就获取最新的状态
+详见[拆分 reducers](#拆分reducers)
+
+组件中获取状态时要
+
+> 如下：
+>
+> ```js
+> import { createStore } from "redux";
+> import rootReducer from "../reducers/index";
+> export default createStore(rootReducer);
+> ```
+>
+> ```js
+> import numberHandler from "./numberHandler";
+> import nameChanger from "./nameChanger";
+> import { combineReducers } from "redux";
+>
+> export default combineReducers({
+>   num: numberHandler,
+>   name: nameChanger,
+> });
+> ```
+>
+> ```js
+> export default function numberHandler(state = 0, action) {
+>   switch (action.type) {
+>     case "INCREMENT_NUM":
+>       return state + action.data.num;
+>     case "DECREMENT_NUM":
+>       return state - action.data.num;
+>     default:
+>       return state;
+>   }
+> }
+> ```
+>
+> ```js
+> export default function nameChanger(state = "Jack", action) {
+>   switch (action.type) {
+>     case "CHANGE_NAME":
+>       return state === "Jack" ? "Andy" : "Jack";
+>     default:
+>       return state;
+>   }
+> }
+> ```
+>
+> ```jsx
+> import React from "react";
+> import store from "../redux/store/index";
+> // console.log(store.getState());
+> // {number: 0, name: 'Jack'}
+>
+> export default function A() {
+>   const { number, name } = store.getState();
+>   return (
+>     <div>
+>       <h1>{number}</h1>
+>       <h1>{name}</h1>
+>     </div>
+>   );
+> }
+> ```
+
+### 创建 store 容器
+
+`store`对象通过`Redux`提供的`createStore()`方法创建
+
+实际开发常将`store`放入单独文件
+
+```js
+import { createStore } from "redux";
+import reducer from "../reducer/index";
+
+export default createStore(reducer);
+```
+
+组件文件内导入`store`在组件内使用`store`提供的方法
+
+```jsx
+import store from "文件路径";
+const 组件 = () => {};
+```
+
+### 获取 Store 中状态
+
+一个`store`对象只有一个`state`状态
+
+组件内通过`store.getState()`方法获取状态数据
+
+```js
+const state = store.getState();
+```
+
+### 更新 Store 中状态
+
+组件内通过`store.dispatch()`方法传递`action`动作对象更新状态
+
+```js
+store.dispatch({
+  type: "动作类型描述",
+});
+```
+
+一般是通过自定义`Action Creator`函数创建并返回`action`对象，然后组件内调用该动作对象生成器函数获取`action`对象后传递给`store`
+
+```js
+const 动作对象生成器函数 = () => ({
+  type: "具体动作描述",
+});
+```
+
+```js
+组件方法 = () => {
+  const action = 动作对象生成器函数();
+  store.dispatch(action);
+};
+```
+
+> 如下：组件传递两个不同`action`动作对象
+>
+> ```js
+> export function AddNum() {
+>   return {
+>     type: "INCREMENT",
+>     data: {
+>       num: 1,
+>     },
+>   };
+> }
+>
+> export function subNum() {
+>   return {
+>     type: "DECREMENT",
+>     data: {
+>       num: 2,
+>     },
+>   };
+> }
+> ```
+>
+> ```jsx
+> import React from "react";
+> import store from "../redux/store/index";
+> import { AddNum, subNum } from "../redux/actions/index";
+>
+> export default function B() {
+>   const add = () => {
+>     store.dispatch(AddNum());
+>   };
+>   const subtract = () => {
+>     store.dispatch(subNum());
+>   };
+>   return (
+>     <div>
+>       <button onClick={add}>+1</button>
+>       <button onClick={subtract}>-2</button>
+>     </div>
+>   );
+> }
+> ```
+>
+> ```js
+> const initialState = 0;
+> function Reducer(state = initialState, action) {
+>   switch (action.type) {
+>     case "INCREMENT":
+>       return state + action.data.num;
+>
+>     case "DECREMENT":
+>       return state - action.data.num;
+>
+>     default:
+>       return state;
+>   }
+> }
+>
+> export default Reducer;
+> ```
+
+### 监测 Store 中状态变化
+
+组件内通过`store.subscribe()`方法监测状态变化
+
+只要`store`对象中的状态数据发生变化该方法就被调用
 
 ```js
 componentDidMount(){
   store.subscribe(()=>{
+    console.log('状态更新了')
     console.log(store.getState().data)
   })
 }
 ```
 
-- **用来监听状态变化就重新加载页面**
+### 更新页面 UI
 
-Redux只是个管理公共状态的，不是React自家的产品
+`Redux`只是管理操作状态数据，并不能实现页面更新渲染，即使实现了`store`中状态的更新，组件也实时获取了新的状态数据，但是页面不会得到及时渲染
 
-所以先用Redux监听状态变化，有变化就通知React去重新加载该组件
+虽然组件内可通过`store.subscribe()`方法监测`store`中状态的更新变化，但还是需要通过`React`自身的 API 才能实现组件重新渲染和页面 UI 更新
 
-加载页面是要靠React来实现即调用 this.setState()，
+#### 方法一
 
-因为只是通过该方法重加载页面，所以传入一个空对象即可
+**组件内监听状态变，重新渲染当前组件**
+
+在使用了`store`中状态的组件内，在生命周期钩子中调用`store.subscribe()`方法监测`store`中状态的更新变化，状态变化时通过`this.setState()`方法重新渲染当前组件，将状态更新到页面，实现页面 UI 更新
+
+> React 中除了`render()`方法外`setState()`方法也能实现组件重新渲染，通过传入一个空对象实现页面重新渲染（不更新组件自身状态仅重新渲染组件）
 
 ```js
 componentDidMount(){
@@ -308,183 +561,21 @@ componentDidMount(){
 }
 ```
 
-也可一劳永逸，直接在App组件中使用，重新渲染整个App组件
+#### 方法二
 
-借助diff，监听Redux状态只要发生改就重新渲染用到了该状态的组件
+**监听状态变化，重新渲染整个`App`根组件**
 
-```jsx
-store.subscribe(()=>{
-  ReactDOM.render(<App/>, doucment.getElementDyId('root'))
-})
-```
-
-
-
-
-
-
-
-
-
-## Redux使用
-
-### 安装
-
-```bash
-yarn add redux
-```
-
-
-
-### 目录
-
-```bash
-xxx
-|- action
-		|- index.js
-|- reducer
-		|- index.js
-|- store		
-		|- index.js
-```
-
-
-
-### 例子
-
-#### action / index.js
-
-```js
-export function sayHello(data) {
-    return {
-        type: "say_hello",
-        data: data
-    }
-}
-```
-
-
-
-#### reducer / index.js
-
-```js
-const init = { data: "Default" }
-
-export default function reducer(state = init, action) {
-
-    switch (action.type) {
-        case "say_hello":
-            return Object.assign({}, state, action);
-
-        default:
-            return state
-    };
-}
-```
-
-
-
-#### store / index.js
-
-```js
-import { createStore } from 'redux'
-
-import reducer from '../reducer/index'
-
-export default createStore(reducer)
-```
-
-
-
-#### 组件中
+在`App.jsx`根组件中调用`store.subscribe()`方法监测`store`中状态的更新变化，状态变化时调用`ReactDOM.render()`重新渲染整个`App`根组件
 
 ```jsx
-import store from '../store/index'
-import { sayHello_Action } from '../action/index'
+const render = () =>
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
 
-class Demo extends Component {
-
-    fn = () => {
-        const action = sayHello_Action('hello')
-        // console.log(action);
-        store.dispatch(action)
-    }
-
-    componentDidMount() {
-        store.subscribe(() => {
-            // console.log(store.getState());
-            this.setState({})
-        })
-    }
-
-    render() {
-        return (
-            <div>
-                <p>{ store.getState().data }</p>
-                <button onClick={this.fn}>发送</button>
-            </div>
-        )
-    }
-}
+store.subscribe(render);
+render();
 ```
-
-
-
-
-
-
-
-## 异步Action
-
-组件传递的action必须是个JS对象
-
-但是通过一个第三方中间件可将action改为函数形式
-
-函数形式的action被称为异步action
-
-- 对象形式的Action：同步action
-
-- 函数形式的Action：异步action（必须借助**redux-thunk**）
-
-```js
-function actionCreator(data){
-  return ()=>{
-    setTimeout(()=>{
-      store.dispatch({
-        type: '描述',
-        data
-      })
-    },1000)
-  }
-}
-```
-
-异步action并不是必须的
-
-1. 可在组件中通过定时器，异步发送action
-
-```js
-incremenAsync = () => {
-  const { value } = this.selectVal;
-  setTimeout(() => {
-    store.dispatch(actionCreator(Number(value)))
-  }, 1000)
-}
-```
-
-2. 通过redux-thunk实现在action creator中异步发送action
-
-```js
-import { creatStore, applyMiddleware } from 'redux';
-
-import peducer from '../prducer/index.js'
-
-import thunk from 'redux-thunk';
-
-export default creatStore(peducer, applyMiddleware(thunk))
-```
-
-
-
-
-

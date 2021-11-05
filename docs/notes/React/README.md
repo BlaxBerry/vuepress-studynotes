@@ -1,8 +1,4 @@
----
-sidebarDepth: 2
----
-
-# React.js 相关目录
+# React.js 相关
 
 ::: tip 官方文档
 [React](https://react.docschina.org/)
@@ -22,11 +18,23 @@ sidebarDepth: 2
 
 ## 组件化开发
 
-[React 类组件（Class Component）](./ComponentsDev/ClassComponent.md)
+::: tip 类组件（Class Component）
 
-[React 函数组件（Functional Component）](./ComponentsDev/FunctionalComponent.md)
+[React 类组件 基础](./ComponentsDev/ClassComponent.md)
 
-[Hooks 钩子](./ComponentsDev/Hooks.md)
+[setState()补充](./extra-01.md)
+
+[组件性能优化](./extra-02.md)
+
+:::
+
+::: tip 函数组件（Functional Component）
+
+[React 函数组件 基础](./ComponentsDev/FunctionalComponent.md)
+
+[Hooks 钩子函数](./ComponentsDev/Hooks.md)
+
+:::
 
 ## 路由管理
 
@@ -34,20 +42,18 @@ sidebarDepth: 2
 
 ## 状态管理
 
-[Redux 基础](./Redux.md)
+::: tip Redux
+
+[Redux 基础](./StateManage/Redux.md)
+
+[Redux 中间件（Middlewares）]()
+
+[Redux + Hooks]()
+
+:::
 
 [消息订阅发布 PubSub.js](./StateManage/PubSub.md)
 
 ## React Native
 
 [React Native 基础](./ReactNative.md)
-
-## 注意事项
-
-::: tip
-
-[setState() 方法补充](./extra-01.md)
-
-[组件性能优化](./extra-02.md)
-
-:::

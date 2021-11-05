@@ -53,30 +53,30 @@
 
 ## 脚手架目录
 
-```js
-XXX |
--node_modules |
--public |
--index.html |
--favicon.ico |
--src |
--assets | // 项目静态资源
--components | // 组件
--A.vue |
--B.vue |
--api |
--plugins |
--router |
--store |
--styles |
--utils |
--views |
--App.vue | // 根组件
--main.js | //
-  -babel.config.js |
-  -package.json |
-  (-package - lock.json) |
-  -vue.config.js;
+```bash
+XXX
+|-node_modules
+|-public  # 项目构建后静态资源
+  |-index.html
+  |-favicon.ico
+|-src
+  |-assets  # 项目静态资源
+  |-components  # 组件
+    |-A.vue
+    |-B.vue
+  |-api
+  |-plugins
+  |-router
+  |-store
+  |-styles
+  |-utils
+  |-views
+  |-App.vue # 根组件
+  |-main.js
+|-babel.config.js
+|-package.json
+|-package - lock.json
+|-vue.config.js
 ```
 
 ::: warning
@@ -222,31 +222,29 @@ module.exports = {
 
 配置项详见 [官方文档脚手架配置项](https://cli.vuejs.org/zh/config/#vue-config-js)
 
-
-
 ## 打包构建
 
 ```bash
 npm run build
 ```
+
 配置项详见 [官方文档脚手架配置项](https://cli.vuejs.org/zh/config/#vue-config-js)
 
 最终打包出的目录是 `dist`目录,
 
 生成的 `dist/index.html` 需要在服务器下打开
 
-::: tip 
+::: tip
 
 - 将`dist中的文件` 做为静态资源放入服务器的 `static`目录
-- 可使用 VSCode的 **Live Server插件**
+- 可使用 VSCode 的 **Live Server 插件**
 - 或通过 **命令行工具 server** 开启服务器，然后打开 `localhost:5000`
   ```bash
   cd dist
   srever .
   ```
 
-::: 
-
+:::
 
 ## 脚手架配置项
 
@@ -298,13 +296,14 @@ axios
 
 3. 因为修改了配置，要重启脚手架才会生效
 
-
 > 该方法的特点：
+>
 > - **配置简单**<br>
 >   直接发给前端开发服务器(localhost:8080)即可
 > - **不能配置多个代理**
 > - **不能控制请求是否走代理, 会优先匹配前端现有资源**<br>
 >   若请求的资源自身服务器中有则不会走代理，没有才会走代理发送请求
+
 ---
 
 #### 配置方法二
@@ -315,36 +314,39 @@ axios
 module.exports = {
   devServer: {
     proxy: {
-      '/api': {
-        target: 'http://目标地址域名',
-        pathRewrite: { '^/api': '' },
+      "/api": {
+        target: "http://目标地址域名",
+        pathRewrite: { "^/api": "" },
         ws: true,
-        changeOrigin: true
+        changeOrigin: true,
       },
-      '/自定义前缀': {
-        target: 'http://目标地址域名',
-        pathRewrite: { '^/自定义前缀': '' },
+      "/自定义前缀": {
+        target: "http://目标地址域名",
+        pathRewrite: { "^/自定义前缀": "" },
         ws: true,
-        changeOrigin: true
-      }
-    }
-  }
-}
+        changeOrigin: true,
+      },
+    },
+  },
+};
 ```
+
 > - `/api`：请求前缀 <br>
 >   前缀可以自定义名
 >   若想走代理在请求前加上盖前缀，不想走代理（请求自身服务器资源）则不加
 > - `pathRewrite: { '^/api': '' }` <br>
 >   防止代理发发送过去的请求中还带有请求前缀
 > - `changeOrigin: true` （默认）<br>
->   请求头host为目标地址的域名
+>   请求头 host 为目标地址的域名
 > - `changeOrigin: false`<br>
->   请求头host为前端的域名
+>   请求头 host 为前端的域名
 
 2. 发送请求时，在需要走代理请求的的域名后加上代理请求前缀
+
 ```js
-"http://前端开发服务器域名/代理请求前缀/xxxxx"
+"http://前端开发服务器域名/代理请求前缀/xxxxx";
 ```
+
 ```js
 axios
   .get("http://localhost:8080/api/xxxxx")
@@ -358,13 +360,9 @@ axios
 
 3. 也要重启脚手架
 
-
-
 ### 出入口
 
 ### 公共路径
-
-
 
 ### 默认配置
 
@@ -382,16 +380,14 @@ vue inspect  > output.js
 
 配置项详见 [vue.config.js](#vue.config.js)
 
-
-
-
-
 ## Vue 插件
 
 ### 自定义插件
 
-```js
-src | -plugins | -example.js;
+```bash
+src
+|-plugins
+  |-example.js;
 ```
 
 ```js

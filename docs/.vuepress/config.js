@@ -14,7 +14,7 @@ module.exports = {
                         items: [
                             { text: 'JavaScript', link: '/notes/Javascript/' },
                             { text: 'Vue.js', link: '/notes/Vue/' },
-                            { text: 'React', link: '/notes/React/' },
+                            { text: 'React.js', link: '/notes/React/' },
                         ]
                     },
                     {
@@ -29,7 +29,6 @@ module.exports = {
             { text: 'Github', link: 'https://github.com/BlaxBerry/vuepress-studynotes' },
         ],
         sidebar: 'auto',
-        sidebarDepth: 4,
         collapsable: true,
         activeHeaderLinks: true,
         lastUpdated: 'Last Updated',

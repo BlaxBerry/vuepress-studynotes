@@ -1,4 +1,4 @@
-# Vue.js 相关目录
+# Vue.js 相关
 
 ::: tip 官方文档
 [Vue](https://cn.vuejs.org/)
