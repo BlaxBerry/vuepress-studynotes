@@ -202,7 +202,7 @@ return (
    import React from "react";
    export default function 子组件(props) {
      console.log(props);
-
+   
      return <div>{props.自定义属性}</div>;
    }
    ```
@@ -240,78 +240,3 @@ return (
 > }
 > ```
 
-## context
-
-`context` 用于跨组件数据传递
-
-尤其是用于多层嵌套的**深层组件**之间的数据传递，如下图：
-
-但实际上开发中不怎么用，主要还是 [Redux]()
-
-<img src="https://ichi.pro/assets/images/max/724/1*EjDSOqhNOqIJ9wOqqFwKJQ.png" style="zoom:50%;" />
-
-::: tip context 使用步骤：
-
-函数组件没有 `this`，需要通过 **`<Provider/>`** 和 **`<Consumer/>`** 组件
-
-1. 公共区域内创建 `Context容器`
-
-   并获取其提供的 **`Provider`** 和 **`Consumer`**
-
-2. 通过 **`<Provider/>`** 包裹后代组件
-
-   并通过 **`value`** 属性传递数据
-
-3. 通过 **`<Consumer/>`** 获取数据
-
-   调用一个**回调函数**接收数据
-
-   函数的参数就是 **`<Provider/>`** 传递的 **`value`** 属性
-
-:::
-
-> 如下：
->
-> ```jsx
-> const { Provider, Consumer } = React.createContext()
->
-> class Father extends React.Component {
-> 	state = {
->     name: 'Andy',
->     age: 20
->   }
->
->   render() {
->     return (
->       <MyContext.Provider
->         value={{
->           num: this.state.num,
->           age: this.state.age
->         }}>
->         <Child1 />
->       </myContext.Provider >
->     )
->   }
-> }
->
-> const Child1 = props => {
->   return (
->     <div>
->       <Child22 />
->     </div>
->   )
-> }
->
-> const Child2 = props => {
->   return (
->     <div>
->       <Consumer>
->         { data => (
->           	<div>{data.num}</div>
->           	<div>{data.age}</div>
->         ) }
->       </Consumer>
->     </div>
->   )
-> }
-> ```

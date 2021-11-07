@@ -265,7 +265,7 @@ export default class Item01 extends Component {
 一般组件如果没有接收到传递的数据或设定默认值的话，`props` 属性是个空对象。若一般组件也想使用路由组件提供的属性（比如编程式导航）需要通过 React 路由内置的 **`witchRouter()`函数**
 
 ```js
-import { withROuter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 ```
 
 `witchRouter()` 用于加工一般组件使其具有路由组件的特有属性。该函数接收的参数是个一般组件，返回值是添加了路由组件上特有的三个属性的这个一般组件
@@ -274,7 +274,7 @@ import { withROuter } from "react-router-dom";
 >
 > ```jsx
 > import React, { Component } from "react";
-> import { withROuter } from "react-router-dom";
+> import { withRouter } from "react-router-dom";
 >
 > class 一般组件 extends Component {}
 >
