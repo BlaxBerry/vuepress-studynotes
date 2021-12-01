@@ -1,67 +1,31 @@
-# JavaScript 相关目录
+# JavaScript 相关
 
-::: tip 官方文档
-[MDN JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+## 内置对象及其常用API
 
-:::
+[Array]()
 
-## ES5
+[String]()
 
-[ES5 基础](./ES5/)
+[Number]()
 
-[原型 Prototype、构造函数](./ES5/Prototype.md)
+[Math]()
 
+[Date]()
 
-## DOM、BOM
+[RegExp]()
 
-[DOM 基础]()
+## 面向对象
 
-[BOM 基础]()
+[构造函数与原型]()
 
-## ES6+
+[Class 类]()
 
-[ES6 + 基础](./ES6+/ES6.md)
-
-[类 Class](./ES6+/Class.md)
-
-[异步]()
-
-[Poxy]()
+## 异步
 
 [Promise]()
 
-[Set、Map]()
+## DOM 与 BOM
 
-[Modules]()
+[DOM]()
 
-## 常用 API
-
-[API - Array](./APIs/API-Array.md)
-
-[API - String](./APIs/API-String.md)
-
-[API - Number](./APIs/)
-
-[API - Math](./APIs/)
-
-## Ajax、Fetch
-
-[XHR]()
-
-[jQuery Ajax]()
-
-[Axios]()
-
-[Fetch]()
-
-## 其他
-
-[JSON]()
-
-[正则表达式（RegExp）](./JS-RegExp.md)
-
-## Web Framworks
-
-[Vue.js]()
-
-[React.js]()
+[BOM]()

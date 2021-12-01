@@ -5,28 +5,10 @@ module.exports = {
     themeConfig: {
         logo: '/logo.jpg',
         nav: [
-            { text: 'Home', link: '/' },
-            { text: 'Catalog', link: '/guide/' },
-            {
-                text: 'Hot', items: [
-                    {
-                        text: 'Front-End',
-                        items: [
-                            { text: 'JavaScript', link: '/notes/Javascript/' },
-                            { text: 'Vue.js', link: '/notes/Vue/' },
-                            { text: 'React.js', link: '/notes/React/' },
-                        ]
-                    },
-                    {
-                        text: 'Server-Side',
-                        items: [
-                            { text: 'Node.js', link: '/notes/Nodejs/' },
-                        ]
-                    },
-                ]
-            },
-            { text: 'Portfolio', link: 'https://blaxberry.github.io/' },
-            { text: 'Github', link: 'https://github.com/BlaxBerry/vuepress-studynotes' },
+            { text: '目录列表', link: '/guide/' },
+            { text: 'JavaScript', link: '/notes/JavaScript/' },
+            { text: 'React.js', link: '/notes/React/' },
+            { text: 'Vue.js', link: '/notes/Vue/' },
         ],
         sidebar: 'auto',
         collapsable: true,

@@ -1,4 +1,4 @@
-# React JSX
+# JSX 语法
 
 ![](https://miro.medium.com/max/650/1*rJB4Tcz_ZZnliNxYmdfGqw.jpeg)
 
