@@ -21,8 +21,8 @@
 - 父子传值：useContext()
 - 状态共享：useReducer()
 - useRef()
-- useMemo()
-- useCallback()
+- 缓存一个数值：：useMemo()
+- 缓存一个函数：useCallback()
 
 :::
 
@@ -56,7 +56,9 @@ export default function Demo() {
 
 ### 组件渲染次数
 
-状态每修改一次当前该函数组件就被调用渲染一次（类似类组件的`render`）
+`useState()`创建的状态每更新修改一次都会导致当前该函数组件调用渲染一次
+
+> 类似类组件的`render`
 
 修改后的新状态值会作为缓存保存，不会因为重新渲染导致状态又变回初始值
 
@@ -739,14 +741,16 @@ export default function Home() {
 
 ## useMemo()
 
-**`useMemo()`** 用于系统优化
+**`useMemo()`** 用于系统优化，缓存一个数据
 
-当一些值的计算量很大时可通过`useMemo()` 来做一个缓存，只有依赖项变化时才会重新计算，用于解决使用`useEffect()`在组件每次渲染都会重复执行的高消耗计算
+可用于解决`useEffect()`处理数据时导致的每次状态更新都重复执行组件渲染这一高消耗性能问题
+
+当一些值的计算量很大时可通过`useMemo()`来做一个缓存，仅依赖项变化时才会重新计算
 
 ### 基础使用
 
 ```jsx
-useMemo(() => {
+const 数据 = useMemo(() => {
   // 计算某个数值
 }, [监测项]);
 ```
@@ -761,7 +765,7 @@ useMemo(() => {
 
 - **参数二**：数组
 
-  监测依赖项
+  监测依赖项，仅依赖项变化时才会重新计算
 
 :::
 
@@ -771,7 +775,7 @@ useMemo(() => {
 
 若没有依赖项，每次组件渲染时都会调用`useMemo()`计算新值
 
-如下：模拟一个切换列表的操作
+如下：模拟一个切换列表的操作，仅`num`更新时`newData`才会被重新计算获取新值
 
 ```jsx
 import React from 'react'
@@ -793,7 +797,7 @@ export default function App() {
     }))
   }, [num])
 
-  console.log(newData); // 调用 n+1 次
+  console.log(newData);
 
   return (
     <div className=“nav”>
@@ -852,9 +856,55 @@ export default function Demo() {
 
 ## useCallback()
 
-在需要传递函数给子组件时，子组件会重新渲染
+**`useMemo()`** 用于系统优化，缓存一个函数
 
-通过`useCallback()`则不会，可用于调用节流、防抖函数
+> 使用方法类似`useMemo()`
+
+每次组件渲染都会导致组件内声明的方法函数被重新创建
+
+比如，只要父组件更新了就会导致子组件更新，但很多场合子组件没有必要被重新渲染
+
+此时就可使用`useCallback()`在子组件中定义方法
+
+> 可用于调用节流、防抖函数
+
+### 基础使用
+
+```jsx
+const 方法 = useCallback(() => {
+  // 函数体逻辑处理
+}, [依赖项]);
+```
+
+> https://zhuanlan.zhihu.com/p/56975681
+
+如下：仅在子组件初次渲染时才声明`add`方法
+
+```jsx
+import React, { useState, useCallback } from "react";
+
+const Child = () => {
+  const [num, setNum] = useState(0);
+  const add = useCallback(() => {
+    setNum(num + 1)
+  }, [])
+
+  return (
+    <h2>{num}</h2>
+    <button onClick={add}>+1</button>
+  )
+};
+
+const Father = () => {
+  const [status, setStatus] = useState(true);
+  return (
+    <h1>{status}</h1>
+    <button onClick={add}>change to {!status}</button>
+    <Child/>
+  )
+}
+export default Father;
+```
 
 ## 自定义 Hook
 

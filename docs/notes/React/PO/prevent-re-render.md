@@ -151,9 +151,9 @@ export default class Father extends Component {
 
 - **方法一： 导出`React.memo()`，函数组件作为参数**
 
-- **方法二： `useMemo()`**
+- **方法二： 缓存一个数值：`useMemo()`**
 
-- **方法三： `useCallback()`**
+- **方法三： 缓存一个函数：`useCallback()`**
 
 :::
 
@@ -209,6 +209,10 @@ export default function Father() {
 
 ### useMemo()
 
+[详见 Hooks](../Components/Hooks/Hooks.md#usememo)
+
 ### useCallback()
 
-https://reffect.co.jp/react/react-memo#useMemo
+[详见 Hooks](../Components/Hooks/Hooks.md#usecallback)
+
+> https://reffect.co.jp/react/react-memo#useMemo
