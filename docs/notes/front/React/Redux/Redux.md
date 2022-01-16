@@ -1,6 +1,6 @@
 # Redux 基础
 
-![](https://miro.medium.com/max/800/1*2dJ3D8gz4CVy3EtOJQNZvw.png)
+![](https://upload.wikimedia.org/wikipedia/commons/3/30/Redux_Logo.png)
 
 [[toc]]
 
@@ -8,15 +8,21 @@
 
 ![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fcss-tricks.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fredux-article-3-03.svg?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=3759e30c2034337af7e0bdfe089f038b)
 
-**Redux 设计思想**
+`Redux`适合多交互多数据源的场合，所有状态保存在一个对象里
 
-Web 应用是个状态机，视图与状态一一对应
+若项目的 UI 层非常简单且没有很多互动的话，用了`Redux`反而增加复杂性
 
-所有状态保存在一个对象里
+## 核心概念
 
-**Resdux 不是必须**
+::: tip Redux 3 大核心概念：
 
-`Redux`适合多交互多数据源的场合，若项目的 UI 层非常简单且没有很多互动的话，用了`Redux`反而增加复杂性
+- [Store 状态对象](#store)
+
+- [Action 动作对象](#action)
+
+- [Reducer 状态函数](#reducer)
+
+:::
 
 ## 执行原理
 
@@ -27,7 +33,7 @@ Web 应用是个状态机，视图与状态一一对应
 1. 由`store`对象统一管理需要被托管的状态
 2. 组件通过固定 API 从`store`获取状态
 3. 组件通过固定 API 发送`action`动作对象给`store`实现修改状态
-4. `store`通过调用`reducer`函数操作状态
+4. `store`将动作对象转交给`reducer`函数来操作状态
 5. 组件通过固定 API 监测`store`中状态的变化并更新渲染 UI
 
 :::
@@ -35,19 +41,31 @@ Web 应用是个状态机，视图与状态一一对应
 
 ![](https://blog.codecentric.de/files/2017/12/Bildschirmfoto-2017-12-01-um-08.56.48.png)
 
-## 核心概念
+## 安装
 
-::: tip Redux 3 大核心概念：
+```bash
+npm install redux
+# 或
+yarn add redux
+```
 
-- [Store 对象](#store)
+## 目录
 
-- [Action 动作对象](#action)
+```js
+|- src
+    |- store
+        |- actionCreators
+            |- /**/
+            |- index.js
+        |- reducers
+            |- /**/
+            |- index.js
+        |- index.js
+    |- components
+    |- pages
+```
 
-- [Reducer 函数](#reducer)
-
-:::
-
-### store
+## store
 
 一个应用只能有一个`store`
 
@@ -55,11 +73,14 @@ Web 应用是个状态机，视图与状态一一对应
 
 通过`Redux`提供的`createStore()`方法创建
 
-```js
-import { createStore } from "redux";
-import Reducer from "reducer函数位置";
+> 如下：
 
-const store = createStore(Reducer);
+```js
+// src/store/index.js
+import { createStore } from "redux";
+import reducers from "../reducers/index";
+
+export default createStore(reducers);
 ```
 
 ::: tip store 给组件提供了 3 个方法来获取和操作状态：
@@ -70,76 +91,87 @@ const store = createStore(Reducer);
 
 :::
 
-#### store.getState
+### store.getState
 
 组件中通过`store.getState()`实时获取`store`中状态数据
 
-详见[获取 Store 中状态]()
+详见[获取 Store 中状态](#获取-store-中状态)
 
 ---
 
-#### store.dispatch
+### store.dispatch
 
 组件中通过`store.dispatch()`将`action`动作对象传入`reducer`函数
 
-详见[更新 Store 中状态]()
+详见[更新 Store 中状态](#更新-store-中状态)
 
 ---
 
-#### store.subscribe
+### store.subscribe
 
 组件中通过`store.subscribe()`监测`store`中状态数据的变化
 
-详见[监测 Store 中状态变化]() 并 [更新页面 UI]()
+详见[监测 Store 中状态变化](#监测-store-中状态变化) 并 [更新页面 UI](#更新页面-UI)
 
-### action
+## action
 
-`action`对象用于描述动作
+动作对象`action`是个 JS 对象，仅用来描述动作类型，告知`reducer`函数要对`store`中状态进行何种操作，但不具体执行动作
 
-告知`reducer`函数要对`store`中状态进行何种操作
+组件内调用该动作对象生成器函数获取`action`对象后传递给`store`
 
-#### 构成
+### 构成
 
-`action`动作对象中必须包含`type`属性
+通过`type`属性指定一个字符串来表示动作
 
-除了`type`属性外可定义任意其他属性携带数据
+> `type`为必须属性，值为字符串常量
+
+通过`payload`属性携带参与动作的数据
+
+> 可定义任意其他属性携带数据
 
 ```js
 {
-  type: "具体动作描述";
+    type: "DOWHAT",
+    playload: {
+        // 自定义数据: 值
+    }
 }
 ```
 
-`type`属性的值为字符串常量，用于描述动作的具体行为
+### actionCreators
 
-`reducer`函数内根据接收的`action`动作对象的`type`属性值对状态进行操作
-
-#### 创建
-
-自定义`Action Creator`函数创建并返回`action`对象
+动作对象一般由动作对象创建函数`actionCreator`函数创建返回
 
 ```js
-const 动作对象名 = () => ({
-  type: "具体动作描述",
-});
+function 自定义名(params) {
+  return {
+    type: "DOWHAT",
+    ...params,
+  };
+}
 ```
 
 > 如下：
->
-> ```js
-> const INCREMENT_ACTION = "increment number";
->
-> const addNum = (params) => ({
->   type: INCREMENT_ACTION,
->   data: params,
-> });
->
-> const action = addNum(1);
-> ```
 
-#### 发送
+```js
+const INCREASE = "INCREASE_ACCOUNT_MONEY";
+const DECREASE = "DECREASE_ACCOUNT_MONEY";
 
-组件内调用该动作对象生成器函数获取`action`对象后传递给`store`
+export const createIncreaseAccountAction = (params) => ({
+  type: INCREASE,
+  payload: params,
+});
+export const createDecreaseAccountAction = (params) => ({
+  type: DECREASE,
+  payload: params,
+});
+```
+
+### dispatch()
+
+动作对象通过`store.dispatch()`传递到`store`，然后被 Redux 内部转给`reducer`函数
+
+`reducer`函数内根据接收的`action`动作对象的`type`属性值对状态进行操作
 
 ```js
 组件方法 = () => {
@@ -148,152 +180,150 @@ const 动作对象名 = () => ({
 };
 ```
 
-### reducer
-
-`reducer`函数由`store`对象调用
-
-用于对`store`中的状态进行初始化和修改操作
-
-默认初始化初始化时调用一次，此后每次组件传递`action`时调用
-
-#### 参数
-
-::: tip reducer 函数接收两个参数：
-
-- 当前状态`state`
-- 组件发送给`store`的`action`对象
-
-:::
+> 如下：
 
 ```js
-const initialState = 初始值;
-function Reducer(state = initialState, action) {
-  console.log(action);
+import store from "../../store";
+import {
+  createIncreaseAccountAction,
+  createDecreaseAccountAction,
+} from "../../store/actionCreators";
+
+export default function MyComponent() {
+  const increase = () => {
+    const action = createIncreaseAccountAction({ num: 10 });
+    store.dispatch(action);
+  };
+  const decrease = () => {
+    const action = createDecreaseAccountAction({ num: 10 });
+    store.dispatch(action);
+  };
+
+  return (
+    <>
+      <button onClick={increase}>+10</button>
+      <button onClick={decrease}>-10</button>
+    </>
+  );
 }
 ```
 
-#### 处理状态
+## reducer
 
-`store`对象不会直接对状态进行修改，而是在接收到组件传递的`action`对象时，调用`reducer`函数并传递`action`动作对象，`reducer`函数根据`action`对象的`type`属性和携带的数据对状态进行处理，然后将数据后返回给`store`对象
+是个用来**初始化状态数据**和接收`action`后**更新状态数据**的函数
+
+函数返回值就是被`store`统一管理的状态的值
+
+接收两个参数：状态的初始值、动作对象
+
+由`store`对象调用，默认初始化初始化时调用一次，然后`return`返回指定默认值作为状态数据的初始值。
+
+此后每次组件通过`dispatch()`传递`action`时被调用，函数内通过`switch case`语句判断接收的动作对象中`type`属性后对状态进行修改操作,然后通过`return`处理后的状态的结果返回给`store`
+
+### 构成
 
 ```js
-function Reducer(state = 初始值, action) {
+export const 自定义名 = (state = initState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case "描述 1":
+      return /* state的新结果 */;
+    case "描述 1":
+      return /* state的新结果 */;
+    default:
+      return initState;
+  }
+};
+```
+
+> 如下：
+
+```js
+export default function reducer(state = 0, action) {
   switch (action.type) {
-    case type属性值:
-      return state 操作 action.自定义属性;
+    case "INCREMENT_NUM":
+      return state + action.data.num;
+    case "DECREMENT_NUM":
+      return state - action.data.num;
+    case "CHANGE_NAME":
+      return "Andy";
     default:
       return state;
   }
 }
 ```
 
-> 如下：
->
-> ```js
-> export default function reducer(state = 0, action) {
->   switch (action.type) {
->     case "INCREMENT_NUM":
->       return state + action.data.num;
->     case "DECREMENT_NUM":
->       return state - action.data.num;
->     case "CHANGE_NAME":
->       return "Andy";
->     default:
->       return state;
->   }
-> }
-> ```
+### combineReducers()
 
-#### 拆分 reducers
+通过`combineReducers()` 方法将众多 `reducers`集合为一个`rootReducer`函数
 
-建议为了防止`reducer`函数过于庞大，建议拆分来写
-
-通过`combineReducers()` 方法将`reducers`集合为一个`rootReducer`函数
-
-```js
-const rootReducer = combineReducers({
-  自定义属性名: 拆分的reducer函数,
-  自定义属性名: 拆分的reducer函数,
-});
-export default rootReducer;
-```
+该合并函数接收一个对象，对象属性是`store`管理的状态，状态值是`reducers`函数的返回值
 
 创建`store`时接收`rootReducer`作为参数
 
 ```js
-const store = createStore(rootReducer);
+|- store
+  |- reducers
+    |- / * reducer01.js * /
+    |- / * reducer02.js * /
+    |- index.js
+  |- index.js
 ```
 
-组件中要通过`store.getState().自定义属性名`获取状态
+```js
+// store/reducers/index.js
+import { combineReducers } from "redux";
 
-```jsx
-console.log(store.getState());
-// {自定义属性名: 初始状态, 自定义属性名: 初始状态}
+const reducers = combineReducers({
+  自定义状态名: reducer函数,
+  自定义状态名: reducer函数,
+});
+export default reducers;
+```
 
-{
-  store.getState().自定义属性名;
-}
+```js
+// src/store/index.js
+import { createStore } from "redux";
+import reducers from "../reducers/index";
+
+export default createStore(reducers);
 ```
 
 > 如下：
->
-> ```js
-> import { combineReducers } from "redux";
->
-> const rootReducer = combineReducers({
->   number: numberHandler,
->   name: nameChanger,
-> });
-> export default rootReducer;
->
-> function numberHandler(state = 0, action) {
->   switch (action.type) {
->     case "INCREMENT_NUM":
->       return state + action.data.num;
->     case "DECREMENT_NUM":
->       return state - action.data.num;
->     default:
->       return state;
->   }
-> }
->
-> function nameChanger(state = "Jack", action) {
->   switch (action.type) {
->     case "CHANGE_NAME":
->       return state === "Jack" ? "Andy" : "Jack";
->     default:
->       return state;
->   }
-> }
-> ```
 
-详见 [创建 reducer]()
+```js
+import { combineReducers } from "redux";
+import nameChanger from "./nameChanger.js";
+import numberHandler from "./numberHandler.js";
 
-## 安装配置
+const reducers = combineReducers({
+  number: numberHandler,
+  name: nameChanger,
+});
 
-### 脚手架安装
-
-```bash
-yarn add redux
+export default reducers;
 ```
 
-### 脚手架目录
+```js
+const INIT_NUMBER = 0
+const INIT_NAME = 'Jack'
 
-```bash
-src
-|-App.jsx
-|-index.js
-|-redux
-  |-store
-    |-index.js
-  |-actions
-    |-index.js
-    |-actionExample.js
-    ...
-  |-reducers
-    |-index.js
-    |-reducerFunction.js
-    ...
+export default function numberHandler(state = INIT_NUMBER , action) {
+  const { type, playload } = action;
+  switch (type) {
+    case "INCREMENT_NUM": return state + payload.num;
+    case "DECREMENT_NUM": return state - payload..num;
+    default: return state;
+  }
+}
+
+export default function nameChanger(state = INIT_NAME, action) {
+  const { type, playload } = action;
+  switch (type) {
+    case "CHANGE_NAME": return  "Jack" ? "Andy" : "Jack";
+    default: return state;
+  }
+}
 ```
 
 ## 基本用法
@@ -330,7 +360,7 @@ function Reducer(state = 初始值, action) {
 > }
 > ```
 
-#### 拆分 reducers
+#### 多个 reducer
 
 为了防止`reducer`函数过于庞大，建议拆分来写
 
@@ -344,7 +374,7 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
-详见[拆分 reducers](#拆分reducers)
+详见[合并多个 reducers](#combinereducers)
 
 组件中获取状态时要
 
@@ -560,6 +590,8 @@ componentDidMount(){
   })
 }
 ```
+
+---
 
 #### 方法二
 

@@ -10,6 +10,7 @@ module.exports = {
             { text: 'Vue.js', link: '/notes/front/Vue/' },
             { text: '前端目录', link: '/guide/front/' },
             { text: '后端目录', link: '/guide/back/' },
+            { text: '其他技术', link: '/guide/other/' },
             // {
             //     text: '前端目录',
             //     items: [

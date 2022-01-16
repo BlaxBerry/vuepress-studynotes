@@ -56,14 +56,13 @@
 ## 脚手架目录
 
 ```bash
-XXX
 |-node_modules
 |-public  # 项目构建后静态资源
   |-index.html
   |-favicon.ico
 |-src
-  |-assets  # 项目静态资源
-  |-components  # 组件
+  |-assets  # 会被多个组件共用到项目静态资源
+  |-components  # 一般组件
     |-A.vue
     |-B.vue
   |-api
@@ -72,9 +71,9 @@ XXX
   |-store
   |-styles
   |-utils
-  |-views
+  |-views # 路由组件
   |-App.vue # 根组件
-  |-main.js
+  |-main.js # 项目入口文件
 |-babel.config.js
 |-package.json
 |-package - lock.json
@@ -90,6 +89,12 @@ XXX
 这五个不能修改名称，不然会无法运行。
 
 :::
+
+pubilc 目录下存放的静态文件，在webpack打包时会原封不动的放入dist目录下
+
+assets 目录下存放的静态文件，在webpack打包时会作为模块打包进JS目录
+
+
 
 ### App.vue
 
@@ -223,6 +228,21 @@ module.exports = {
 ```
 
 配置项详见 [官方文档脚手架配置项](https://cli.vuejs.org/zh/config/#vue-config-js)
+
+
+
+#### 配置ESLint
+
+```js
+module.exports = {
+  // 关闭eslint
+  lintOnSave: false
+};
+```
+
+
+
+
 
 ## 打包构建
 

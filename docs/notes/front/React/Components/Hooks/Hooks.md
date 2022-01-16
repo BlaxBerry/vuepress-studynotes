@@ -198,11 +198,11 @@ useEffect(() => {
 ::: tip useEffect() 接受两个参数
 
 - **参数一**：匿名函数
-
+  
   根据监测依赖项模拟生命周期，返回值也是一个函数（在组件卸载时执行）
 
 - **参数二**：数组（默认省略）
-
+  
   监测依赖项
 
 :::
@@ -758,13 +758,13 @@ const 数据 = useMemo(() => {
 ::: tip useMemo() 接受两个参数
 
 - **参数一**：匿名函数
-
+  
   用于计算高消耗的数值，在组件渲染时执行
-
+  
   不能在这个函数内部执行与计算无关的操作
 
 - **参数二**：数组
-
+  
   监测依赖项，仅依赖项变化时才会重新计算
 
 :::
@@ -856,17 +856,17 @@ export default function Demo() {
 
 ## useCallback()
 
-**`useMemo()`** 用于系统优化，缓存一个函数
+**`useMemo()`** 用于系统优化
 
-> 使用方法类似`useMemo()`
+可以缓存一个函数
 
-每次组件渲染都会导致组件内声明的方法函数被重新创建
+> 每次组件渲染都会导致内部声明的方法函数被重新创建渲染
+> 
+> 此时就可使用`useCallback()`在组件中定义方法
 
-比如，只要父组件更新了就会导致子组件更新，但很多场合子组件没有必要被重新渲染
+但`useCallback`有时会让代码可读性变差
 
-此时就可使用`useCallback()`在子组件中定义方法
-
-> 可用于调用节流、防抖函数
+除非有个别非常复杂的组件需要考虑性能优化问题
 
 ### 基础使用
 
@@ -876,15 +876,22 @@ const 方法 = useCallback(() => {
 }, [依赖项]);
 ```
 
-> https://zhuanlan.zhihu.com/p/56975681
+```jsx
+const 方法 = useCallback(async () => {
+  // 同步处理
+}, [依赖项]);
+```
 
-如下：仅在子组件初次渲染时才声明`add`方法
+> 如下：
+> 
+> 仅在子组件初次渲染时才声明`add`方法
 
 ```jsx
 import React, { useState, useCallback } from "react";
 
 const Child = () => {
   const [num, setNum] = useState(0);
+
   const add = useCallback(() => {
     setNum(num + 1)
   }, [])
@@ -898,9 +905,13 @@ const Child = () => {
 const Father = () => {
   const [status, setStatus] = useState(true);
   return (
-    <h1>{status}</h1>
-    <button onClick={add}>change to {!status}</button>
-    <Child/>
+    <>
+        <h1>{status}</h1>
+        <button onClick={add}>
+            change to {!status}
+        </button>
+        <Child/>
+    </>
   )
 }
 export default Father;
@@ -908,9 +919,24 @@ export default Father;
 
 ## 自定义 Hook
 
-一律使用 `use` 前缀命名，使用 `xxx` 功能就命名为 `useXxx`。
+在自定义钩子函数中定义状态和方法
 
-### 实例一：获取页面尺寸
+并通过`return`返回出会被其他组件中使用的状态和方法
+
+自定义Hooks一律使用 `use` 前缀命名，使用 `xxx` 功能就命名为 `useXxx`
+
+```js
+|-src
+    |- components
+    |- Hooks
+        |- // useXxx.js
+        |- // useXxx.js
+    |- pages
+```
+
+
+
+### 实例：获取页面尺寸
 
 ```jsx
 // 定义并表露出自定义Hook
@@ -953,5 +979,3 @@ export default function App() {
   );
 }
 ```
-
-### 实例二

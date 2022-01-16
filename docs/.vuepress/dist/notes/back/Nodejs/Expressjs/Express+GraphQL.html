@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Express GraphQL | BlaxBerry</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Chen's Program Study Note">
+    
+    <link rel="preload" href="/vuepress-studynotes/assets/css/0.styles.9f18e3e9.css" as="style"><link rel="preload" href="/vuepress-studynotes/assets/js/app.8bbdb3c6.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/2.46821667.js" as="script"><link rel="preload" href="/vuepress-studynotes/assets/js/11.73ce61ad.js" as="script"><link rel="prefetch" href="/vuepress-studynotes/assets/js/10.6002131b.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/12.26fa6963.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/13.701aefbe.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/14.ec9ebeb4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/15.37741dbc.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/16.1d4fd063.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/17.67ff56d8.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/18.70f044e7.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/19.88155b47.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/20.8c13e1bc.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/21.70c69412.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/22.9957f1f9.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/23.51a3d959.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/24.b920f183.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/25.ac0e0e85.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/26.5b12a3d0.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/27.5a9f7daa.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/28.b83e1e4c.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/29.ef9a2d42.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/3.5ecb3533.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/30.2e1d4e70.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/31.188ad6e2.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/32.bba78f80.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/33.5f687123.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/34.538a2b0e.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/35.d999a214.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/36.bc46d6bc.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/37.4420c6d4.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/38.0b3665bb.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/39.47f6a9b9.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/4.abe3bfaf.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/40.05fa962e.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/41.2d7c4cc8.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/42.c22bda62.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/5.09c87c14.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/6.451c0322.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/7.d00e6429.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/8.219afb66.js"><link rel="prefetch" href="/vuepress-studynotes/assets/js/9.18874c2d.js">
+    <link rel="stylesheet" href="/vuepress-studynotes/assets/css/0.styles.9f18e3e9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-studynotes/" class="home-link router-link-active"><img src="/vuepress-studynotes/logo.jpg" alt="BlaxBerry" class="logo"> <span class="site-name can-hide">BlaxBerry</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-studynotes/notes/front/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/notes/front/React/" class="nav-link">
+  React.js
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/notes/front/Vue/" class="nav-link">
+  Vue.js
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/front/" class="nav-link">
+  前端目录
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/back/" class="nav-link">
+  后端目录
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/other/" class="nav-link">
+  其他技术
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-studynotes/notes/front/JavaScript/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/notes/front/React/" class="nav-link">
+  React.js
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/notes/front/Vue/" class="nav-link">
+  Vue.js
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/front/" class="nav-link">
+  前端目录
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/back/" class="nav-link">
+  后端目录
+</a></div><div class="nav-item"><a href="/vuepress-studynotes/guide/other/" class="nav-link">
+  其他技术
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Express GraphQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#服务器构建" class="sidebar-link">服务器构建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#开启服务器" class="sidebar-link">开启服务器</a></li></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#schema" class="sidebar-link">schema</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#resolver" class="sidebar-link">resolver</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#类型" class="sidebar-link">类型</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#查询类型" class="sidebar-link">查询类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#query-类型" class="sidebar-link">Query 类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#基本类型" class="sidebar-link">基本类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#对象类型" class="sidebar-link">对象类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#数组类型" class="sidebar-link">数组类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#非空类型" class="sidebar-link">非空类型 !</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#query-查询参数" class="sidebar-link">Query 查询参数</a></li></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#修改类型" class="sidebar-link">修改类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#mutation-类型" class="sidebar-link">Mutation 类型</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#input-类型" class="sidebar-link">input 类型</a></li></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#mutation-增删改实例" class="sidebar-link">Mutation 增删改实例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#增加" class="sidebar-link">增加</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#删除" class="sidebar-link">删除</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#修改" class="sidebar-link">修改</a></li></ul></li><li><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#前端测试" class="sidebar-link">前端测试</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#方法一-ide-工具" class="sidebar-link">方法一：IDE 工具</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#方法二-apollo-client" class="sidebar-link">方法二：Apollo Client</a></li><li class="sidebar-sub-header"><a href="/vuepress-studynotes/notes/back/Nodejs/Expressjs/Express+GraphQL.html#方法三-axios" class="sidebar-link">方法三：axios</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="express-graphql"><a href="#express-graphql" class="header-anchor">#</a> Express GraphQL</h1> <p><img src="https://miro.medium.com/max/1200/1*z6KGBIxGxXpzcS7AKlDT_A.jpeg" alt=""></p> <p></p><div class="table-of-contents"><ul><li><a href="#服务器构建">服务器构建</a><ul><li><a href="#安装">安装</a></li><li><a href="#开启服务器">开启服务器</a></li></ul></li><li><a href="#schema">schema</a></li><li><a href="#resolver">resolver</a></li><li><a href="#类型">类型</a></li><li><a href="#查询类型">查询类型</a><ul><li><a href="#query-类型">Query 类型</a></li><li><a href="#基本类型">基本类型</a></li><li><a href="#对象类型">对象类型</a></li><li><a href="#数组类型">数组类型</a></li><li><a href="#非空类型">非空类型 !</a></li><li><a href="#query-查询参数">Query 查询参数</a></li></ul></li><li><a href="#修改类型">修改类型</a><ul><li><a href="#mutation-类型">Mutation 类型</a></li><li><a href="#input-类型">input 类型</a></li></ul></li><li><a href="#mutation-增删改实例">Mutation 增删改实例</a><ul><li><a href="#增加">增加</a></li><li><a href="#删除">删除</a></li><li><a href="#修改">修改</a></li></ul></li><li><a href="#前端测试">前端测试</a><ul><li><a href="#方法一-ide-工具">方法一：IDE 工具</a></li><li><a href="#方法二-apollo-client">方法二：Apollo Client</a></li><li><a href="#方法三-axios">方法三：axios</a></li></ul></li></ul></div><p></p> <h2 id="服务器构建"><a href="#服务器构建" class="header-anchor">#</a> 服务器构建</h2> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> i express express-graphql graphql
+</code></pre></div><h3 id="开启服务器"><a href="#开启服务器" class="header-anchor">#</a> 开启服务器</h3> <ol><li>创建 Express.js 服务器</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.js</span>
+<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Running at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ol start="2"><li>导入 Express GraphQL</li></ol> <blockquote><p>如下：</p> <p>将 GraphQL API 服务器运行在 <code>localhost:8080</code></p> <p>并在 <code>localhost:8080/graphql</code>开启 IDE 调试工具</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 导入 Express GraphQL 相关</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> graphqlHTTP <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express-graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建 schema 查询和类型</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+    }
+
+    type Query {
+        user: User
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 定义 schema 的对应处理器 resolver</span>
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">user</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 挂载 graphql 中间件</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">graphqlHTTP</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    schema<span class="token punctuation">,</span>
+    rootValue<span class="token punctuation">,</span>
+    graphiql<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 开启浏览器的 Graphql IDE 调试工具</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">GraphQL API server running at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/graphql</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>nodemon index.js
+</code></pre></div><h2 id="schema"><a href="#schema" class="header-anchor">#</a> schema</h2> <p>schema 中定义<strong>查询的语句</strong>与<strong>类型</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type 自定义类型 {
+        属性名: 类型
+    }
+
+    type Query {
+        属性名: 类型
+				属性名: 自定义类型
+    }
+
+		input 自定义input名{
+        属性: 类型
+				属性: 类型
+    }
+
+    type Mutation {
+        属性名(自定义参数名: 自定义input名): 类型/自定义类型
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+    }
+
+    type Query {
+        user: User
+				id: ID
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="resolver"><a href="#resolver" class="header-anchor">#</a> resolver</h2> <p>处理器 resolver 用来定义 schema 中查询名对应的数据</p> <p>创建的对应数据的类型必须与 schema 中定义的一致</p> <p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+    }
+
+    type Product {
+        id: ID
+        title: String
+        price: Float
+    }
+
+    type Query {
+        user: User
+        product: Product
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">user</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">product</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">id</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;GBHNJNHBGVVBHNJKMJNHBGV&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">title</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;耳机&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">price</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28.88</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="类型"><a href="#类型" class="header-anchor">#</a> 类型</h2> <p>类型在 schema 中定义给属性</p> <p>在 resolver 中创建的属性值的类型必须与 schema 中定义的一致</p> <p>类型默认是 null 类型</p> <p>若 schema 中定义了但 resolver 中没有对应值则查询结果为<code>null</code></p> <p>如下：查询 <code>age</code> 的结果为<code>null</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+			name: String
+			age: Int
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>query <span class="token punctuation">{</span>
+  age
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="查询类型"><a href="#查询类型" class="header-anchor">#</a> 查询类型</h2> <h3 id="query-类型"><a href="#query-类型" class="header-anchor">#</a> Query 类型</h3> <p>Query 类型是查询类型，实质是个对象类型</p> <p>作为所有数据查询的入口点，查询时只能从 query 中查</p> <p><strong>Query 类型必须被定义，且只能有一个</strong></p> <p>即使不查询只修改也要在 schema 中定义 Query 类型</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+        属性名: 类型
+				属性名: 自定义类型
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+    }
+
+    type Query {
+        id: ID
+        user: User
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">id</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;GBHNJNHBGVVBHNJKMJNHBGV&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">user</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>query <span class="token punctuation">{</span>
+  id
+  user <span class="token punctuation">{</span>
+    name
+    age
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="基本类型"><a href="#基本类型" class="header-anchor">#</a> 基本类型</h3> <ul><li><p><strong>String</strong> 字符串类型</p></li> <li><p><strong>Int</strong> 整数类型</p></li> <li><p><strong>Float</strong> 浮点类型</p></li> <li><p><strong>Boolean</strong> 布尔类型</p></li> <li><p><strong>ID</strong> id 类型（唯一字符串）</p></li></ul> <p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+        id: ID
+        name: String
+        age: Int
+        score: Float
+        status: Boolean
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">id</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;FTYGUBHINIHUBGYV&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">score</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">60.5</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">status</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="对象类型"><a href="#对象类型" class="header-anchor">#</a> 对象类型</h3> <h4 id="单一对象"><a href="#单一对象" class="header-anchor">#</a> 单一对象</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type 自定义类型A {
+        属性: 基本类型
+    }
+
+    type 自定义类型B {
+        属性: 基本类型
+    }
+
+    type Query {
+        属性: 自定义类型A
+				属性: 自定义类型B
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+    }
+
+    type Product {
+        id: ID
+        title: String
+        price: Float
+    }
+
+    type Query {
+        user: User
+        product: Product
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">user</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">product</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">id</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;GBHNJNHBGVVBHNJKMJNHBGV&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">title</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;耳机&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">price</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28.88</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-json extra-class"><pre class="language-json"><code>query <span class="token punctuation">{</span>
+  product<span class="token punctuation">{</span>
+    id
+    title
+    price
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <h4 id="嵌套对象"><a href="#嵌套对象" class="header-anchor">#</a> 嵌套对象</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type 自定义类型A {
+        属性: 基本类型
+        属性: 自定义类型B
+    }
+
+    type 自定义类型B {
+        属性: 基本类型
+    }
+
+    type Query {
+        属性: 自定义类型A
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+    }
+
+    type Product {
+        id: ID
+        title: String
+        price: Float
+        user: User
+    }
+
+    type Query {
+        user: User
+        product: Product
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">product</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">id</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;GBHNJNHBGVVBHNJKMJNHBGV&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">title</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;耳机&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">price</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">28.88</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">user</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Lili&quot;</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">27</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>query <span class="token punctuation">{</span>
+  product<span class="token punctuation">{</span>
+    id
+    title
+    price
+    user<span class="token punctuation">{</span>
+      name
+      age
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="数组类型"><a href="#数组类型" class="header-anchor">#</a> 数组类型</h3> <h4 id="简单元素"><a href="#简单元素" class="header-anchor">#</a> 简单元素</h4> <p>数组元素不需要再单独指定类型来，直接赋值即可</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+        属性: [基本类型]
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+        hobies: [String]
+        scores: [Float]
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">hobies</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;抽烟&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;喝酒&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;烫头&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">scores</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">95.5</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>query <span class="token punctuation">{</span>
+  hobies
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <h4 id="复杂元素"><a href="#复杂元素" class="header-anchor">#</a> 复杂元素</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type 自定义类型A {
+        属性: 基本类型
+        属性: 自定义类型B
+    }
+
+    type 自定义类型B {
+        属性: 基本类型
+    }
+
+    type Query {
+        属性: [自定义类型A]
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type User {
+        name: String
+        age: Int
+        blogs: [Blog]
+    }
+
+    type Blog {
+        id: ID,
+        title: String
+        content: String
+    }
+
+    type Query {
+        user: User
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">user</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Lili&quot;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">age</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">27</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">blogs</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">&quot;GBHNBGVVB93JKMJNHBGV&quot;</span><span class="token punctuation">,</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;专题一&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">&quot;内容&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">&quot;GBHNJNHBGVHBG6789HJ&quot;</span><span class="token punctuation">,</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;专题二&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">&quot;内容&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="非空类型"><a href="#非空类型" class="header-anchor">#</a> 非空类型 !</h3> <p>若想规定查询结果返回值不能是<code>null</code></p> <p>可在 schema 中定义类型时加上 <code>类型!</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+			属性: 类型!
+			属性: [类型]!
+			属性: [类型!]
+			属性: [类型!]!
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如下：查询<code>age</code>会提示报错不能返回一个空值</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Query {
+			name: String
+			age: Int!
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">name</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;Andy&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>query <span class="token punctuation">{</span>
+  age
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-{ extra-class"><pre class="language-text"><code>{
+  &quot;errors&quot;: [
+    {
+      &quot;message&quot;: &quot;Cannot return null for non-nullable field Query.age.&quot;,
+      &quot;locations&quot;: [
+        {
+          &quot;line&quot;: 2,
+          &quot;column&quot;: 3
+        }
+      ],
+      &quot;path&quot;: [
+        &quot;age&quot;
+      ]
+    }
+  ],
+  &quot;data&quot;: null
+}
+</code></pre></div><h3 id="query-查询参数"><a href="#query-查询参数" class="header-anchor">#</a> Query 查询参数</h3> <p>如下：通过<code>id</code>查询数组中的某个元素</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token constant">DEFAULT_SKILLS</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+    example<span class="token operator">:</span> <span class="token string">&quot;EC Shopping App&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+    example<span class="token operator">:</span> <span class="token string">&quot;MOBA Character Detail&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type SkillItem {
+        name: String!
+        id: String!
+        example: String!
+    }
+    type Query {
+        skill(id: ID!): SkillItem
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">skill</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> id <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// console.log(id)</span>
+    <span class="token keyword">return</span> <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id <span class="token operator">===</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>query <span class="token punctuation">{</span>
+  <span class="token function">skill</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    name
+    id
+    example
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>或：</p> <div class="language-js extra-class"><pre class="language-js"><code>query <span class="token function">skill</span><span class="token punctuation">(</span><span class="token parameter">$id<span class="token operator">:</span><span class="token constant">ID</span><span class="token operator">!</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">skill</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token operator">:</span>$id</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    name
+    id
+    example
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="修改类型"><a href="#修改类型" class="header-anchor">#</a> 修改类型</h2> <h3 id="mutation-类型"><a href="#mutation-类型" class="header-anchor">#</a> Mutation 类型</h3> <p>修改/输入类型</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Mutation {
+        自定义名(自定义参数名: 类型): 类型/自定义类型
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="input-类型"><a href="#input-类型" class="header-anchor">#</a> input 类型</h3> <p>若 Mutation 接收的参数很多可统一写为一个对象</p> <p>但是该对象的类型必须是 input，必须通过 input 在 schema 中定义</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    input 自定义input名{
+        属性: 类型
+				属性: 类型
+    }
+    type Mutation {
+        自定义名(自定义参数名: 自定义input名): 类型/自定义类型
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token constant">DEFAULT_SKILLS</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Skill {
+        name: String!
+        id: String!
+    }
+    input CreateSkillInput{
+        name: String!
+    }
+    type Mutation {
+        createSkill(input: CreateSkillInput!): Skill
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">createSkill</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> input <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// console.log(input)</span>
+    <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token string">&quot;FGVBHNJKKMJNH&amp;6789&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> newSkill <span class="token operator">=</span> <span class="token punctuation">{</span>
+      name<span class="token operator">:</span> input<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+      id<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>newSkill<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> newSkill<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>mutation <span class="token function">createSkill</span><span class="token punctuation">(</span><span class="token parameter">$input<span class="token operator">:</span> CreateSkillInput<span class="token operator">!</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">createSkill</span><span class="token punctuation">(</span><span class="token parameter">input<span class="token operator">:</span> $input</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    name
+    id
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;input&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JavaScript&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="mutation-增删改实例"><a href="#mutation-增删改实例" class="header-anchor">#</a> Mutation 增删改实例</h2> <h3 id="增加"><a href="#增加" class="header-anchor">#</a> 增加</h3> <p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token constant">DEFAULT_SKILLS</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Skill {
+        name: String!
+        id: String!
+    }
+		type Query {
+        skills: [Skill]
+    }
+    input CreateSkillInput{
+        name: String!
+    }
+    type Mutation {
+        createSkill(input: CreateSkillInput!): Skill
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  skills<span class="token operator">:</span> <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">createSkill</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> input <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// console.log(input)</span>
+    <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token string">&quot;FGVBHNJKKMJNH&amp;6789&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> newSkill <span class="token operator">=</span> <span class="token punctuation">{</span>
+      name<span class="token operator">:</span> input<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+      id<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>newSkill<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> newSkill<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>mutation <span class="token function">createSkill</span><span class="token punctuation">(</span><span class="token parameter">$input<span class="token operator">:</span> CreateSkillInput<span class="token operator">!</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">createSkill</span><span class="token punctuation">(</span><span class="token parameter">input<span class="token operator">:</span> $input</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    name
+    id
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;input&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JavaScript&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="删除"><a href="#删除" class="header-anchor">#</a> 删除</h3> <p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token constant">DEFAULT_SKILLS</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Skill {
+        name: String!
+        id: String!
+        content: String!
+    }
+    type DeletitionMessage {
+        success: Boolean!
+        info: String!
+    }
+    type Mutation {
+        deleteSkill(id: ID!): DeletitionMessage 
+    }
+    type Query {
+        skills: [Skill]
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  skills<span class="token operator">:</span> <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">deleteSkill</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> id <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> index <span class="token operator">=</span> <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id <span class="token operator">==</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        success<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        info<span class="token operator">:</span> <span class="token string">&quot;删除成功&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        success<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        info<span class="token operator">:</span> <span class="token string">&quot;删除失败&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>mutation <span class="token function">deleteSkill</span><span class="token punctuation">(</span><span class="token parameter">$id<span class="token operator">:</span><span class="token constant">ID</span><span class="token operator">!</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">deleteSkill</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token operator">:</span>$id</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    success
+    info
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="修改"><a href="#修改" class="header-anchor">#</a> 修改</h3> <p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token constant">DEFAULT_SKILLS</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token string">&quot;内容&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span>
+    id<span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token string">&quot;内容&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> buildSchema <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;graphql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token function">buildSchema</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    type Skill {
+        name: String!
+        id: String!
+				content: String!
+    }
+    input UpdateSkillInput {
+        name: String!
+				content: String!
+    }
+    type Mutation {
+        updateSkill(
+					id: ID!, 
+					input: UpdateSkillInput!
+				): Skill
+    }
+    type Query {
+        skills: [Skill]
+    }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootValue <span class="token operator">=</span> <span class="token punctuation">{</span>
+  skills<span class="token operator">:</span> <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">updateSkill</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> id<span class="token punctuation">,</span> input <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// console.log(id, input)</span>
+    <span class="token keyword">const</span> skill <span class="token operator">=</span> <span class="token constant">DEFAULT_SKILLS</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id <span class="token operator">==</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> content <span class="token punctuation">}</span> <span class="token operator">=</span> input<span class="token punctuation">;</span>
+    skill<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    skill<span class="token punctuation">.</span>content <span class="token operator">=</span> content<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> skill<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>mutation <span class="token function">updateSkill</span><span class="token punctuation">(</span><span class="token parameter">$id<span class="token operator">:</span><span class="token constant">ID</span><span class="token operator">!</span><span class="token punctuation">,</span> $input<span class="token operator">:</span> UpdateSkillInput<span class="token operator">!</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">updateSkill</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token operator">:</span>$id<span class="token punctuation">,</span> input<span class="token operator">:</span> $input</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    name
+    id
+    content
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;input&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;haha&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;content&quot;</span><span class="token operator">:</span> <span class="token string">&quot;新&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="前端测试"><a href="#前端测试" class="header-anchor">#</a> 前端测试</h2> <h3 id="方法一-ide-工具"><a href="#方法一-ide-工具" class="header-anchor">#</a> 方法一：IDE 工具</h3> <p>访问浏览器的 Graphql IDE 调试工具</p> <div class="language-http extra-class"><pre class="language-http"><code><span class="token header-name keyword">http:</span>//服务器域名/graphql/
+</code></pre></div><div class="language-http extra-class"><pre class="language-http"><code><span class="token header-name keyword">http:</span>//localhost:8080/graphql/
+</code></pre></div><p><img src="https://developers.cloudflare.com/analytics/static/b09bb23b243e05f350bfcc3528b07f1b/eb3fa/graphiql-doc-explorer.png" alt=""></p> <blockquote><p>field 字段是根据定义的 schema</p></blockquote> <hr> <h3 id="方法二-apollo-client"><a href="#方法二-apollo-client" class="header-anchor">#</a> 方法二：Apollo Client</h3> <p><a href="">Apollo Client</a></p> <hr> <h3 id="方法三-axios"><a href="#方法三-axios" class="header-anchor">#</a> 方法三：axios</h3> <p>如下：通过 axios 请求数据</p> <blockquote><ul><li>POST 请求</li> <li>query 请求的内容是字符串格式的属性名</li> <li>返回数据存放在 data 中（下例中 axios 的返回值的 data 中的 data）</li></ul></blockquote> <h4 id="查询所有"><a href="#查询所有" class="header-anchor">#</a> 查询所有</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  method<span class="token operator">:</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+  url<span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/graphql&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    query<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+          query getUser{
+						user{
+							name
+							age
+						}
+					}
+      }</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="查询单个"><a href="#查询单个" class="header-anchor">#</a> 查询单个</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  method<span class="token operator">:</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+  url<span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/graphql&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    query<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+          query getUser($id: ID!){
+						user(id: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">){
+							name
+							age
+						}
+					}
+      }</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    variables<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;GBHNJMKJ123&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="增加-2"><a href="#增加-2" class="header-anchor">#</a> 增加</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  method<span class="token operator">:</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+  url<span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/graphql&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    query<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+          muataion createUser($input: CreateUserInput!){
+						createUser(input: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>input<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">){
+							name
+							age
+						}
+					}
+      }</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    variables<span class="token operator">:</span> <span class="token punctuation">{</span>
+      input<span class="token operator">:</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;新人&quot;</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>createUser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="删除-2"><a href="#删除-2" class="header-anchor">#</a> 删除</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    method<span class="token operator">:</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+    url<span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/graphql&quot;</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      query<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+          muataion deleteUser($id: ID!){
+						deleteUser(id: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">){
+							success
+							message
+						}
+					}
+      }</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+      variables<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">&quot;6789&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>deleteUser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="修改-2"><a href="#修改-2" class="header-anchor">#</a> 修改</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    method<span class="token operator">:</span> <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+    url<span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/graphql&quot;</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      query<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">{
+          muataion updateUser(
+						$id: ID!,
+						$input: UpdateUserInput!
+					){
+						updateUser(id: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, input: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>input<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">){
+							name
+							age
+						}
+					}
+      }</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+      variables<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">&quot;6789&quot;</span>
+        input<span class="token operator">:</span> <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;新名&quot;</span><span class="token punctuation">,</span>
+          age<span class="token operator">:</span> <span class="token number">29</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> data <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>updateUser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">12/31/2021, 9:27:06 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress-studynotes/assets/js/app.8bbdb3c6.js" defer></script><script src="/vuepress-studynotes/assets/js/2.46821667.js" defer></script><script src="/vuepress-studynotes/assets/js/11.73ce61ad.js" defer></script>
+  </body>
+</html>
