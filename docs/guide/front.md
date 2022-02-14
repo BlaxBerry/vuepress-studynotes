@@ -10,7 +10,13 @@
 
 ### JavaScript
 
-<!-- [相关笔记 →]() -->
+[内置对象 & 其常用 API →](../notes/front/JavaScript/README.md##内置对象及其常用api)
+
+[面向对象 →](../notes/front/JavaScript/README.md#面向对象)
+
+[异步 →](../notes/front/JavaScript/README.md#异步)
+
+[DOM & BOM →](../notes/front/JavaScript/README.md#dom-与-bom)
 
 ### TypeScript
 
@@ -34,11 +40,9 @@
 
 [JSX →](../notes/front/React/README.md#jsx-相关)
 
-<!-- [Hooks →](../notes/front/React/README.md#) -->
+[Hooks 钩子函数 →](../notes/front/React/README.md#hooks-钩子函数)
 
-[Create-React-App →](../notes/front/React/README.md#脚手架工具)
-
-<!-- [Gatsby →](../notes/front/React/README.md#) -->
+[Create-React-App →](../notes/front/React/README.md#create-react-app)
 
 [React-Router →](../notes/front/React/README.md#路由器)
 
@@ -61,5 +65,11 @@
 [v1.x 官方文档 →](https://vuepress.vuejs.org/zh/guide/)
 
 ### Gatsby
+
+[Gatsby 项目结构 →](../notes/front/React/Gatsby/Gatsby.md#目录结构)
+
+[Gatsby 路由 →](../notes/front/React/Gatsby/Gatsby.md#路由-页面)
+
+[Gatsby 配置文件 →](../notes/front/React/Gatsby/Gatsby-ConfigsFiles)
 
 <!-- [相关笔记 →]() -->

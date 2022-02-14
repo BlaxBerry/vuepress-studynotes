@@ -1,4 +1,4 @@
-# Hooks 钩子函数
+# 原生 Hooks 钩子函数
 
 ![](https://www.wangbase.com/blogimg/asset/201908/bg2019083104.jpg)
 
@@ -198,11 +198,11 @@ useEffect(() => {
 ::: tip useEffect() 接受两个参数
 
 - **参数一**：匿名函数
-  
+
   根据监测依赖项模拟生命周期，返回值也是一个函数（在组件卸载时执行）
 
 - **参数二**：数组（默认省略）
-  
+
   监测依赖项
 
 :::
@@ -431,6 +431,18 @@ export default function App() {
   );
 }
 ```
+
+### eslint 报错问题
+
+> 一般来说 `useEffect` 中使用了的外部变量，都应该放到第二个数组参数中，
+>
+> 一般会使用`eslint-plugin-react-hooks`插件检查规范
+
+**但有时候，使用规范与业务需求有冲突时，可以不将某变量放入依赖项**
+
+即，仅当需要当该变量变化时才触发`useEffect` 函数执行时才将其放入依赖项，而不是因为 useEffect 中用到了这个变量就都放入依赖项。该情况可以选择性忽略 `eslint-plugin-react-hooks`插件的警告
+
+<br/>
 
 ## useContext()
 
@@ -758,13 +770,13 @@ const 数据 = useMemo(() => {
 ::: tip useMemo() 接受两个参数
 
 - **参数一**：匿名函数
-  
+
   用于计算高消耗的数值，在组件渲染时执行
-  
+
   不能在这个函数内部执行与计算无关的操作
 
 - **参数二**：数组
-  
+
   监测依赖项，仅依赖项变化时才会重新计算
 
 :::
@@ -861,7 +873,7 @@ export default function Demo() {
 可以缓存一个函数
 
 > 每次组件渲染都会导致内部声明的方法函数被重新创建渲染
-> 
+>
 > 此时就可使用`useCallback()`在组件中定义方法
 
 但`useCallback`有时会让代码可读性变差
@@ -883,7 +895,7 @@ const 方法 = useCallback(async () => {
 ```
 
 > 如下：
-> 
+>
 > 仅在子组件初次渲染时才声明`add`方法
 
 ```jsx
@@ -923,7 +935,7 @@ export default Father;
 
 并通过`return`返回出会被其他组件中使用的状态和方法
 
-自定义Hooks一律使用 `use` 前缀命名，使用 `xxx` 功能就命名为 `useXxx`
+自定义 Hooks 一律使用 `use` 前缀命名，使用 `xxx` 功能就命名为 `useXxx`
 
 ```js
 |-src
@@ -933,8 +945,6 @@ export default Father;
         |- // useXxx.js
     |- pages
 ```
-
-
 
 ### 实例：获取页面尺寸
 
