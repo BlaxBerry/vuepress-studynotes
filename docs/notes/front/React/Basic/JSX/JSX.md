@@ -592,7 +592,7 @@ export default class App extends Component {
 }
 ```
 
-### \<></>
+### 语法糖 \<></>
 
 `<></>`是`<React.Fragment>`的语法糖
 

@@ -7,7 +7,6 @@
 ::: tip 性能优化
 
 [Vue2 + Vue-Cli 组件化开发](./Vue2/ComponentsDevelopment.md)
-
 [Vue2 的 9 种性能优化技巧](./Vue2/PO/9-Performance-Optimizations.md)
 
 :::
@@ -22,21 +21,37 @@
 
 <br/>
 
-## Vue3 + TS
+## Vue3
 
 [Vue3 基础 + Vue-Cli + TS ](./Vue3/Vue3+Vue-Cli+TS.md)
 
+[script-setup 语法糖]()
+
 <br/>
 
-## 脚手架工具
+## 项目创建
 
 ### Vue-Cli
 
-[Vue-Cli](./Cli/Vue-Cli.md)
+[Vue-Cli 基础](./Cli/Vue-Cli.md)
+
+---
 
 ### Vite
 
-[Vite]()
+[Vite](https://vitejs.cn/)
+
+### Nuxt
+
+> 服务端渲染 (SSR)
+> [Nuxt.js]()
+
+---
+
+### VuePress
+
+> 静态站点生成器
+> [VuePress]()
 
 <br/>
 
@@ -48,7 +63,15 @@
 
 ## 状态管理
 
-[Vuex]()
+### Vuex
+
+[Vuex v4]()
+
+---
+
+### Pinia
+
+[Pinia v2]()
 
 <br/>
 
@@ -56,12 +79,24 @@
 
 > Server Side Rendering
 
-[Nuxt.js]()
-
 <br/>
 
 ## 静态站点生成器
 
 > Static Site Generators
 
-[VuePress]()
+<br/>
+
+## 第三方库生态圈
+
+### 国际化
+
+[vue-i18n]()
+
+---
+
+### 数据请求
+
+::: tip Graphql
+[Vue Apollo](https://apollo.vuejs.org/)
+:::

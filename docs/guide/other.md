@@ -1,49 +1,29 @@
 # 其他技术目录
 
-## 网络知识
+## :x:网络知识
 
 ### 网络基础
 
 ### 网络安全
 
-<br/>
+## API
 
-## 数据请求
-
-### Ajax
-
-### GraphQL
-
-[Express + GraphQL →](../notes/back/Nodejs/Expressjs/Express+GraphQL.md)
-
-<!-- [Apollo GraphQL →]() -->
-
-<br/>
+[What is an API]()
 
 ## 身份验证
 
-> Authentication
+[Session + Cookie]()
 
-[Session + Cookie](../notes/others/Authentication/Session+Cookie.md)
+[JWT ( JSON Web Token)]()
 
-[JWT ( JSON Web Token)](../notes/others/Authentication/JWT.md)
+## 开发工具
 
-<br/>
+### 版本管理
 
-## 构建工具
+[Git 基本使用]()
 
-### 包管理工具
+## 原型设计
 
-<!-- [npm →]() -->
+❌ [Sketch](https://www.sketch.com/)
 
-<!-- [yarn →]() -->
-
-### 打包工具
-
-<!-- [webpack]() -->
-
-### 代码格式化工具
-
-<!-- styleLint -->
-
-<!-- eslint -->
+❌ [Figma](https://www.figma.com/)
