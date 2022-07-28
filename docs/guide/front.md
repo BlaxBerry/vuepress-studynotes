@@ -76,18 +76,31 @@
 
 ---
 
-## Electron
+### Electron
 
 <br/>
 
-## :x:数据请求
+## 数据请求
 
 ### Restful
+
+[Ajax](https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX)
+
+[Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
+
+[Axios](https://axios-http.com/)
 
 ---
 
 ### GraphQL
 
+::: tip React
+[ApolloClient](https://www.apollographql.com/docs/react)
+:::
+
+::: tip Vue
+[Vue Apollo](https://apollo.vuejs.org/)
+:::
 <br/>
 
 ## :x:构建工具
@@ -106,7 +119,7 @@
 
 ## 第三方库
 
-### 时间处理
+### 日期处理
 
 [date-fns](https://date-fns.org/)
 
