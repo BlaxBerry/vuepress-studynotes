@@ -14,14 +14,16 @@
 console.log(typeof /abc/); // object
 ```
 
-正则表达式构成：
+::: tip 正则表达式构成：
 
 ```js
 /匹配规则/[修饰符];
 ```
 
-- 匹配规则（pattern）[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/APIs/RegExp.html#匹配模式)
-- 修饰符（modifiers）[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/APIs/RegExp.html#修饰符)
+- 匹配规则（pattern）[详见下文](#匹配模式)
+- 修饰符（modifiers）[详见下文](#修饰符)
+
+:::
 
 <br/>
 
@@ -36,6 +38,9 @@ console.log(typeof /abc/); // object
 ```js
 const 正则表达式 = /匹配规则/;
 const 正则表达式 = /匹配规则/修符饰;
+```
+
+```js
 /abc/;
 /abc/i;
 ```
@@ -49,11 +54,14 @@ const 正则表达式 = /匹配规则/修符饰;
 ```js
 const 正则表达式 = new RegExp(匹配规则);
 const 正则表达式 = new RegExp(匹配规则, 修饰符);
+```
+
+```js
 new RegExp("abc");
 new RegExp("abc", "i");
 ```
 
-写入 [元字符](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/APIs/RegExp.html#元字符) 时要多写一个 **`\`** 来和**转义字符** 区分
+写入 [元字符](#元字符) 时要多写一个 **`\`** 来和**转义字符** 区分
 
 ```js
 console.log(new RegExp("\\w")); /*  /\w/  */
@@ -210,7 +218,13 @@ console.log(/^\d$/.test("12")); // false
 ```js
 /./; // 一个任意字符
 /\./; // 一个点 . 字符
+```
+
+```js
 /\\/; // 一个斜线 \ 文本
+```
+
+```js
 /\*/; // 一个星号 * 字符
 
 /指定字符*/; // 一个以上的指定字符

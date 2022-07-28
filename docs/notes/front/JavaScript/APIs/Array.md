@@ -6,6 +6,8 @@
 
 ## 数组创建
 
+### 字面量
+
 字面量方式更常用
 
 ```js
@@ -52,7 +54,9 @@ const c = new Array(3, 3);
 // [3, 3]
 ```
 
-通过调用构造函数来创建数组，无法确定传入的参数是数组的长度还是具体的每一项，为此 ES6 提供了新的 API [**`Array.of()`**](<#Array.of()>)解决
+通过调用构造函数来创建数组，无法确定传入的参数是数组的长度还是具体的每一项，为此 ES6 提供了新的 API [**`Array.of()`**](<#array-of()>)解决
+
+---
 
 ### Array.of()
 
@@ -87,13 +91,12 @@ const e = Array.of({
 
 <br/>
 
-## 类型监测
+## 判断类型
 
 数组是个**对象类型**
 
 ```js
-console.log(typeof [1, 2, 3, 4]);
-// object
+console.log(typeof [1, 2, 3, 4]); // object
 ```
 
 ### Array.isArray()
@@ -1051,11 +1054,45 @@ console.log(res.sort());
 // [ 1, 2, 3, 4 ]
 ```
 
-<br/>
-<br/>
+---
+
+### 筛选数组元素
+
+灵活运用，将初始值定位空数组，将符合判断条件的元素追加进数组
+
+```js
+const 新数组 = 数组.reduce((前一个返回值，当前元素) => {
+  if(条件) 前一个返回值push(当前元素)
+  return 前一个返回值
+}, []);
+```
+
+> 如下：筛选出所有 `age` 大于 20 的元素
+
+```js
+const arr = [
+  { name: "Andy", age: 28 },
+  { name: "Tom", age: 17 },
+  { name: "Jack", age: 26 },
+];
+
+const res = arr.reduce((preArr, curItem) => {
+  if (curItem.age > 20) preArr.push(curItem);
+  return preArr;
+}, []);
+
+console.log(res);
+// [
+//   { name: 'Andy', age: 28 },
+//   { name: 'Jack', age: 26 }
+// ]
+```
+
 <br/>
 
-## 过滤对象元素属性
+## 常用
+
+### 过滤对象元素属性
 
 > 如下：
 
@@ -1111,9 +1148,11 @@ const dataSource = [
 */
 ```
 
-## 数组去重复
+---
 
-方法一：new Set()
+### 数组去重复
+
+::: tip 方法一：new Set()
 
 ```js
 const arr = [1, 2, 1, 2, 3, 4];
@@ -1126,7 +1165,9 @@ console.log(Array.from(new Set(arr)));
 console.log([...new Set(arr)]);
 ```
 
-方法二：for + includes
+:::
+
+::: tip 方法二：for + includes
 
 ```js
 const arr = [1, 2, 1, 2, 3, 4];
@@ -1141,4 +1182,19 @@ for (let i = 0; i < arr.length; i++) {
 console.log(newArr);
 ```
 
-方法三：reduce
+:::
+
+::: tip 方法三：reduce
+
+```js
+function unique(arr) {
+  return arr.reduce((pre, cur) => {
+    return pre.includes(cur) ? pre : [...pre, cur];
+  }, []);
+}
+
+console.log(unique([9, 9, 6]));
+console.log(unique([1, 2, 1, 1, 3, 2]));
+```
+
+:::

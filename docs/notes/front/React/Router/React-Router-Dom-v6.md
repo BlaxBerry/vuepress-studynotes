@@ -14,9 +14,9 @@ npm i react-router-dom
 ::: tip v6 版本新特点：
 
 - 推荐使用函数式组件
-- 内置组件变化，详见下文 [内置组件](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#内置组件)
-- 注册路由的语法变化，详见 [ 组件](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#Route)
-- 新增 Hooks，详见下文 [内置 Hooks](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#内置-hooks)
+- 内置组件变化，详见下文 [内置组件](#内置组件)
+- 注册路由的语法变化，详见 [组件](#Route)
+- 新增 Hooks，详见下文 [内置 Hooks](#内置-hooks)
 
 :::
 
@@ -30,7 +30,7 @@ npm i react-router-dom
 
 使用方法同 v5 一样
 
-```js
+```jsx
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -63,7 +63,7 @@ ReactDOM.render(
 
 使用方法同 v5 一样
 
-```js
+```jsx
 import { Link } from "react-router-dom";
 <Link to="路径">文本内容</Link>;
 ```
@@ -86,7 +86,7 @@ import { Link } from "react-router-dom";
 
 使用方法同 v5 一样
 
-```js
+```jsx
 import { NavLink } from "react-router-dom";
 <NavLink to="路径">文本内容</NavLink>;
 ```
@@ -115,7 +115,7 @@ import { NavLink } from "react-router-dom";
 
 **替代 v5 的 `<Switch/>` 组件**
 
-```js
+```jsx
 import { Routes } from "react-router-dom";
 <Routes>
   <Route path="/" element={<要渲染的组件 />} />
@@ -201,13 +201,13 @@ export default function A() {
 
 用于渲染子级路由组件，否则子级路由组件内容不会显示
 
-详见 [嵌套路由](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#嵌套路由)
+详见 [嵌套路由](#嵌套路由)
 
 <br/>
 
 ## 嵌套路由
 
-嵌套路由需要配合 [](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#Outlet) 组件使用
+嵌套路由需要配合 [\<Outlet>](#outlet) 组件使用
 
 `<Outlet/>` 用于渲染展示子级路由组件
 
@@ -215,7 +215,7 @@ export default function A() {
 
 ### 嵌套路由组件
 
-通过 [``](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#Routes) 组件包裹多个 [``](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#Route) 组件
+通过 [\<Routes>](#routes)组件包裹多个 [\<Route>](#route)
 
 子路由路径直接写即可
 
@@ -259,6 +259,9 @@ export default function App() {
     </>
   );
 }
+```
+
+```jsx
 // 子路由组件
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
@@ -279,11 +282,11 @@ export default function Message() {
 
 ### 路由表
 
-可通过内置 Hooks 的 [`useRoutes()`](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#useRoutes) 生成可以统一管理的路由匹配规则
+可通过内置 Hooks 的 [`useRoutes()`](#useRoutes) 生成可以统一管理的路由匹配规则
 
 UI 视图只需要渲染 `useRoutes()` 调用结果的变量即可
 
-可用来代替 [嵌套路由组件](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#嵌套路由组件) 的做法
+可用来代替 [嵌套路由组件](#嵌套路由组件) 的做法
 
 ```jsx
 const element = useRoutes([
@@ -332,6 +335,9 @@ export default function App() {
     </>
   );
 }
+```
+
+```jsx
 // 子路由组件
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
@@ -406,7 +412,7 @@ export default function App() {
 
 ### pathname
 
-通过 **`useLocatin()`** 获取当前路由组件的路由地址<br/>[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#uselocation)
+通过 **`useLocatin()`** 获取当前路由组件的路由地址<br/>[详见下文](#uselocation)
 
 ```jsx
 const { pathname } = useLocation();
@@ -473,7 +479,7 @@ React Router v6 使用了简化的路径格
 
 可以匹配任何（非空）路径，同时该匹配拥有最低的优先级
 
-可以用于设置 404 页面。
+可以用于设置 404 页面
 
 <br/>
 
@@ -496,7 +502,7 @@ React Router v6 使用了简化的路径格
 
 路由匹配规则的 `<Route/>` 组件的 `path` 属性的地址上指定要接受的参数名与个数
 
-或 [路由表](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#路由表) 中对应的路由地址的 `path` 属性的的地址上指定要接受的参数名与个数
+或 [路由表](#路由表) 中对应的路由地址的 `path` 属性的的地址上指定要接受的参数名与个数
 
 ```jsx
 <Link to={`地址/${参数名对应数据}/${参数名对应数据}`}>文本内容</Link>
@@ -542,7 +548,7 @@ export default function App() {
 
 `params`参数拼接到跳转目标的路由地址中即可
 
-[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#usenavigate)
+[详见下文](#usenavigate)
 
 ```jsx
 navigate("地址/值/值");
@@ -554,7 +560,7 @@ navigate("地址/值/值");
 
 路由组件内接收 `params` 参数通过内置 Hooks 的 **`useParams()`**
 
-[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#useparams)
+[详见下文](#useparams)
 
 ```jsx
 // 接受参数的路由组件
@@ -633,7 +639,7 @@ export default function App() {
 
 `search`参数拼接到跳转目标的路由地址中即可
 
-[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#usenavigate)
+[详见下文](#usenavigate)
 
 ```jsx
 navigate("地址?参数=值&参数=值");
@@ -645,7 +651,7 @@ navigate("地址?参数=值&参数=值");
 
 路由组件内接收 `search` 参数通过内置 Hooks 的 **`useSearchParams()`**
 
-[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#usesearchparams)
+[详见下文](#usesearchparams)
 
 ```jsx
 import React from "react";
@@ -737,7 +743,7 @@ export default function App() {
 
 并通过函数的第二个参数配置项中的 `state` 属性传递对象形式的 `state` 参数
 
-[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#usenavigate)
+[详见下文](#usenavigate)
 
 ```jsx
 const navigate = useNavigate();
@@ -793,7 +799,7 @@ export default function App() {
 
 路由组件内接收 `state` 参数通过内置 Hooks 的 **`useLocatino()`**
 
-[详见下文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#uselocatin)
+[详见下文](#uselocatin)
 
 ```jsx
 import React from "react";
@@ -896,6 +902,9 @@ export default function App() {
 
 ```jsx
 import { useNavigate } from "react-router-dom";
+```
+
+```jsx
 const navigate = useNavigate();
 
 const 路由跳转函数 = () => {
@@ -927,10 +936,13 @@ const 后退 = () => {
 
 用来在路由组件内接收传递来的 `params` 参数
 
-`params` 参数的传递 [详见上文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#路由参数-params)
+`params` 参数的传递 [详见上文](#路由参数-params)
 
 ```jsx
 import { useParams } from "react-router-dom";
+```
+
+```jsx
 const params = useParams();
 
 console.log(params);
@@ -961,10 +973,13 @@ export default function Message() {
 
 ### useMatch()
 
-不常用，更推荐使用 [useParams()](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#useparams)
+不常用，更推荐使用 [useParams()](#useparams)
 
 ```jsx
 import { useMatch } from "react-router-dom";
+```
+
+```jsx
 const { params } = useMatch("路由组件匹配的完整路由地址");
 ```
 
@@ -980,6 +995,9 @@ export default function Message() {
 
   return <>Message 页面</>;
 }
+```
+
+```jsx
 import React from "react";
 import { Link, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
@@ -1012,10 +1030,13 @@ export default function App() {
 
 用来在路由组件内接收传递来的 `search` 参数
 
-`search` 参数的传递 [详见上文](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#路由参数-search)
+`search` 参数的传递 [详见上文](#路由参数-search)
 
 ```jsx
 import { useSearchParams } from "react-router-dom";
+```
+
+```jsx
 const [searchParams, setSearchParams] = useSearchParams();
 
 const 参数 = searchParams.get("参数名");
@@ -1068,10 +1089,13 @@ export default function Message() {
 
 用于获取当前路由组件的路径 URL 相关数据
 
-可解构获取 **[当前路由地址](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#pathname)**、**[search 参数](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#路由参数-search)**、**[state 参数](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Router/React-Router-Dom-v6.html#路由参数-state)** 等
+可解构获取 **[pathname 当前路由地址](#pathname)**、**[search 参数](#路由参数-search)**、**[state 参数](#路由参数-state)** 等
 
 ```jsx
 import { useLocation } from "react-router-dom";
+```
+
+```jsx
 const location = useLocation();
 
 /*
@@ -1163,6 +1187,9 @@ export default function A() {
     </div>
   );
 }
+```
+
+```jsx
 import React from "react";
 import { useRoutes, Link } from "react-router-dom";
 import A from "./components/A";

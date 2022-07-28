@@ -8,7 +8,7 @@
 
 ES7 引入的新语法，异步函数调用的终极解决方案
 
-比 链式调用处理异步的 [Promise 链](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#then-的链式调用) 的结构更清晰：
+比 链式调用处理异步的 [Promise 链](./Promise.md#then-的链式调用) 的结构更清晰：
 
 **异步任务可通过 `async` 和 `await` 关键字以同步形式来处理**
 
@@ -252,6 +252,9 @@ Promise {<pending>}
 	[[PromiseState]]: "fulfilled"
 	[[PromiseResult]]: "OKK"
 */
+```
+
+```js
 async function func() {
   return new Promise((resolve, reject) => {
     reject("Errorrr");
@@ -264,6 +267,9 @@ Promise {<pending>}
 	[[PromiseState]]: "rejected"
 	[[PromiseResult]]: "Errorrr"
 */
+```
+
+```js
 async function func() {
   return Promise.resolve({
     name: "Andy",

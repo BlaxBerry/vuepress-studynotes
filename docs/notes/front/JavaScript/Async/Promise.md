@@ -12,7 +12,7 @@ Promise 是 ES6 提出的处理异步编程的一种解决方案
 
 Promise 将异步操作从以往的嵌套变为**线性链式调用**，解决了回调地狱
 
-回调函数嵌套地狱
+::: tip 回调函数嵌套地狱
 
 代码结构不清晰、容易书写重复代码、且不方便异常的处理
 
@@ -42,6 +42,8 @@ fs.readFile("./1.json", "utf-8", (err, data1) => {
 });
 ```
 
+:::
+
 <br/>
 
 ## Promise 工作流程
@@ -63,17 +65,17 @@ fs.readFile("./1.json", "utf-8", (err, data1) => {
 
 通过 **`new Promise()`** 构造函数**实例化一个 Promise 对象**
 
-构造函数将要处理的异步任务封装为一个 [executor 执行器函数](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#executor-执行器函数) 当作参数接收
+构造函数将要处理的异步任务封装为一个 [executor 执行器函数](#executor-执行器函数) 当作参数接收
 
 - **第二步**
 
-**异步处理成功时调用 [resolve()](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#resolve-与-reject)，异步处理失败就调用 [reject()](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#resolve-与-reject)**
+**异步处理成功时调用 [resolve()](#resolve-与-reject)，异步处理失败就调用 [reject()](#resolve-与-reject)**
 
-调用时将对应成功或失败的 [异步操作的结果作为参数传入](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#传递异步结果)
+调用时将对应成功或失败的 [异步操作的结果作为参数传入](#传递异步结果)
 
 - **第三步**
 
-生成的 **Promise 实例对象调用 [then() 方法](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#promise-prototype-then)**
+生成的 **Promise 实例对象调用 [then() 方法](#then)**
 
 接收执行器函数中异步任务处理的结果，
 
@@ -215,17 +217,19 @@ Promise {<pending>}
 
 一个 Promise 对象同时只能存在一种状态
 
-Promise 实例对象状态的三种情况：
+::: tip Promise 实例对象状态的三种情况：
 
 - **pending**：进行中（默认初始状态）
 - **fulfilled**：成功
 - **rejected**：失败
 
+:::
+
 随着异步任务执行状态有且只会改变一次
 
 状态变化仅会从 `pending` 变为成功的 `fulfilled` 或 失败的 `rejected`
 
-改变 Promise 实例对象状态的 3 种方法：
+::: tip 改变 Promise 实例对象状态的 3 种方法：
 
 - 在构造函数的执行器函数中**调用 `resolve()`**
 
@@ -257,6 +261,8 @@ const p = new Promise((resolve, reject) => {
 });
 ```
 
+:::
+
 异步任务执行状态有且只会改变一次
 
 > 如下，第一次为成功了状态就直接成为成功，不会再改变
@@ -287,12 +293,14 @@ Promise 无论成功失败都有一个结果数据，若不指定则默认 `unde
 
 通过创建 Promise 实例对象时中的 `resolve()` 或 `reject()` 指定：
 
-传递结果
+::: tip 传递结果
 
 - **异步处理成功的数据**在调用 **`resolve()`** 时作为的参数传入
 - **异步处理失败的数据**在调用 **`reject()`** 时作为的参数传入
 
-成功或失败对应的结果值都可通过 Promise 实例对象的 [then()](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#promise-prototype-then) 方法获取
+成功或失败对应的结果值都可通过 Promise 实例对象的 [then()](#then) 方法获取
+
+:::
 
 <br/>
 
@@ -326,10 +334,12 @@ console.log(22222);
 
 ### resolve() 与 reject()
 
-执行器函数接受两个函数作参数：
+::: tip 执行器函数接受两个函数作参数：
 
 - **resolve**：异步任务处理**成功时**调用
 - **reject**：异步任务处理**失败时**调用
+
+:::
 
 ```js
 const 实例对象 = new Promise((resolve, reject)=>{
@@ -342,7 +352,7 @@ const 实例对象 = new Promise((resolve, reject)=>{
 })
 ```
 
-`resolve()` 与 `rejec()` 在被调用时会修改 [Promise 对象的状态](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#状态-promisestate)
+`resolve()` 与 `rejec()` 在被调用时会修改 [Promise 对象的状态](#状态-promisestate)
 
 可在判断异步是否成功后并分别调用，也可不判断直接就调用
 
@@ -352,7 +362,7 @@ const 实例对象 = new Promise((resolve, reject)=>{
 
 此外，`resolve()` 和 `reject()` 在调用时，可接收对应处理的结果数据/信息作为其参数。
 
-传入的结果在 Promise 实例调用 [then()](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#promise-prototype-then) 方法时在其对应的函数参数接收
+传入的结果在 Promise 实例调用 [then()](#then) 方法时在其对应的函数参数接收
 
 ```js
 const 实例对象 = new Promise((resolve, reject)=>{
@@ -368,7 +378,7 @@ const 实例对象 = new Promise((resolve, reject)=>{
 
 ## then()
 
-Promise 实例对象的方法，`Promise.prototype.then()`
+Promise 实例对象的方法，**`Promise.prototype.then()`**
 
 接收执行器函数中异步任务处理的结果，并对应成功与否进一步进行不同的处理操作
 
@@ -378,13 +388,13 @@ Promise 实例对象的方法，`Promise.prototype.then()`
 
 `then()` 方法接受两个回调函数做参数
 
-作为参数的**回调函数仅在 Promise 对象[状态改变](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#状态-promisestate)时才会被调用**
+作为参数的**回调函数仅在 Promise 对象[状态改变](#状态-promisestate)时才会被调用**
 
 ```js
 Promise实例对象.then(onResolved, onRejected);
 ```
 
-两个函数参数：
+::: tip 两个函数参数：
 
 - **第一个函数参数**：异步处理成功后的操作
 
@@ -398,7 +408,9 @@ Promise实例对象.then(onResolved, onRejected);
 
   该函数可接收 `reject()` 调用时传入的值做参数
 
-  推荐用 Promise 实例的 [catch()](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#promise-prototype-catch) 方法替代
+  推荐用 Promise 实例的 [catch()](#catch) 方法替代
+
+:::
 
 ```js
 const 实例对象 = new Promise((resolve, reject) => {
@@ -495,7 +507,7 @@ Promise {<pending>}
 
   返回值 Promise 对象的状态为成功的 `fulfilled`
 
-  [详见上文](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#返回值结果)
+  [详见上文](#返回值结果)
 
 - 若没有 `return`，而是通过 **`throw`** 抛出一个错误：
 
@@ -638,7 +650,7 @@ asyncReadFile("./1.json")
 
 ## catch()
 
-Promise 实例对象的方法，`Promise.prototype.catch()`
+Promise 实例对象的方法，**`Promise.prototype.catch()`**
 
 用于获取**异步处理失败**的结果并指定对应的操作
 
@@ -754,7 +766,7 @@ p.then((value) => {
 
 Promise 函数对象的方法
 
-可用于简化繁琐的 [then() 的链式调用](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#then-的链式调用)
+可用于简化繁琐的 [then() 的链式调用](#then-的链式调用)
 
 接收一个参数，参数为多个 Promise 对象组成的数组
 
@@ -837,7 +849,7 @@ result.catch((reason) => console.log(reason));
 
 可用于简化繁琐的 `then()` 的链式调用，具体需求视情况而定
 
-如 [上述例子](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#then-的链式调用)中的依次读取文件并合并读取数据
+如 [上述例子](#then-的链式调用)中的依次读取文件并合并读取数据
 
 > 如下：
 
@@ -1041,7 +1053,7 @@ Promise {<rejected>: Promise}
 
 ### Promise 链
 
-详见上文 [then() 的链式调用](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/Async/Promise.html#then-的链式调用)
+详见上文 [then() 的链式调用](#then-的链式调用)
 
 ```js
 Promise对象.then((value) => {

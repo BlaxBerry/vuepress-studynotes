@@ -2,8 +2,6 @@
 
 ![img](https://raw.githubusercontent.com/bluebill1049/react-hook-form/master/docs/logo.png)
 
-
-
 [[toc]]
 
 ## 安装
@@ -81,7 +79,7 @@ const App = () => {
 export default App;
 ```
 
-> 如下：提交错误时返回所有错误信息[errors](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Plugins/form/react-hook-form.html#errors)
+> 如下：提交错误时返回所有错误信息[errors](#errors)
 
 ```jsx
 import React from "react";
@@ -119,7 +117,7 @@ export default App;
 <input {...register("输入框名", 验证选择项)}>
 ```
 
-------
+---
 
 ::: tip 常用验证项 options：
 
@@ -148,7 +146,7 @@ export default App;
 
 - 写成对象形式：
   - `value`：为验证的标准
-  - `message`：为验证错误时的信息，可通过结构`useForm()`后的[errors](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Plugins/form/react-hook-form.html#errors)对象获取
+  - `message`：为验证错误时的信息，可通过结构`useForm()`后的[errors](#errors)对象获取
 
 ```jsx
 <input
@@ -165,6 +163,8 @@ export default App;
 />
 ```
 
+:::
+
 ---
 
 ### errors
@@ -173,7 +173,7 @@ export default App;
 
 首次渲染默认是个空对象`{}`
 
-可通过 [`setError()`](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Plugins/form/react-hook-form.html#setError())手动设置错误信息
+可通过 [`setError()`](<#setError()>)手动设置错误信息
 
 ```jsx
 const {
@@ -311,7 +311,7 @@ export default function App() {
 
 获取当前输入框内容
 
-若想同步获取最新值需要通过 [watch()](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Plugins/form/react-hook-form.html#watch()) 方法
+若想同步获取最新值需要通过 [watch()](<#watch()>) 方法
 
 ```js
 getValues("输入框名");
@@ -387,7 +387,7 @@ setError(输入框name, {
 });
 ```
 
-设置的错误信息可通过[errors](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Plugins/form/react-hook-form.html#errors)获取
+设置的错误信息可通过[errors](#errors)获取
 
 ```js
 const {
@@ -459,9 +459,7 @@ export default App;
 
 ### control
 
-```
-control`对象来调用`useForm()
-```
+`control` 对象来调用`useForm()`
 
 ---
 
@@ -469,7 +467,7 @@ control`对象来调用`useForm()
 
 用于设置验证规则
 
-与`useForm()`的 [`register()`](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Plugins/form/react-hook-form.html#register) 相同
+与`useForm()`的 [`register()`](#register) 相同
 
 > 如下：
 
@@ -522,8 +520,6 @@ control`对象来调用`useForm()
 ```
 
 <br/>
-
-
 
 ## useFormContext
 

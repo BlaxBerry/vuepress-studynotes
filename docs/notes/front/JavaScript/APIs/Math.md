@@ -8,8 +8,11 @@
 
 获取一组数值中的最大值
 
-```jsx
+```js
 const 最大值 = Math.max(数值, 数值, 数值);
+```
+
+```jsx
 const arr = [1, 2, 3, 4];
 
 const max = Math.max(...arr);
@@ -24,6 +27,9 @@ console.log(max); // 4
 
 ```js
 const 最小值 = Math.min(数值, 数值, 数值);
+```
+
+```js
 const arr = [1, 2, 3, 4];
 
 const min = Math.min(...arr);
@@ -42,6 +48,9 @@ console.log(min); // 1
 
 ```js
 const num = Math.ceil(数值);
+```
+
+```js
 console.log(Math.ceil(1.1)); // 2
 console.log(Math.ceil(1.6)); // 2
 console.log(Math.ceil(1.5)); // 2
@@ -63,6 +72,9 @@ console.log(Math.ceil(-0.5)); // -0
 
 ```js
 const num = Math.floor(数值);
+```
+
+```js
 console.log(Math.floor(1.1)); // 1
 console.log(Math.floor(1.6)); // 1
 console.log(Math.floor(1.5)); // 1
@@ -86,6 +98,9 @@ console.log(Math.floor(-0.5)); // -1
 
 ```js
 const num = Math.round(数值);
+```
+
+```js
 console.log(Math.round(1.1)); // 1
 console.log(Math.round(1.6)); // 2
 console.log(Math.round(1.5)); // 2
@@ -111,7 +126,7 @@ const num = Math.random();
 // ...
 ```
 
-获取 0 ～指定数字 之间的的随机整数：
+::: tip 获取 0 ～指定数字 之间的的随机整数：
 
 ```js
 // 不包含结束数字
@@ -125,7 +140,9 @@ function getRandomInteger(max) {
 }
 ```
 
-返回 定数字～指定数字 之间的随机整数：
+:::
+
+::: tip 返回 定数字～指定数字 之间的随机整数：
 
 ```js
 // min（包含）～ max（不包含）
@@ -139,7 +156,9 @@ function getRandomInteger(min, max) {
 }
 ```
 
-随机生成字符串：
+:::
+
+::: tip 随机生成字符串：
 
 > 原理是随机生成的 `0.123312`、`0.982931`之类的数在调用 `toString(36)` 方法后会被转换成 36 进制的包含了字母 `a~z` 和 数字`0~9` 的随机数
 >
@@ -158,3 +177,5 @@ console.log(
 // sab0enrv
 // o1sy86tj
 ```
+
+:::

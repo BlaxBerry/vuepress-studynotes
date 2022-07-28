@@ -64,7 +64,7 @@ const d = new Date(2022, 4, 7, 12, 14, 13, 15);
 
 ## Date 实例常用方法
 
-通过 [new Date()](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/APIs/Date.html#new-date) 获取的 Date 实例对象可使用以下方法
+通过 [new Date()](#new-date) 获取的 Date 实例对象可使用以下方法
 
 ---
 
@@ -76,6 +76,9 @@ Date 实例对象的方法
 
 ```js
 const year = new Date().getFullYear();
+```
+
+```js
 const d = new Date("2022-04-07");
 const year = d.getFullYear();
 
@@ -139,6 +142,9 @@ Date 实例对象的方法
 
 ```js
 const date = new Date().getDate();
+```
+
+```js
 const d = new Date("2022-04-07");
 
 const date = d.getDate();
@@ -155,6 +161,9 @@ Date 实例对象的方法
 
 ```js
 const hour = new Date().getHours();
+```
+
+```js
 const a = new Date("2022-04-07 23:00:00");
 console.log(a.getHours()); // 23
 
@@ -175,6 +184,9 @@ Date 实例对象的方法
 
 ```js
 const minutes = new Date().getMinutes();
+```
+
+```js
 const a = new Date("2022-04-07 10:00:00");
 console.log(a.getMinutes()); // 0
 
@@ -195,6 +207,9 @@ Date 实例对象的方法
 
 ```js
 const seconds = new Date().getSeconds();
+```
+
+```js
 const a = new Date("2022-04-07 10:00:00");
 console.log(a.getSeconds()); // 0
 
@@ -238,6 +253,9 @@ console.log(currentDay); // "周四"
 
 ```js
 new Date().toTimeString();
+```
+
+```js
 const time = new Date().toTimeString();
 console.log(time); // 23:51:40 GMT+0900 (日本标准时间)
 ```
@@ -261,6 +279,9 @@ timeFromDate(new Date()); // 返回当前时间 23:51:40
 
 ```js
 new Date().toDateString();
+```
+
+```js
 const time = new Date().toDateString();
 console.log(time); // Fri Apr 08 2022
 ```
@@ -320,6 +341,9 @@ Date 实例对象的方法
 
 ```js
 const timeStamp = new Date().getTime();
+```
+
+```js
 console.log(new Date().getTime());
 // 1649350752355
 ```
@@ -332,6 +356,9 @@ Date 实例对象的方法
 
 ```js
 const timeStamp = new Date().valueOf();
+```
+
+```js
 console.log(new Date().valueOf());
 // 1649350752355
 ```
@@ -344,6 +371,9 @@ Date 对象的方法
 
 ```js
 const timeStamp = Date.parse();
+```
+
+```js
 console.log(Date.parse(new Date()));
 // 1649429745005
 

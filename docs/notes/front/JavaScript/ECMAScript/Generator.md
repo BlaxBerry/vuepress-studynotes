@@ -202,6 +202,9 @@ console.log(generator.next()); // { value: 'b', done: false }
 console.log(generator.next()); // { value: 'c', done: false }
 console.log(generator.next()); // { value: undefined, done: true }
 console.log(generator.next()); // { value: undefined, done: true }
+```
+
+```js
 function* Generator函数名() {
   yield "a";
   yield "b";

@@ -24,7 +24,7 @@
 
 ### TypeScript
 
-[相关笔记 →]()
+[相关笔记 →](../notes/front/TypeScript/README.md)
 
 <br/>
 

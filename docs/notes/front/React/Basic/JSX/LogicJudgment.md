@@ -167,8 +167,8 @@ const renderFunc = () => {
 
 ::: tip 可以解决三元表达式的以下问题：
 
-- JSX 结构不清晰的 [三元表达式嵌套地狱](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Basic/JSX/JSX_Conditions.html#嵌套地狱)
-- 判断条件改变后 [受控组件的数据残留](https://blaxberry.github.io/vuepress-studynotes/notes/front/React/Basic/JSX/JSX_Conditions.html#受控组件数据残留)
+- JSX 结构不清晰的 [三元表达式嵌套地狱](#嵌套地狱)
+- 判断条件改变后 [受控组件的数据残留](#受控组件数据残留)
 
 :::
 
@@ -178,7 +178,7 @@ const renderFunc = () => {
 
 不能直接将列表数据的长度 `length` 作为判断条件，
 
-否则空列表的场合会直接将 `0` 给渲染出来
+否则**空列表的场合会直接将 `0` 给渲染出来**
 
 > 如下：
 

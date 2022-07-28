@@ -56,6 +56,9 @@ const 变量名 = function() {
 };
 
 变量名();
+```
+
+```js
 const func = function() {
   console.log("hello");
   return 999;
@@ -76,7 +79,9 @@ console.log(func());
 (function() {
   console.log("hello");
 })();
+```
 
+```js
 (() => {
   console.log("hello");
 })();
@@ -91,7 +96,7 @@ console.log(func());
 
 回调函数嵌套层数过多会成为 **回调地狱**
 
-详见 [Promise](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/ECMAScript/Function.html)
+详见 [Promise](../Async/Promise.md)
 
 ---
 
@@ -99,7 +104,7 @@ console.log(func());
 
 面向对象编程
 
-详见 [构造函数 与 原型](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/ECMAScript/Function.html)
+详见 [构造函数 与 原型]()
 
 ---
 
@@ -144,6 +149,9 @@ function 函数名() {
   /* return 返回值 */
 }
 const 返回值 = 函数名();
+```
+
+```js
 function func() {
   console.log("hello");
 }
@@ -152,7 +160,7 @@ console.log(func());
 // undefined
 ```
 
-`return` 返回什么函数的返回值就是什么
+::: tip return 返回什么函数的返回值就是什么
 
 ```js
 function a() {
@@ -168,7 +176,9 @@ console.log(b());
 // 999
 ```
 
-`return` 后面的代码不会被处理
+:::
+
+::: tip return 后面的代码不会被处理
 
 ```js
 function func() {
@@ -178,6 +188,8 @@ function func() {
 console.log(func());
 // 'finished'
 ```
+
+:::
 
 <br/>
 
@@ -189,10 +201,9 @@ console.log(func());
 
 函数接收的参数值默认值为 `undefined`，调用时传入的是什么函数内部就接收到什么
 
-参数具体分为形参、实参：
+::: tip 参数具体分为形参、实参：
 
-- 实参：指调用函数时传入的不同数据
-- 形参：指函数接收到的传入的不同数据
+**实参**：指调用函数时传入的不同数据<br/>**形参**：指函数接收到的传入的不同数据
 
 ```js
 function 函数名(参数) {
@@ -202,6 +213,11 @@ function 函数名(参数) {
 // 调用函数
 动词函数名(参数A);
 动词函数名(参数B);
+```
+
+:::
+
+```js
 function func(params) {
   console.log(params);
 }
@@ -275,6 +291,9 @@ func();
 function 函数(参数) {
   console.log(arguments);
 }
+```
+
+```js
 function func(a, b = 999) {
   console.log(arguments);
 }
@@ -296,6 +315,9 @@ function xxx() {
   console.log(arguments instanceof Array);
 }
 xxx(); // false
+```
+
+```js
 function func(a, b, c) {
   for (let i = 0; i < arguments.length; i++) {
     console.log(arguments[i]);
@@ -362,7 +384,7 @@ func(1, 2, 3, 4, 5);
 
 函数内部对参数直接赋值和修改时是否会影响外部调用时传入的实参，取决于传入的参数的类型
 
-详见[堆栈与数据引用](https://blaxberry.github.io/vuepress-studynotes/notes/front/JavaScript/ECMAScript/Function.html)
+详见[堆栈与数据引用]()
 
 ---
 
@@ -440,11 +462,13 @@ setTimeout(() => {
 // Window
 ```
 
-也可修改函数调用时的 this 指向：
+::: tip 也可修改函数调用时的 this 指向：
 
 - **apply()**:
 - **call()**:
 - **bind()**：
+
+:::
 
 ---
 

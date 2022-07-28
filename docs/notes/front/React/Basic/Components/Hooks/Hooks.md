@@ -444,6 +444,46 @@ export default function App() {
 
 <br/>
 
+## useLayoutEffect()
+
+布局副作用钩子函数
+
+```js
+import { useLayoutEffect } from "react";
+```
+
+::: tip useEffect() vs useLayoutEffect()
+
+- useEffect()：**浏览器渲染完成后**执行
+- useLayoutEffect()：**浏览器渲染前**执行
+
+:::
+
+执行时机在页面重绘前，早于 `useEffect()`
+
+多用于影响页面布局的处理
+
+> 比如： **Route Change 后的页面自动返回顶部**
+
+```tsx
+import { useLayoutEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
+export default function IndexPage = () => {
+  const location = useLocation()
+
+  // 自动滚到页面顶部
+  useLayoutEffect(
+    () => document.documentElement.scrollTo(0, 0),
+    [location.pathname]
+  )
+
+  return <div>页面内容</div>
+}
+```
+
+<br/>
+
 ## useContext()
 
 用于深层父子组件间传值，子组件可不通过组件的`prop`参数就能接收来自祖先组件的数据

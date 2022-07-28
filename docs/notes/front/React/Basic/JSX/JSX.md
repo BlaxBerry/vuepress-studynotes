@@ -12,9 +12,11 @@ React 使用 JSX 替代常规的 JavaScript，使其可以在 JS 中书写 XML/H
 
 是`createElement`创建组件方式的 **语法糖**
 
+---
+
 ### 引入使用
 
-**1. React 脚手架环境**
+::: tip React 脚手架环境
 
 因为 React 脚手架已内置了 babel 编译
 
@@ -27,7 +29,9 @@ JSX 结构可直接在 **.js 文件** 或 **.jsx 文件**的中书写
 |- App.js
 ```
 
-**2. CDN 引入（正经开发不会用）**
+:::
+
+::: tip CDN 引入（正经开发不会用）
 
 JSX 需要在引入 babel.js 进行编译后才可被浏览器识别
 
@@ -57,16 +61,16 @@ JSX 需要在引入 babel.js 进行编译后才可被浏览器识别
 </body>
 ```
 
+:::
+
+---
+
 ### 为何使用
 
-::: tip JSX 的优势:
-
-使用 JSX 书写 HTML 结构的话:
+::: tip 使用 JSX 书写 HTML 结构的优势:
 
 - 声明式语法，直观简洁
-
 - 结构与 HTML 相同
-
 - 所以实际开发中常使用
 
 ```jsx
@@ -82,8 +86,6 @@ const VDOM = (
 
 ReactDOM.render(VDOM, document.getElementById("root"));
 ```
-
-> 如下：
 
 ```jsx
 <div className="list">
@@ -139,6 +141,8 @@ React.createElement(
 
 :::
 
+---
+
 ### 转换机制
 
 JSX 在 React 内部的转化步骤：
@@ -171,6 +175,8 @@ JSX 在 React 内部的转化步骤：
      },
    };
    ```
+
+<br/>
 
 ## 语法规则
 
@@ -237,6 +243,8 @@ const VDOM = (
 
 :::
 
+<br/>
+
 ## 样式处理
 
 ### style 行内样式
@@ -260,6 +268,8 @@ const VDOM = (
 > }}>
 > </div>
 > ```
+
+---
 
 ### className 类名
 
@@ -290,6 +300,8 @@ Warning: Invalid DOM property `class`. Did you mean `className`?
 > );
 > ```
 
+<br/>
+
 ## 嵌入内容
 
 ::: tip JSX 中可以嵌入：
@@ -306,6 +318,8 @@ Warning: Invalid DOM property `class`. Did you mean `className`?
 - JavaScript 语句
 
 :::
+
+---
 
 ### JS 表达式
 
@@ -335,6 +349,8 @@ JS 的变量、函数返回值等必须放入花括号 **{ }**
 > );
 > ```
 
+---
+
 ### 注释
 
 注释属于 JS，也要放入 **`{ }`**
@@ -356,6 +372,8 @@ JS 的变量、函数返回值等必须放入花括号 **{ }**
 >   </div>
 > );
 > ```
+
+---
 
 ### 嵌套 JSX
 
@@ -381,6 +399,8 @@ JSX 结构本身就是 JS 的语法糖，也要放入 **`{ }`**
 > );
 > ```
 
+---
+
 ### 动态遍历数组
 
 JSX 结构中若插入一个数组，React 会自动遍历数组元素渲染到页面
@@ -391,11 +411,13 @@ const data = ["Reacr", "Vue", "angular"];
 ReactDOM.render(<div> {data} </div>, document.getElementById("root"));
 ```
 
+---
+
 ## 条件渲染
 
 根据特定条件判断是否渲染出指定的 JSX 结构
 
-JSX 中可使用的条件渲染判断方式：
+::: tip JSX 中可使用的条件渲染判断方式：
 
 - **`if else` 语句**
 
@@ -424,9 +446,9 @@ JSX 中可使用的条件渲染判断方式：
   return isLoading && <img src="/loading.gif" />;
   ```
 
-> 比如：
->
-> 判断加载 loading 图标是否显示
+:::
+
+> 比如：判断加载 loading 图标是否显示
 
 ```jsx
 import src from "./loading.svg";
@@ -445,9 +467,7 @@ export default function Demo() {
 }
 ```
 
-> 比如：
->
-> 结合[列表渲染](#列表渲染)，当数据不为空时渲染列表
+> 比如：结合[列表渲染](#列表渲染)，当数据不为空时渲染列表
 
 ```jsx
 import React, { Component } from "react";
@@ -487,6 +507,8 @@ export default class Demo extends Component {
 }
 ```
 
+<br/>
+
 ## 列表渲染
 
 JSX 中渲染一组数据到页面需要通过数组的 **map()** 方法
@@ -503,13 +525,17 @@ JSX 中渲染一组数据到页面需要通过数组的 **map()** 方法
 
 :::
 
+---
+
 ### 唯一标识 key
 
-渲染列表时，每一个虚拟子节点都要有个唯一的标识 **key 属性**，否则报错：
+渲染列表时每一个虚拟子节点必须要有个唯一的标识 **key 属性**
 
-::: danger 每一个子节点需要唯一标识 key
+::: danger 没有则控制台报错：
 
 Warning: Each child in a list should have a unique "key" prop.
+
+（每一个子节点需要唯一标识 key）
 
 :::
 
@@ -528,8 +554,7 @@ key 必须要是唯一标识，比如 id，但最好不要用可变的 index
 
 :::
 
-> 如下：
-> 遍历一组数据
+> 如下：遍历一组数据
 
 ```jsx
 import React, { Component } from "react";
@@ -557,6 +582,8 @@ export default class Demo extends Component {
 }
 ```
 
+<br/>
+
 ## 空标签
 
 React 要求 JSX 必须被一个根标签包裹
@@ -564,6 +591,8 @@ React 要求 JSX 必须被一个根标签包裹
 但根标签也会被渲染为页面上的真实 DOM，导致页面最终出现有多个无意义的标签
 
 若不想有真实的 DOM 节点可使用 **`<React.Fragment>`** 或 空标签 **`<></>`** 来包裹组件
+
+---
 
 ### Fragment
 
@@ -591,6 +620,8 @@ export default class App extends Component {
   }
 }
 ```
+
+---
 
 ### 语法糖 \<></>
 
@@ -651,6 +682,8 @@ export default class App extends Component {
   }
 }
 ```
+
+<br/>
 
 ## 过滤富文本编辑器数据
 

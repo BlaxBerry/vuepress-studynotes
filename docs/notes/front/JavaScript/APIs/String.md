@@ -438,6 +438,8 @@ const str2 = String.fromCharCode(72, 69, 76, 76, 79);
 console.log(str2;  // HELLO
 ```
 
+<br/>
+
 ## ❌ 正则表达式
 
 ### replace()

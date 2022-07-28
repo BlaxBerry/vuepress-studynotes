@@ -332,7 +332,10 @@ export default function 子组件(props) {
     return a + b;
   }}
   tag={<div>Hello</div>}
-/>;
+/>
+```
+
+```jsx
 // 子组件接受参数
 import React from "react";
 
@@ -382,6 +385,9 @@ export default function Child(props) {
     </>
   );
 }
+```
+
+```jsx
 // 父组件
 import React, { useState } from "react";
 import Child from "./components/Child";
@@ -459,6 +465,9 @@ export default function Child(props) {
     </>
   );
 }
+```
+
+```jsx
 // 父组件
 import React, { useState } from "react";
 import Child from "./components/Child";
@@ -511,6 +520,9 @@ import React from "react";
 export default function Child(props) {
   return <div>{props.children}</div>;
 }
+```
+
+```jsx
 // 父组件
 import React from "react";
 import Child from "./components/Child";

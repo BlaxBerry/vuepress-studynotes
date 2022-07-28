@@ -6,15 +6,14 @@
 
 ::: tip 性能优化
 
-[Vue2 + Vue-Cli 组件化开发](./Vue2/ComponentsDevelopment.md)
+[Vue2 + Vue-Cli 组件化开发](./Vue2/ComponentsDevelopment.md)<br/>
 [Vue2 的 9 种性能优化技巧](./Vue2/PO/9-Performance-Optimizations.md)
 
 :::
 
 ::: tip 书写规范
 
-[Vue2 命名规范](./Vue2/PO/styleGuide-vue2-name.md)
-
+[Vue2 命名规范](./Vue2/PO/styleGuide-vue2-name.md)<br/>
 [Vue2 代码规范](./Vue2/PO/styleGuide-vue2-code.md)
 
 :::
@@ -51,7 +50,7 @@
 ### VuePress
 
 > 静态站点生成器
-> [VuePress]()
+> [VuePress](https://vuepress.vuejs.org/zh/)
 
 <br/>
 

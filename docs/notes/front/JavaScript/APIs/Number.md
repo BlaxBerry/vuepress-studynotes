@@ -58,6 +58,9 @@ console.log(0 / 0); // NaN
 console.log(0 == -0); // true
 console.log(0 === -0); // true
 console.log(-0 === +0); // true
+```
+
+```js
 console.log(1 / 0); // Infinity
 console.log(9 / 0); // Infinity
 
@@ -78,6 +81,9 @@ console.log(-0 / 9); // -0
 
 ```js
 const boolean = isNaN(数值);
+```
+
+```js
 console.log(isNaN(NaN)); // true
 
 console.log(isNaN(999)); // false
@@ -128,6 +134,9 @@ const boolean = isInteger()(数值);
 
 ```js
 const num = 数值.toFixed(小数点后保留位数);
+```
+
+```js
 const a = 3.1415;
 console.log(a.toFixed()); // 3
 console.log(a.toFixed(1)); // 3.1
@@ -153,7 +162,7 @@ console.log(b.toFixed(2)); // 3.00
 const num = parseInt(数值);
 ```
 
-数值转化
+::: tip 数值转化
 
 获取小数点前的整数
 
@@ -164,7 +173,9 @@ console.log(parseInt(-1.0)); // -1
 console.log(parseInt(-1.9)); // -1
 ```
 
-字符串转化
+:::
+
+:::tip 字符串转化
 
 - 若字符串以数字开头，则仅返回数字部分
 - 若字符串以非数字开头，则返回 `NaN`
@@ -177,6 +188,8 @@ console.log(parseInt("123.456abcd")); // 123
 console.log(parseInt("abc123")); // NaN
 console.log(parseInt("")); // NaN
 ```
+
+:::
 
 ---
 
@@ -199,7 +212,7 @@ console.log(parseFloat(-1.0)); // -1
 console.log(parseFloat(-1.9)); // -1.9
 ```
 
-字符串转化
+::: tip 字符串转化
 
 - 若字符串以数字开头，则仅返回数字部分
 - 若字符串以非数字开头，则返回 `NaN`
@@ -213,19 +226,28 @@ console.log(parseFloat("abc123")); // NaN
 console.log(parseFloat("")); // NaN
 ```
 
+:::
+
 ---
 
 ### Number()
 
-将参数转换为数值
+将参数强制转换为数值
 
 ```js
 const num = Number(参数);
+```
+
+```js
 console.log(Number(true)); // 1
 console.log(Number(false)); // 0
-console.log(Number(undefined)); // NaN
-
 console.log(Number("123")); // 123
+```
+
+但是非数字的参数会被转为 **`NaN`（Not a Number）**
+
+```js
+console.log(Number(undefined)); // NaN
 console.log(Number("123abc")); // NaN
 console.log(Number("abc123")); // NaN
 ```
