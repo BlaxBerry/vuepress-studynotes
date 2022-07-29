@@ -6,17 +6,19 @@
 
 ## 简介
 
-`Express.js`是一个基于`Node.js` 的快速简易的 Web 开发框架。
+Express.js 是一个基于 Node.js 的快速简易的 **Web 开发框架**
 
-`Express.js`基于`Node.js`内置的`http`模块封装，更方便强大。并支持 14 个以上的模版引擎。很多框架是基于`Express.js`：LoopBack、Sails、Nest.js...
+> 原生 Node.js 开发服务端有些麻烦
+
+Express.js 基于 Node.js 内置 `http` 模块封装，更方便强大。
+
+很多框架是基于 Express.js，比如：Sails、Nest.js...
 
 ::: tip Express.js 可用于创建：
 
-- **Web 网站服务器**
-
 - **API 接口服务器**
 
-- 服务端渲染的中间层
+- **服务端渲染**的中间层
 
 - 开发工具（webpack-dev-server、JSON Server...）
 
@@ -260,6 +262,132 @@ app.get("/", (req, res) => {
     age: 28,
   });
 });
+```
+
+## 托管静态文件
+
+### express.static()
+
+原生 Node.js 需要封装读取静态资源，麻烦
+
+用 express.static() 可以轻松托管静态文件，如图片、css 文件、js 文件等
+
+参数是静态文件所在目录
+
+```js
+express.static("public");
+```
+
+然后就可以通过 URL 地址访问**该目录下的文件**了
+
+```bash
+域名：端口/文件名
+```
+
+> 如下：入口 js 文件
+
+```js
+const express = require("express");
+const app = express();
+
+const server = app.use(express.static("public"));
+
+server.listen(3000, () => {
+  console.log("running at localhost:3000");
+});
+```
+
+> 项目目录：
+
+```bash
+|——node_modules
+|——public
+		|——images
+				｜——01.jpg
+				｜——02.jpg
+				...
+		|——css
+				｜——home.css
+				｜——about.css
+				｜——list.css
+				...
+		|——js
+				｜——home.js
+				｜——about.js
+				｜——list.js
+        ...
+		|——home.html
+		|——about.html
+		|——list.html
+|——package.json
+|——package-lock.json
+|——index.js
+```
+
+终端执行入口 js 文件后，
+
+浏览器输入的请求地址，就可访问到对应的文件
+
+```bash
+#访问public目录下的文件
+localhost:3000/home.html
+localhost:3000/about.html
+localhost:3000/list.html
+#访问public目录下的目录
+http://127.0.0.1:3000/images/01.jpg
+http://127.0.0.1:3000/js/sayHello.js
+```
+
+---
+
+### 指定多个目录
+
+> 如下：指定了三个要托管的目录：
+
+```js
+const express = require("express");
+const app = express();
+
+app.use(express.static("dir01"));
+app.use(express.static("dir02"));
+app.use(express.static("dir03"));
+
+app.listen(3000, () => {
+  console.log("running at localhost:3000");
+});
+```
+
+---
+
+### 添加虚拟目录
+
+给静态文件添加一个虚拟的上级目录
+
+虚拟的目录也可以被托管
+
+```js
+app.use(虚拟目录, express.static(托管目录));
+```
+
+访问时需要添加上虚拟目录的路径
+
+> 如下：
+
+```js
+const express = require("express");
+const app = express();
+
+app.use("/static", express.static("public"));
+
+app.listen(3000, () => {
+  console.log("running at localhost:3000");
+});
+```
+
+```bash
+localhost:3000/home.html   #报错找不到请求地址
+
+localhost:3000/static/home.html  #找到了
 ```
 
 ## 客户端渲染（CSR）
