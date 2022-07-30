@@ -1,12 +1,6 @@
 # asdf 基础
 
-
-
-
-
 [[toc]]
-
-
 
 ## 简介
 
@@ -14,7 +8,7 @@ asdf 是一个可以按项目管理多种语言运行时版本的命令行工具
 
 [官方文档](https://asdf-vm.com/)
 
-相比于安装一大堆“专款专用”的版本管理工具来说，asdf-vm具备以下特点：
+相比于安装一大堆“专款专用”的版本管理工具来说，asdf-vm 具备以下特点：
 
 - 用一个命令行工具支持多种编程语言
 
@@ -34,8 +28,6 @@ asdf 是一个可以按项目管理多种语言运行时版本的命令行工具
 
 - 由插件自身管理命令行自动完成脚本，而不需要自己去配置
 
-
-
 ## 配置准备
 
 mac Homebrew：
@@ -47,10 +39,6 @@ brew install asdf
 ```shell
 echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
 ```
-
-
-
-
 
 ## 下载
 
@@ -69,8 +57,6 @@ asdf install python 3.10.0
 否则默认安装的是该语言的所有可用版本！
 
 :::
-
-
 
 ## 查看
 
@@ -101,7 +87,7 @@ asdf current 语言名
 > 如下：
 
 ```shell
-% asdf current 
+% asdf current
 nodejs          14.18.1         /Users/user/.tool-versions
 python          3.10.0          /Users/user/.tool-versions
 ```
@@ -110,10 +96,6 @@ python          3.10.0          /Users/user/.tool-versions
 % asdf current nodejs
 nodejs          14.18.1         /Users/chen/.tool-versions
 ```
-
-
-
-
 
 ## 设置版本
 
@@ -132,10 +114,10 @@ asdf local 语言名 版本
 > 如下：
 
 ```shell
+
 ```
 
 ```js
-
 ```
 
 ---
@@ -148,10 +130,14 @@ asdf local 语言名 版本
 asdf global 语言名 版本
 ```
 
-该命令会在用户的 `$HOME` 文件夹下生成一个 `.tool-version `文件记录默认的语言和版本号
+该命令会在用户的 `$HOME` 文件夹下生成一个 `.tool-version`文件记录默认的语言和版本号
 
 > 如下：
 
 ```shell
+
 ```
 
+## 清除残留
+
+### asdf reshim

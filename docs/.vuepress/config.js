@@ -8,6 +8,7 @@ module.exports = {
             { text: 'JavaScript', link: '/notes/front/JavaScript/' },
             { text: 'React.js', link: '/notes/front/React/' },
             { text: 'Vue.js', link: '/notes/front/Vue/' },
+            { text: 'Python', link: '/notes/back/Python/' },
             { text: '前端目录', link: '/guide/front/' },
             { text: '后端目录', link: '/guide/back/' },
             { text: '其他技术', link: '/guide/other/' },
