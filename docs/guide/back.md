@@ -21,7 +21,9 @@
 
 ## Python
 
-### Django
+[ 相关笔记 →](../notes/back/Python/README.md)
+
+<!-- ### Django -->
 
 <br/>
 
